@@ -1348,12 +1348,12 @@ template({name : "Mustache"});
 =&gt; "Hello Mustache!"</pre>
 
 
-      <h2 id="chaining">Chaining</h2>
+      <h2 id="chaining">Цепные вызовы</h2>
 
       <p>
-        You can use Underscore in either an object-oriented or a functional style,
-        depending on your preference. The following two lines of code are
-        identical ways to double a list of numbers.
+        Вы можете использовать Underscore как с применением объектоно-ориентированного подхода, так и процедурного,
+        в зависимости от ваших привычек и предпочтений. В качестве иллюстрации, взгляните на 2 строки кода ниже, они
+        выполняют одну и ту же задачу, удваивают каждое число в массиве.
       </p>
 
     <pre>
@@ -1361,11 +1361,12 @@ _.map([1, 2, 3], function(n){ return n * 2; });
 _([1, 2, 3]).map(function(n){ return n * 2; });</pre>
 
       <p>
-        Calling <tt>chain</tt> on a wrapped object will cause all future method calls to
-        return wrapped objects as well. When you've finished the computation,
-        use <tt>value</tt> to retrieve the final value. Here's an example of chaining
-        together a <b>map/flatten/reduce</b>, in order to get the word count of
-        every word in a song.
+        Вызвав <tt>chain</tt> на объекте, с которым собираетесь работать, 
+        вы получите эффект, при котором каждый последующий метод в цепочке 
+        будет вызван на объекте, возвращенным предыдущим методом.
+        Чтобы получить результат отработавших методов, нужно вызвать 
+        <tt>value</tt>. Ниже приведен пример цепного вызова
+        <b>map/flatten/reduce</b>, в результате мы получим количество каждого слова в приведенной песне.
       </p>
 
 <pre>
@@ -1376,6 +1377,7 @@ var lyrics = [
   {line : 4, words : "He sleeps all night and he works all day"}
 ];
 
+// вернет {lumberjack : 2, all : 4, night : 2 ... }
 _.chain(lyrics)
   .map(function(line) { return line.words.split(' '); })
   .flatten()
@@ -1383,41 +1385,41 @@ _.chain(lyrics)
     counts[word] = (counts[word] || 0) + 1;
     return counts;
 }, {}).value();
-
-=&gt; {lumberjack : 2, all : 4, night : 2 ... }</pre>
+</pre>
 
       <p>
-        In addition, the
-        <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/prototype">Array prototype's methods</a>
-        are proxied through the chained Underscore object, so you can slip a
-        <tt>reverse</tt> or a <tt>push</tt> into your chain, and continue to
-        modify the array.
+        Кроме того, цепочка, сделанная из объекта Underscore, обладает всеми методами 
+        <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/prototype">
+	стандартного объекта Array</a>, а это значит, что Вы можете ее изменить, например, с помощью
+        <tt>reverse</tt> или <tt>push</tt>, и затем продолжить работу.
       </p>
 
       <p id="chain">
         <b class="header">chain</b><code>_.chain(obj)</code>
         <br />
-        Returns a wrapped object. Calling methods on this object will continue
-        to return wrapped objects until <tt>value</tt> is used.
+        Вернет объект-оболочку, на котором можно будет вызвать любой из методов underscore. 
+        Результатом работы вызванных методов будет такой же объект.
+        Для получения результата работы цепочки методов нужно вызвать <tt>value</tt>.
       </p>
       <pre>
 var stooges = [{name : 'curly', age : 25}, {name : 'moe', age : 21}, {name : 'larry', age : 23}];
+
+// youngest будет установлена в "moe is 21"
 var youngest = _.chain(stooges)
   .sortBy(function(stooge){ return stooge.age; })
   .map(function(stooge){ return stooge.name + ' is ' + stooge.age; })
   .first()
-  .value();
-=&gt; "moe is 21"
+  .value(); 
 </pre>
 
       <p id="value">
         <b class="header">value</b><code>_(obj).value()</code>
         <br />
-        Extracts the value of a wrapped object.
+        Вернет значение, извлеченное из объекта-оболочки.
       </p>
       <pre>
+// вернет [1, 2, 3]
 _([1, 2, 3]).value();
-=&gt; [1, 2, 3]
 </pre>
 
       <h2 id="links">Links &amp; Suggested Reading</h2>
