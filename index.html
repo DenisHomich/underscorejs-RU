@@ -140,11 +140,11 @@
     </a>
     
     <a class="toc_title" href="#">
-      Introduction
+      Введение
     </a>
 
     <a class="toc_title" href="#collections">
-      Collections
+      Коллекции
     </a>
     <ul class="toc_section">
       <li>- <a href="#each">each</a></li>
@@ -170,7 +170,7 @@
     </ul>
 
     <a class="toc_title" href="#arrays">
-      Arrays
+      Массивы
     </a>
     <ul class="toc_section">
       <li>- <a href="#first">first</a></li>
@@ -191,7 +191,7 @@
     </ul>
 
     <a class="toc_title" href="#functions">
-      Functions
+      Функции
     </a>
     <ul class="toc_section">
       <li>- <a href="#bind">bind</a></li>
@@ -208,7 +208,7 @@
     </ul>
 
     <a class="toc_title" href="#objects">
-      Objects
+      Объекты
     </a>
     <ul class="toc_section">
       <li>- <a href="#keys">keys</a></li>
@@ -236,7 +236,7 @@
     </ul>
 
     <a class="toc_title" href="#utility">
-      Utility
+      Утилиты
     </a>    
     <ul class="toc_section">
       <li>- <a href="#noConflict">noConflict</a></li>
@@ -249,7 +249,7 @@
     </ul>
 
     <a class="toc_title" href="#chaining">
-      Chaining
+      Цепные вызовы
     </a>
     <ul class="toc_section">
       <li>- <a href="#chain">chain</a></li>
@@ -273,325 +273,318 @@
     </p>
 
     <p>
-      <a href="http://github.com/documentcloud/underscore/">Underscore</a> is a
-      utility-belt library for JavaScript that provides a lot of the
-      functional programming support that you would expect in
-      <a href="http://prototypejs.org/api">Prototype.js</a>
-      (or <a href="http://www.ruby-doc.org/core/classes/Enumerable.html">Ruby</a>),
-      but without extending any of the built-in JavaScript objects. It's the
-      tie to go along with <a href="http://docs.jquery.com">jQuery</a>'s tux,
-      and <a href="http://backbonejs.org">Backbone.js</a>'s suspenders.
+      <a href="http://github.com/documentcloud/underscore/">Underscore</a> это 
+      невероятно удобная JavaScript библиотека, этакий швейцарский нож для 
+      js-разработчика, набор функций-утилит, которые так привычны любителям 
+      <a href="http://prototypejs.org/api">Prototype.js</a> (или <a href="http://www.ruby-doc.org/core/classes/Enumerable.html">Ruby</a>).
+      Однако, в отличие, от Prototype.js, underscore не модифицирует прототипы  
+      встроенных объектов JavaScript. Данная особенность гарантирует бесконфликтность, 
+      что позволяет замечательно сочетать сей инструмент с, например, 
+      <a href="http://docs.jquery.com">jQuery</a>.
     </p>
 
     <p>
-      Underscore provides 60-odd functions that support both the usual
-      functional suspects: <b>map</b>, <b>select</b>, <b>invoke</b> &mdash;
-      as well as more specialized helpers: function binding, javascript
-      templating, deep equality testing, and so on. It delegates to built-in
-      functions, if present, so modern browsers will use the
-      native implementations of <b>forEach</b>, <b>map</b>, <b>reduce</b>,
-      <b>filter</b>, <b>every</b>, <b>some</b> and <b>indexOf</b>.
+      В состав Underscore входит более 60 функций, часть из которых решает 
+      более стандартные задачи, например, упрощает работу с коллекциями, 
+      а часть позволяет проще делать более экзотические вещи, такие как: 
+      функциональное связывание, javascript шаблонизация, проверки на равенство 
+      (напр. объектов), и т.д. Кроме того, underscore умеет делегировать вызовы, 
+      т.е. если код выполняется с современном браузере, который имеет нативные 
+      реализации таких методов, как: <b>forEach</b>, <b>map</b>, <b>reduce</b>,
+      <b>filter</b>, <b>every</b>, <b>some</b> and <b>indexOf</b>, то будут вызваны 
+      именно они.
     </p>
 
     <p>
-      A complete <a href="test/test.html">Test &amp; Benchmark Suite</a>
-      is included for your perusal.
+      Функциональные тесты и тесты производительности <a href="http://documentcloud.github.com/underscore/test/test.html">прилагаются</a>.
     </p>
     
     <p>
-      You may also read through the <a href="docs/underscore.html">annotated source code</a>.
+      Отлично документированные <a href="docs/underscore.html">исходники</a>.
     </p>
 
     <p>
-      The project is
-      <a href="http://github.com/documentcloud/underscore/">hosted on GitHub</a>.
-      You can report bugs and discuss features on the
-      <a href="http://github.com/documentcloud/underscore/issues">issues page</a>,
-      on Freenode in the <tt>#documentcloud</tt> channel,
-      or send tweets to <a href="http://twitter.com/documentcloud">@documentcloud</a>.
+      Проект 
+      <a href="http://github.com/documentcloud/underscore/">хостится на GitHub</a>.
+      Баг репорты и фичереквесты можно разместить 
+      <a href="http://github.com/documentcloud/underscore/issues">тут</a>,
+      или отправить твитом на <a href="http://twitter.com/documentcloud">@documentcloud</a>.
     </p>
 
     <p>
-      <i>Underscore is an open-source component of <a href="http://documentcloud.org/">DocumentCloud</a>.</i>
+      <i>Underscore — это open-source компонента <a href="http://documentcloud.org/">DocumentCloud</a>.</i>
     </p>
 
-    <h2>Downloads <i style="padding-left: 12px; font-size:12px;">(Right-click, and use "Save As")</i></h2>
+    <h2>Файлы для загрузки <i style="padding-left: 12px; font-size:12px;">(правый клик, затем "Сохранить как..")</i></h2>
 
     <table>
       <tr>
-        <td><a href="underscore.js">Development Version (1.3.1)</a></td>
-        <td><i>34kb, Uncompressed with Comments</i></td>
+        <td><a href="underscore.js">Версия для разработчиков (1.3.1)</a></td>
+        <td><i>34kb, Много комментариев</i></td>
       </tr>
       <tr>
-        <td><a href="underscore-min.js">Production Version (1.3.1)</a></td>
-        <td><i>&lt; 4kb, Minified and Gzipped</i></td>
+        <td><a href="underscore-min.js">Продакшн версия (1.3.1)</a></td>
+        <td><i>&lt; 4kb, Обфусцированная и обжатая</i></td>
       </tr>
     </table>
     
-    <div class="warning">Upgrade warning: version 1.3.0 removes AMD (RequireJS) support.</div>
+    <div class="warning">Важно (при обновлении): с версии 1.3.0 удалена поддержка RequireJS.</div>
 
     <div id="documentation">
 
-      <h2 id="collections">Collection Functions (Arrays or Objects)</h2>
+      <h2 id="collections">Работа с коллекциями (массивами или объектами)</h2>
 
       <p id="each">
         <b class="header">each</b><code>_.each(list, iterator, [context])</code>
         <span class="alias">Alias: <b>forEach</b></span>
         <br />
-        Iterates over a <b>list</b> of elements, yielding each in turn to an <b>iterator</b>
-        function. The <b>iterator</b> is bound to the <b>context</b> object, if one is
-        passed. Each invocation of <b>iterator</b> is called with three arguments:
-        <tt>(element, index, list)</tt>. If <b>list</b> is a JavaScript object, <b>iterator</b>'s
-        arguments will be <tt>(value, key, list)</tt>. Delegates to the native
-        <b>forEach</b> function if it exists.
+        Проходит по всему списку элементов, вызывая для каждого из них функцию <b>iterator</b>,
+        которая будет вызвана в контексте <b>context</b>, если он был передан.
+        При каждом вызаве в <b>iterator</b> будут переданы 3 аргумента:
+        <tt>(element, index, list)</tt>. В случае, если <b>list</b> является JavaScript объектом, то в <b>iterator</b>
+        будут переданы <tt>(value, key, list)</tt>. Если в браузере есть нативная реализация метода
+        <b>forEach</b>, то вызов будет делегирован ему.
       </p>
       <pre>
+// выведет все элементы массива
 _.each([1, 2, 3], function(num){ alert(num); });
-=&gt; alerts each number in turn...
-_.each({one : 1, two : 2, three : 3}, function(num, key){ alert(num); });
-=&gt; alerts each number in turn...</pre>
+
+// выведет содержимое объекта в формате ключ:значение
+_.each({one : 1, two : 2, three : 3}, function(num, key){ alert(key+":"+num); });</pre>
 
       <p id="map">
         <b class="header">map</b><code>_.map(list, iterator, [context])</code>
         <span class="alias">Alias: <b>collect</b></span>
         <br />
-        Produces a new array of values by mapping each value in <b>list</b>
-        through a transformation function (<b>iterator</b>). If the native <b>map</b> method
-        exists, it will be used instead. If <b>list</b> is a JavaScript object,
-        <b>iterator</b>'s arguments will be <tt>(value, key, list)</tt>.
+        Вернет новые массив, полученный преобразованием каждого элемента <b>list</b>
+        в функции (<b>iterator</b>). Если метод <b>map</b> реализован нативно, будет вызван именно он.
+        Если <b>list</b> — JavaScript объект, аргументами функции
+        <b>iterator</b> будут <tt>(value, key, list)</tt>.
       </p>
       <pre>
+// вернет [3,6,9]
 _.map([1, 2, 3], function(num){ return num * 3; });
-=&gt; [3, 6, 9]
-_.map({one : 1, two : 2, three : 3}, function(num, key){ return num * 3; });
-=&gt; [3, 6, 9]</pre>
+
+// вернет [3,6,9]
+_.map({one : 1, two : 2, three : 3}, function(num, key){ return num * 3; });</pre>
 
       <p id="reduce">
         <b class="header">reduce</b><code>_.reduce(list, iterator, memo, [context])</code>
         <span class="alias">Aliases: <b>inject, foldl</b></span>
         <br />
-        Also known as <b>inject</b> and <b>foldl</b>, <b>reduce</b> boils down a
-        <b>list</b> of values into a single value. <b>Memo</b> is the initial state
-        of the reduction, and each successive step of it should be returned by
-        <b>iterator</b>.
+        <b>Reduce</b> объеденит вместе значения из <b>list</b>, путем пропускания каждого из них через 
+        функцию <b>iterator</b>, которая в качестве аргументов получит <tt>(memo, value, key, list)</tt>.
+	Где <b>memo</b> начальное значение шага редукции, которое было возвращено предыдущим вызовом <b>iterator</b>.
       </p>
       <pre>
-var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
-=&gt; 6
-</pre>
+// вернет 6
+var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);</pre>
 
       <p id="reduceRight">
         <b class="header">reduceRight</b><code>_.reduceRight(list, iterator, memo, [context])</code>
         <span class="alias">Alias: <b>foldr</b></span>
         <br />
-        The right-associative version of <b>reduce</b>. Delegates to the
-        JavaScript 1.8 version of <b>reduceRight</b>, if it exists. <b>Foldr</b>
-        is not as useful in JavaScript as it would be in a language with lazy
-        evaluation.
+        Правоассоциативная версия <b>reduce</b>.  Вызов будет делегирован <b>reduceRight</b>, 
+        если есть нативная реализация.
       </p>
       <pre>
 var list = [[0, 1], [2, 3], [4, 5]];
-var flat = _.reduceRight(list, function(a, b) { return a.concat(b); }, []);
-=&gt; [4, 5, 2, 3, 0, 1]
-</pre>
+
+// вернет [4, 5, 2, 3, 0, 1]
+var flat = _.reduceRight(list, function(a, b) { return a.concat(b); }, []);</pre>
 
       <p id="find">
         <b class="header">find</b><code>_.find(list, iterator, [context])</code>
         <span class="alias">Alias: <b>detect</b></span>
         <br />
-        Looks through each value in the <b>list</b>, returning the first one that
-        passes a truth test (<b>iterator</b>). The function returns as
-        soon as it finds an acceptable element, and doesn't traverse the
-        entire list.
+        Вызывает для каждого элемента <b>list</b>, функцию сравнения <b>iterator</b>,
+	возвращая первый элемент, для которого <b>iterator</b> вернула <tt>true</tt>. 
+	Выполнение функции при этом прерывается, т.е. вызовов <b>iterator</b> для оставшейся части <b>list</b>
+	не будет.
       </p>
       <pre>
+// вернет 2
 var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
-=&gt; 2
 </pre>
 
       <p id="filter">
         <b class="header">filter</b><code>_.filter(list, iterator, [context])</code>
         <span class="alias">Alias: <b>select</b></span>
         <br />
-        Looks through each value in the <b>list</b>, returning an array of all
-        the values that pass a truth test (<b>iterator</b>). Delegates to the
-        native <b>filter</b> method, if it exists.
+        Проходит каждое значение <b>list</b>, возвращая массив из
+        значений, для которых <b>iterator</b> вернул <tt>true</tt>. 
+ 	Делегирует вызов нативной реализации <b>filter</b>, если таковая имеется.
       </p>
       <pre>
+// вернет [2,4,6]
 var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
-=&gt; [2, 4, 6]
 </pre>
 
       <p id="reject">
         <b class="header">reject</b><code>_.reject(list, iterator, [context])</code>
         <br />
-        Returns the values in <b>list</b> without the elements that the truth
-        test (<b>iterator</b>) passes. The opposite of <b>filter</b>.
+        Возвращает массив, содержащий все значения <b>list</b>, за исключением элементов, для которых функция
+	<b>iterator</b> вернула значение, отличное от <tt>true</tt>. Т.е. <b>reject</b> является «антонимом» <b>filter</b>.
       </p>
       <pre>
+// вернет [1, 3, 5]
 var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
-=&gt; [1, 3, 5]
 </pre>
 
       <p id="all">
         <b class="header">all</b><code>_.all(list, iterator, [context])</code>
         <span class="alias">Alias: <b>every</b></span>
         <br />
-        Returns <i>true</i> if all of the values in the <b>list</b> pass the <b>iterator</b>
-        truth test. Delegates to the native method <b>every</b>, if present.
+        Вернет <tt>true</tt>, если для каждого значения из <b>list</b> <b>iterator</b>
+        вернет <tt>true</tt>. Делегирует вызов к нативной реализации <b>every</b>, если она существует.
       </p>
       <pre>
+// вернет false
 _.all([true, 1, null, 'yes'], _.identity);
-=&gt; false
 </pre>
 
       <p id="any">
         <b class="header">any</b><code>_.any(list, [iterator], [context])</code>
         <span class="alias">Alias: <b>some</b></span>
         <br />
-        Returns <i>true</i> if any of the values in the <b>list</b> pass the
-        <b>iterator</b> truth test. Short-circuits and stops traversing the list
-        if a true element is found. Delegates to the native method <b>some</b>,
-        if present.
+        Вернет <tt>true</tt>, если хотябы для одного значения из <b>list</b> <b>iterator</b>
+        вернет <tt>true</tt>. После нахождения первого, удовлетворяющего условию элемента выполнение функции прерывается.
+	Делегирует вызов к нативной реализации <b>some</b>, если она существует.
       </p>
       <pre>
+// вернет true
 _.any([null, 0, 'yes', false]);
-=&gt; true
 </pre>
 
       <p id="include">
         <b class="header">include</b><code>_.include(list, value)</code>
         <span class="alias">Alias: <b>contains</b></span>
         <br />
-        Returns <i>true</i> if the <b>value</b> is present in the <b>list</b>, using
-        <i>===</i> to test equality. Uses <b>indexOf</b> internally, if <b>list</b>
-        is an Array.
+        Вернет <i>true</i>, если в <b>list</b> содержится элемент, эквивалентный <b>value</b>.
+	Для сравнения используется оператор <tt>===</tt>. Если <b>list</b> является массивом, будет вызван метод <b>indexOf</b>.
       </p>
       <pre>
+// вернет true
 _.include([1, 2, 3], 3);
-=&gt; true
 </pre>
 
       <p id="invoke">
         <b class="header">invoke</b><code>_.invoke(list, methodName, [*arguments])</code>
         <br />
-        Calls the method named by <b>methodName</b> on each value in the <b>list</b>.
-        Any extra arguments passed to <b>invoke</b> will be forwarded on to the
-        method invocation.
+        Вызовет метод <b>methodName</b> на каждом значении <b>list</b>.
+        Все дополнительные аргументы, если они переданы в <b>invoke</b> будут так же переданы при вызове <b>methodName</b>.
       </p>
       <pre>
+// вернет [[1, 5, 7], [1, 2, 3]]
 _.invoke([[5, 1, 7], [3, 2, 1]], 'sort');
-=&gt; [[1, 5, 7], [1, 2, 3]]
 </pre>
 
       <p id="pluck">
         <b class="header">pluck</b><code>_.pluck(list, propertyName)</code>
         <br />
-        A convenient version of what is perhaps the most common use-case for
-        <b>map</b>: extracting a list of property values.
+        Наверное, наиболее частоиспользуемый метод для <b>map</b>:
+	вернет массив, состоящий из значений свойства <b>propertyName</b> каждого из элементов <b>list</b>.
       </p>
       <pre>
+// вернет ["moe", "larry", "curly"]
 var stooges = [{name : 'moe', age : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];
 _.pluck(stooges, 'name');
-=&gt; ["moe", "larry", "curly"]
 </pre>
 
       <p id="max">
         <b class="header">max</b><code>_.max(list, [iterator], [context])</code>
         <br />
-        Returns the maximum value in <b>list</b>. If <b>iterator</b> is passed,
-        it will be used on each value to generate the criterion by which the
-        value is ranked.
+        Вернет максимальное значение из <b>list</b>. Если был передан <b>iterator</b>,
+        то он будет использован для генерация критерия, по которому будет проведено сравнение.
       </p>
       <pre>
 var stooges = [{name : 'moe', age : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];
+
+// вернет {name : 'curly', age : 60};
 _.max(stooges, function(stooge){ return stooge.age; });
-=&gt; {name : 'curly', age : 60};
 </pre>
 
       <p id="min">
         <b class="header">min</b><code>_.min(list, [iterator], [context])</code>
         <br />
-        Returns the minimum value in <b>list</b>. If <b>iterator</b> is passed,
-        it will be used on each value to generate the criterion by which the
-        value is ranked.
+        Вернет минимальное значение из <b>list</b>. Если был передан <b>iterator</b>,
+	то он будет использован для генерация критерия, по которому будет проведено сравнение.
       </p>
       <pre>
 var numbers = [10, 5, 100, 2, 1000];
+
+// вернет 2
 _.min(numbers);
-=&gt; 2
 </pre>
 
       <p id="sortBy">
         <b class="header">sortBy</b><code>_.sortBy(list, iterator, [context])</code>
         <br />
-        Returns a sorted copy of <b>list</b>, ranked in ascending order by the 
-        results of running each value through <b>iterator</b>.
+        Вернет отсортированную копию <b>list</b>, сортировка будет проведена по значению, 
+        возвращенному функцией <b>iterator</b>, для каждого элемента <b>list</b>.
       </p>
       <pre>
+// вернет [5, 4, 6, 3, 1, 2]
 _.sortBy([1, 2, 3, 4, 5, 6], function(num){ return Math.sin(num); });
-=&gt; [5, 4, 6, 3, 1, 2]
 </pre>
 
       <p id="groupBy">
         <b class="header">groupBy</b><code>_.groupBy(list, iterator)</code>
         <br />
-        Splits a collection into sets, grouped by the result of running each
-        value through <b>iterator</b>. If <b>iterator</b> is a string instead of
-        a function, groups by the property named by <b>iterator</b> on each of
-        the values.
+        Разобьет коллекцию на сеты, сгруппированные по признаку, определенному вызовом <b>iterator</b>
+	для каждого из элементов <b>list</b>. Если <b>iterator</b> не функция, а строка, 
+	то группировка будет произведена по значению свойства с именем <b>iterator</b>.
       </p>
       <pre>
+// вернет {1: [1.3], 2: [2.1, 2.4]}
 _.groupBy([1.3, 2.1, 2.4], function(num){ return Math.floor(num); });
-=&gt; {1: [1.3], 2: [2.1, 2.4]}
 
+// вернет {3: ["one", "two"], 5: ["three"]}
 _.groupBy(['one', 'two', 'three'], 'length');
-=&gt; {3: ["one", "two"], 5: ["three"]}
 </pre>
 
       <p id="sortedIndex">
         <b class="header">sortedIndex</b><code>_.sortedIndex(list, value, [iterator])</code>
         <br />
-        Uses a binary search to determine the index at which the <b>value</b>
-        <i>should</i> be inserted into the <b>list</b> in order to maintain the <b>list</b>'s
-        sorted order. If an <b>iterator</b> is passed, it will be used to compute
-        the sort ranking of each value.
+        Использует бинарный поиск, чтобы определить позицию, куда <b>value</b>
+        <i>должен</i> быть вставлен, чтобы не нарушился порядок отсортированного <b>list</b>.
+	Если был передан <b>iterator</b>, он будет использован для вычисленя ранга при сортировке каждого из элементов <b>list</b>.
       </p>
       <pre>
+// вернет 3
 _.sortedIndex([10, 20, 30, 40, 50], 35);
-=&gt; 3
 </pre>
 
       <p id="shuffle">
         <b class="header">shuffle</b><code>_.shuffle(list)</code>
         <br />
-        Returns a shuffled copy of the <b>list</b>, using a version of the 
-        <a href="http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates shuffle</a>.
+        Вернет «перемешанную» копию <b>list</b>, используя 
+        <a href="http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">метод случайного перемешивания Фишера-Ятса</a>.
       </p>
       <pre>
+// вернет [4, 1, 6, 3, 5, 2]
 _.shuffle([1, 2, 3, 4, 5, 6]);
-=&gt; [4, 1, 6, 3, 5, 2]
 </pre>
 
       <p id="toArray">
         <b class="header">toArray</b><code>_.toArray(list)</code>
         <br />
-        Converts the <b>list</b> (anything that can be iterated over), into a
-        real Array. Useful for transmuting the <b>arguments</b> object.
+        Сконвертирует <b>list</b> в массив.
+	Удобен, например, для преобразования объекта <b>arguments</b>.
       </p>
       <pre>
+// вернет [1, 2, 3]
 (function(){ return _.toArray(arguments).slice(0); })(1, 2, 3);
-=&gt; [1, 2, 3]
 </pre>
 
       <p id="size">
         <b class="header">size</b><code>_.size(list)</code>
         <br />
-        Return the number of values in the <b>list</b>.
+        Вернет количесво элементов в <b>list</b>.
       </p>
       <pre>
+// вернет 3
 _.size({one : 1, two : 2, three : 3});
-=&gt; 3
 </pre>
 
       <h2 id="arrays">Array Functions</h2>
