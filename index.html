@@ -1045,14 +1045,14 @@ _([1,2,3,200]).chain().
       <p id="has">
         <b class="header">has</b><code>_.has(object, key)</code>
         <br />
-        Does the object contain the given key? Identical to 
-        <tt>object.hasOwnProperty(key)</tt>, but uses a safe reference to the
-        <tt>hasOwnProperty</tt> function, in case it's been 
-        <a href="http://www.devthought.com/2012/01/18/an-object-is-not-a-hash/">overridden accidentally</a>.
+        Проверяет, есть ли свойство <b>key</b> в объекте <b>object</b>? Для выяснения этого факта будет вызвана
+        <tt>object.hasOwnProperty(key)</tt>, но при этом будет использована «безопасная» ссылка на  
+        <tt>hasOwnProperty</tt>, подробнее об этом можно прочитать 
+        <a href="http://www.devthought.com/2012/01/18/an-object-is-not-a-hash/">тут</a>.
       </p>
       <pre>
+// ture
 _.has({a: 1, b: 2, c: 3}, "b");
-=&gt; true
 </pre>
 
       <p id="isEqual">
