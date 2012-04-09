@@ -961,90 +961,87 @@ welcome('moe');
 =&gt; 'hi: moe!'
 </pre>
 
-      <h2 id="objects">Object Functions</h2>
+      <h2 id="objects">Функции для работы с объектами</h2>
 
       <p id="keys">
         <b class="header">keys</b><code>_.keys(object)</code>
         <br />
-        Retrieve all the names of the <b>object</b>'s properties.
+        Вернет массив, состоящий из названий всех свойств <b>object</b>.
       </p>
       <pre>
+// вернет ["one", "two", "three"]
 _.keys({one : 1, two : 2, three : 3});
-=&gt; ["one", "two", "three"]
 </pre>
 
       <p id="values">
         <b class="header">values</b><code>_.values(object)</code>
         <br />
-        Return all of the values of the <b>object</b>'s properties.
+        Вернет массив, состоящий из значений всех свойств <b>object</b>.
       </p>
       <pre>
+// вернет [1, 2, 3]
 _.values({one : 1, two : 2, three : 3});
-=&gt; [1, 2, 3]
 </pre>
 
       <p id="object-functions">
         <b class="header">functions</b><code>_.functions(object)</code>
         <span class="alias">Alias: <b>methods</b></span>
         <br />
-        Returns a sorted list of the names of every method in an object &mdash;
-        that is to say, the name of every function property of the object.
+        Вернет отсортированный массив, состоящий из названий всех методов <b>object</b>.
       </p>
       <pre>
+// вернет ["all", "any", "bind", "bindAll", "clone", "compact", "compose" ...
 _.functions(_);
-=&gt; ["all", "any", "bind", "bindAll", "clone", "compact", "compose" ...
 </pre>
 
       <p id="extend">
         <b class="header">extend</b><code>_.extend(destination, *sources)</code>
         <br />
-        Copy all of the properties in the <b>source</b> objects over to the
-        <b>destination</b> object. It's in-order, so the last source will override
-        properties of the same name in previous arguments.
+        Скопирует все свойства из объектов <b>source</b> в объект
+        <b>destination</b>. Если объекты <b>source</b> имеют одноименные свойства, то значения каждого будут затерты значениями из следующего.
       </p>
       <pre>
+// вернет {name : 'moe', age : 50}
 _.extend({name : 'moe'}, {age : 50});
-=&gt; {name : 'moe', age : 50}
 </pre>
 
       <p id="defaults">
         <b class="header">defaults</b><code>_.defaults(object, *defaults)</code>
         <br />
-        Fill in missing properties in <b>object</b> with default values from the
-        <b>defaults</b> objects. As soon as the property is filled, further defaults
-        will have no effect.
+        Проинициализирует неопределенные свойства <b>object</b> значениями одноименных свойств из
+        <b>defaults</b>. Если же какие-то своейства <b>object</b> уже определены, то они не будут изменены.
       </p>
       <pre>
 var iceCream = {flavor : "chocolate"};
+
+// вернет {flavor : "chocolate", sprinkles : "lots"}
 _.defaults(iceCream, {flavor : "vanilla", sprinkles : "lots"});
-=&gt; {flavor : "chocolate", sprinkles : "lots"}
 </pre>
 
       <p id="clone">
         <b class="header">clone</b><code>_.clone(object)</code>
         <br />
-        Create a shallow-copied clone of the <b>object</b>. Any nested objects
-        or arrays will be copied by reference, not duplicated.
+        Вернет клон <b>object</b>. Любые, входящие в его состав массивы или 
+        объекты будут скопированы по ссылке, а <i>не</i> продублированы.
       </p>
       <pre>
+// вернет {name : 'moe'}
 _.clone({name : 'moe'});
-=&gt; {name : 'moe'};
 </pre>
 
       <p id="tap">
         <b class="header">tap</b><code>_.tap(object, interceptor)</code>
         <br />
-        Invokes <b>interceptor</b> with the <b>object</b>, and then returns <b>object</b>.
-        The primary purpose of this method is to "tap into" a method chain, in order to perform operations on intermediate results within the chain.
+        Вызовет <b>interceptor</b> с <b>object</b> в качестве аргумента и затем вернет <b>object</b>.
+        Основная задача данного метода: возможность «вклиниться» в цепочку вызовов, для того, чтобы произвести некие операции с промежуточными итогами.
       </p>
       <pre>
-_.chain([1,2,3,200])
-  .filter(function(num) { return num % 2 == 0; })
-  .tap(console.log)
-  .map(function(num) { return num * num })
-  .value();
-=&gt; [2, 200]
-=&gt; [4, 40000]
+// на консоль будет выведен массив [2, 200], затем вызов value вернет [4, 40000]
+_([1,2,3,200]).chain().
+  filter(function(num) { return num % 2 == 0; }).
+  tap(console.log).
+  map(function(num) { return num * num }).
+  value();
 </pre>
 
       <p id="has">
@@ -1063,169 +1060,174 @@ _.has({a: 1, b: 2, c: 3}, "b");
       <p id="isEqual">
         <b class="header">isEqual</b><code>_.isEqual(object, other)</code>
         <br />
-        Performs an optimized deep comparison between the two objects, to determine
-        if they should be considered equal.
+        Предоставляет возможность полноценного сравнения двух объектов, т.е. сравнения каждого из их свойств.
       </p>
       <pre>
 var moe   = {name : 'moe', luckyNumbers : [13, 27, 34]};
 var clone = {name : 'moe', luckyNumbers : [13, 27, 34]};
+
+// fasle
 moe == clone;
-=&gt; false
+
+// true
 _.isEqual(moe, clone);
-=&gt; true
 </pre>
 
       <p id="isEmpty">
         <b class="header">isEmpty</b><code>_.isEmpty(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> contains no values.
+        Вернет <i>true</i> если <b>object</b> не содержит данных.
       </p>
       <pre>
+// fasle
 _.isEmpty([1, 2, 3]);
-=&gt; false
+
+// true
 _.isEmpty({});
-=&gt; true
 </pre>
 
       <p id="isElement">
         <b class="header">isElement</b><code>_.isElement(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is a DOM element.
+        Вернет <i>true</i> если <b>object</b> является DOM элементом.
       </p>
       <pre>
+// true
 _.isElement(jQuery('body')[0]);
-=&gt; true
 </pre>
 
       <p id="isArray">
         <b class="header">isArray</b><code>_.isArray(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is an Array.
+        Вернет <i>true</i> если <b>object</b> является массивом (Array).
       </p>
       <pre>
+(// false
 (function(){ return _.isArray(arguments); })();
-=&gt; false
+
+// true
 _.isArray([1,2,3]);
-=&gt; true
 </pre>
 
       <p id="isArguments">
         <b class="header">isArguments</b><code>_.isArguments(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is an Arguments object.
+        Вернет <i>true</i> если <b>object</b> является объектом arguments.
       </p>
       <pre>
+// true
 (function(){ return _.isArguments(arguments); })(1, 2, 3);
-=&gt; true
+
+// false
 _.isArguments([1,2,3]);
-=&gt; false
 </pre>
 
       <p id="isFunction">
         <b class="header">isFunction</b><code>_.isFunction(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is a Function.
+        Вернет <i>true</i> если <b>object</b> является функцией (Function).
       </p>
       <pre>
+// true
 _.isFunction(alert);
-=&gt; true
 </pre>
 
       <p id="isString">
         <b class="header">isString</b><code>_.isString(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is a String.
+        Вернет <i>true</i> если <b>object</b> является строкой (String).
       </p>
       <pre>
+// true
 _.isString("moe");
-=&gt; true
 </pre>
 
       <p id="isNumber">
         <b class="header">isNumber</b><code>_.isNumber(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is a Number (including <tt>NaN</tt>).
+        Вернет <i>true</i> если <b>object</b> является числом (Number, включая константу NaN).
       </p>
       <pre>
+// true
 _.isNumber(8.4 * 5);
-=&gt; true
 </pre>
 
       <p id="isBoolean">
         <b class="header">isBoolean</b><code>_.isBoolean(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is either <i>true</i> or <i>false</i>.
+        Вернет <i>true</i> если <b>object</b> является булевым значением (true или false).
       </p>
       <pre>
+// false
 _.isBoolean(null);
-=&gt; false
 </pre>
 
       <p id="isDate">
         <b class="header">isDate</b><code>_.isDate(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is a Date.
+        Вернет <i>true</i> если <b>object</b> является датой (Date).
       </p>
       <pre>
+// true
 _.isDate(new Date());
-=&gt; true
 </pre>
 
       <p id="isRegExp">
         <b class="header">isRegExp</b><code>_.isRegExp(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is a RegExp.
+        Вернет <i>true</i> если <b>object</b> является регулярным выражением (RegExp).
       </p>
       <pre>
+// true
 _.isRegExp(/moe/);
-=&gt; true
 </pre>
 
       <p id="isNaN">
         <b class="header">isNaN</b><code>_.isNaN(object)</code>
         <br />
-        Returns <i>true</i> if <b>object</b> is <i>NaN</i>.<br /> Note: this is not
-        the same as the native <b>isNaN</b> function, which will also return
-        true if the variable is <i>undefined</i>.
+        Вернет <i>true</i> если <b>object</b> является <i>NaN</i>.<br /> Примечание: 
+ 	разница с <b>isNaN</b> в том, что она так же вернет <i>true</i> для значения <i>undefined</i>.
       </p>
       <pre>
+// true
 _.isNaN(NaN);
-=&gt; true
+
+// true
 isNaN(undefined);
-=&gt; true
+
+// false
 _.isNaN(undefined);
-=&gt; false
 </pre>
 
       <p id="isNull">
         <b class="header">isNull</b><code>_.isNull(object)</code>
         <br />
-        Returns <i>true</i> if the value of <b>object</b> is <i>null</i>.
+        Вернет <i>true</i> если <b>object</b> является <i>null</i>.
       </p>
       <pre>
+// true
 _.isNull(null);
-=&gt; true
+
+// false
 _.isNull(undefined);
-=&gt; false
 </pre>
 
       <p id="isUndefined">
         <b class="header">isUndefined</b><code>_.isUndefined(variable)</code>
         <br />
-        Returns <i>true</i> if <b>variable</b> is <i>undefined</i>.
+        Вернет <i>true</i> если <b>object</b> является <i>undefined</i>.
       </p>
       <pre>
+// true
 _.isUndefined(window.missingVariable);
-=&gt; true
 </pre>
 
-      <h2 id="utility">Utility Functions</h2>
+      <h2 id="utility">Функции-утилиты</h2>
 
       <p id="noConflict">
         <b class="header">noConflict</b><code>_.noConflict()</code>
         <br />
-        Give control of the "_" variable back to its previous owner. Returns
-        a reference to the <b>Underscore</b> object.
+        Отвяжет переменную "_" от объекта <b>Underscore</b>.Вернет ссылку на объект <b>Underscore</b>.
       </p>
       <pre>
 var underscore = _.noConflict();</pre>
@@ -1233,20 +1235,19 @@ var underscore = _.noConflict();</pre>
       <p id="identity">
         <b class="header">identity</b><code>_.identity(value)</code>
         <br />
-        Returns the same value that is used as the argument. In math:
-        <tt>f(x) = x</tt><br />
-        This function looks useless, but is used throughout Underscore as
-        a default iterator.
+        Вернет значение, которое было передано в качестве аргумента (<tt>f(x) = x</tt>).<br />
+        Используется повсюду в Underscore в качестве дефолтного итератора.
       </p>
       <pre>
 var moe = {name : 'moe'};
-moe === _.identity(moe);
-=&gt; true</pre>
+
+// true
+moe === _.identity(moe);</pre>
 
       <p id="times">
         <b class="header">times</b><code>_.times(n, iterator)</code>
         <br />
-        Invokes the given iterator function <b>n</b> times.
+        Вызовет <b>iterator</b> <b>n</b> раз.
       </p>
       <pre>
 _(3).times(function(){ genie.grantWish(); });</pre>
@@ -1254,9 +1255,9 @@ _(3).times(function(){ genie.grantWish(); });</pre>
       <p id="mixin">
         <b class="header">mixin</b><code>_.mixin(object)</code>
         <br />
-        Allows you to extend Underscore with your own utility functions. Pass
-        a hash of <tt>{name: function}</tt> definitions to have your functions 
-        added to the Underscore object, as well as the OOP wrapper.
+        Позволяет расширять Underscore собственными функциями. 
+	Принимает объект следующего вида <tt>{name: function}</tt>, где <b>name</b> — имя функции, 
+	а <b>function</b> определение.
       </p>
       <pre>
 _.mixin({
@@ -1264,78 +1265,85 @@ _.mixin({
     return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
   }
 });
+
+// вернет "Fabio"
 _("fabio").capitalize();
-=&gt; "Fabio"
 </pre>
 
       <p id="uniqueId">
         <b class="header">uniqueId</b><code>_.uniqueId([prefix])</code>
         <br />
-        Generate a globally-unique id for client-side models or DOM elements
-        that need one. If <b>prefix</b> is passed, the id will be appended to it.
+        Сгенерирует уникальный id, для, например DOM элемента.
+	Если был передан <b>prefix</b>, то сгенерированное имя будет добавлено к нему.
       </p>
       <pre>
-_.uniqueId('contact_');
-=&gt; 'contact_104'</pre>
+// вернет 'contact_104'
+_.uniqueId('contact_');</pre>
 
       <p id="escape">
         <b class="header">escape</b><code>_.escape(string)</code>
         <br />
-        Escapes a string for insertion into HTML, replacing 
-        <tt>&amp;</tt>, <tt>&lt;</tt>, <tt>&gt;</tt>, <tt>&quot;</tt>, <tt>&#x27;</tt>, and <tt>&#x2F;</tt> characters.
+        Проэкранирует в с строке <b>string</b> спецсимволы 
+	(<tt>&amp;</tt>, <tt>&lt;</tt>, <tt>&gt;</tt>, <tt>"</tt>, <tt>'</tt>, <tt>/</tt>),
+	сделав возможным ее безболезненную вставку в HTML.
       </p>
       <pre>
-_.escape('Curly, Larry &amp; Moe');
-=&gt; "Curly, Larry &amp;amp; Moe"</pre>
+// "Curly, Larry &amp;amp; Moe"
+_.escape('Curly, Larry &amp; Moe');</pre>
 
       <p id="template">
         <b class="header">template</b><code>_.template(templateString, [context])</code>
         <br />
-        Compiles JavaScript templates into functions that can be evaluated
-        for rendering. Useful for rendering complicated bits of HTML from JSON
-        data sources. Template functions can both interpolate variables, using<br />
-        <tt>&lt;%= &hellip; %&gt;</tt>, as well as execute arbitrary JavaScript code, with
-        <tt>&lt;% &hellip; %&gt;</tt>. If you wish to interpolate a value, and have
-        it be HTML-escaped, use <tt>&lt;%- &hellip; %&gt;</tt> When you evaluate a template function, pass in a
-        <b>context</b> object that has properties corresponding to the template's free
-        variables. If you're writing a one-off, you can pass the <b>context</b>
-        object as the second parameter to <b>template</b> in order to render
-        immediately instead of returning a template function.
+        Компилирует JavaScript шаблоны в функции, которые могут быть вызваны для рендеринга этого шаблона.
+	Полезно при рендеринге объемных и сложных частей HTML разметки из JSON данных.
+	Полученные функции во время обработки данных могут интерполировать переменные, для чего используется следующий синтаксис внутри шаблона: 
+	<tt>&lt;%= &hellip; %&gt;</tt>, а также производить вычисления <tt>&lt;% &hellip; %&gt;</tt>.
+	Если вы выводите внутри шаблона данные и хотите, чтобы они были HTML-безопасными (спец. символы будут экранированы),
+        используйте такой синтаксис: <tt>&lt;%- &hellip; %&gt;</tt>.
+ 	Если при вызове функции-шаблонизатора передать в нее аргумент <b>context</b>, 
+	то его свойства будут соответствовать одноименным свободным переменным внутри функции.
+	Если же передать <b>context</b> во время вызова <b>template</b>, то 
+	результатом его работы будет не функция-шаблонизатор, а отрендеренный шаблон.<br/>
+	В скомплированных функциях сохраняется динамический контекст, так что внутри них можно использовать <b>this</b>.
       </p>
       <pre>
 var compiled = _.template("hello: &lt;%= name %&gt;");
+
+// вернет "hello: moe"
 compiled({name : 'moe'});
-=&gt; "hello: moe"
+
 
 var list = "&lt;% _.each(people, function(name) { %&gt; &lt;li&gt;&lt;%= name %&gt;&lt;/li&gt; &lt;% }); %&gt;";
+
+// вернет "&lt;li&gt;moe&lt;/li&gt;&lt;li&gt;curly&lt;/li&gt;&lt;li&gt;larry&lt;/li&gt;"
 _.template(list, {people : ['moe', 'curly', 'larry']});
-=&gt; "&lt;li&gt;moe&lt;/li&gt;&lt;li&gt;curly&lt;/li&gt;&lt;li&gt;larry&lt;/li&gt;"
+
 
 var template = _.template("&lt;b&gt;&lt;%- value %&gt;&lt;/b&gt;");
-template({value : '&lt;script&gt;'});
-=&gt; "&lt;b&gt;&amp;lt;script&amp;gt;&lt;/b&gt;"</pre>
+
+// вернет "&lt;b&gt;&amp;lt;script&amp;gt;&lt;/b&gt;"
+template({value : '&lt;script&gt;'});</pre>
 
       <p>
-        You can also use <tt>print</tt> from within JavaScript code.  This is
-        sometimes more convenient than using <tt>&lt;%= ... %&gt;</tt>.
+        В некоторых случаях вместо <tt>&lt;%= ... %&gt;</tt> будет лучше использовать 
+	<tt>print</tt> внутри шаблонов.
       </p>
       
       <pre>
 var compiled = _.template("&lt;% print('Hello ' + epithet); %&gt;");
-compiled({epithet: "stooge"});
-=&gt; "Hello stooge."</pre>
+
+// вернет "Hello stooge."
+compiled({epithet: "stooge"});</pre>
 
       <p>
-        If ERB-style delimiters aren't your cup of tea, you can change Underscore's
-        template settings to use different symbols to set off interpolated code.
-        Define an <b>interpolate</b> regex to match expressions that should be 
-        interpolated verbatim, an <b>escape</b> regex to match expressions that should 
-        be inserted after being HTML escaped, and an <b>evaluate</b> regex to match
-        expressions that should be evaluated without insertion into the resulting
-        string. You may define or omit any combination of the three.
-        For example, to perform
-        <a href="http://github.com/janl/mustache.js#readme">Mustache.js</a>
-        style templating:
+        Если по какой-то причине Вам не нравятся дескрипторы, используемые для вывода 
+	переменных и вставки исполняемого кода в шаблон, описанные выше,
+	Вы можете изменить настройки шаблонизатора Underscore, чтобы использовать для этих целей привычные символы.
+        Задайте регулярным выражением свойство <b>interpolate</b>, и (необязательно) свойство <b>evaluate</b>,
+	для определения участков шаблона, которые должны быть просто выведены в HTML или выполнены, как JavaScript код.
+        Если же свойство <b>evaluate</b> не было определено, то используя новые дескрипторы Вы сможете лишь выводить в HTML значения переменных.
+        В качестве примера можно взглянуть на синтаксис шаблонизатора
+        <a href="http://github.com/janl/mustache.js#readme">Mustache.js</a>:
       </p>
 
       <pre>
@@ -1344,8 +1352,9 @@ _.templateSettings = {
 };
 
 var template = _.template("Hello {{ name }}!");
-template({name : "Mustache"});
-=&gt; "Hello Mustache!"</pre>
+
+// вернет "Hello Mustache!"
+template({name : "Mustache"});</pre>
 
 
       <h2 id="chaining">Цепные вызовы</h2>
