@@ -308,7 +308,8 @@
       <a href="http://github.com/documentcloud/underscore/">хостится на GitHub</a>.
       Баг репорты и фичереквесты можно разместить 
       <a href="http://github.com/documentcloud/underscore/issues">тут</a>,
-      или отправить твитом на <a href="http://twitter.com/documentcloud">@documentcloud</a>.
+      или отправить твитом на <a href="http://twitter.com/documentcloud">@documentcloud</a>. Баги по русской версии 
+      документации принимаются <a href="https://github.com/DenisHomich/underscorejs-RU">в этом репозитории</a>.
     </p>
 
     <p>
@@ -356,9 +357,9 @@ _.each({one : 1, two : 2, three : 3}, function(num, key){ alert(key+":"+num); })
         <b class="header">map</b><code>_.map(list, iterator, [context])</code>
         <span class="alias">Alias: <b>collect</b></span>
         <br />
-        Вернет новые массив, полученный преобразованием каждого элемента <b>list</b>
+        Вернет новый массив, полученный преобразованием каждого элемента <b>list</b>
         в функции (<b>iterator</b>). Если метод <b>map</b> реализован нативно, будет вызван именно он.
-        Если <b>list</b> — JavaScript объект, аргументами функции
+        Если <b>list</b> — JavaScript-объект, аргументами функции
         <b>iterator</b> будут <tt>(value, key, list)</tt>.
       </p>
       <pre>
@@ -372,7 +373,7 @@ _.map({one : 1, two : 2, three : 3}, function(num, key){ return num * 3; });</pr
         <b class="header">reduce</b><code>_.reduce(list, iterator, memo, [context])</code>
         <span class="alias">Aliases: <b>inject, foldl</b></span>
         <br />
-        <b>Reduce</b> объеденит вместе значения из <b>list</b>, путем пропускания каждого из них через 
+        <b>Reduce</b> объединит вместе значения из <b>list</b>, путем пропускания каждого из них через 
         функцию <b>iterator</b>, которая в качестве аргументов получит <tt>(memo, value, key, list)</tt>.
 	Где <b>memo</b> начальное значение шага редукции, которое было возвращено предыдущим вызовом <b>iterator</b>.
       </p>
