@@ -500,6 +500,40 @@ var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 </pre>
 
+      <p id="where">
+          <b class="header">where</b><code>_.where(list, properties)</code>
+          <br />
+          Вернет массив из элементов <b>list</b>, для которых совпадают значения для
+          соответсвующих ключей, перечисленные в <b>properties</b>.
+      </p>
+<pre>
+_.where(listOfPlays, {author: "Shakespeare", year: 1611});
+// вернет
+[
+    {title: "Cymbeline", author: "Shakespeare", year: 1611},
+    {title: "The Tempest", author: "Shakespeare", year: 1611}
+]
+</pre>
+
+      <p id="findWhere">
+          <b class="header">findWhere</b><code>_.findWhere(list, properties)</code>
+          <br />
+          Сработает аналогично <b>where</b>, но вернет только первый элемент, соответствующий
+          заданным <b>properties</b>.
+      </p>
+      <p>
+          Если совпадений не найдено или <b>list</b> пустой — вернет <i>undefined</i>.
+      </p>
+<pre>
+_.findWhere(publicServicePulitzers, {newsroom: "The New York Times"});
+// вернет
+{
+    year     : 1918,
+    newsroom : "The New York Times",
+    reason   : "For its public service in publishing in full so many official reports, documents and speeches by European statesmen relating to the progress and conduct of the war."
+}
+</pre>
+
       <p id="reject">
         <b class="header">reject</b><code>_.reject(list, iterator, [context])</code>
         <br />
@@ -641,6 +675,20 @@ _.indexBy(stooges, 'age');
   "50": {name: 'larry', age: 50},
   "60": {name: 'curly', age: 60}
 }
+</pre>
+
+      <p id="countBy">
+          <b class="header">countBy</b><code>_.countBy(list, iterator, [context])</code>
+          <br />
+          Сортирует коллекцию <b>list</b> в группы, вернет объект где значением каждого свойства <b>groupName</b>
+          будет количество элементов коллекции, относящихся к этой группе.
+          Т.е. работает аналогично <tt>groupBy</tt>, но вернет не сами элементы а их количество.
+      </p>
+<pre>
+// вернет {odd: 3, even: 2}
+_.countBy([1, 2, 3, 4, 5], function(num) {
+    return num % 2 == 0 ? 'even': 'odd';
+});
 </pre>
 
       <p id="shuffle">
