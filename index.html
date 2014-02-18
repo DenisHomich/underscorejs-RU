@@ -253,6 +253,7 @@
     <ul class="toc_section">
       <li>- <a href="#bind">bind</a></li>
       <li>- <a href="#bindAll">bindAll</a></li>
+      <li>- <a href="#partial">partial</a></li>
       <li>- <a href="#memoize">memoize</a></li>
       <li>- <a href="#delay">delay</a></li>
       <li>- <a href="#defer">defer</a></li>
@@ -260,6 +261,7 @@
       <li>- <a href="#debounce">debounce</a></li>
       <li>- <a href="#once">once</a></li>
       <li>- <a href="#after">after</a></li>
+      <li>- <a href="#now">now</a></li>
       <li>- <a href="#wrap">wrap</a></li>
       <li>- <a href="#compose">compose</a></li>
     </ul>
@@ -977,7 +979,7 @@ _.range(0);
       <h2 id="functions">Работа с функциями</h2>
 
       <p id="bind">
-        <b class="header">bind</b><code>_.bind(function, object, [*arguments])</code>
+        <b class="header">bind</b><code>_.bind(function, object, *arguments)</code>
         <br />
         Связывает функцию <b>function</b> с объектом <b>object</b>. Это значит, что 
 		каждый раз когда она будет вызвана <i>this</i> будет указывать на <b>object</b>.
@@ -993,7 +995,7 @@ func();
 </pre>
 
       <p id="bindAll">
-        <b class="header">bindAll</b><code>_.bindAll(object, [*methodNames])</code>
+        <b class="header">bindAll</b><code>_.bindAll(object, *methodNames)</code>
         <br />
         Свяжет с объектом <b>object</b>, все методы, переданные, как
         <b>methodNames</b>. Весьма полезно использовать при работе с обработчиками событий.
@@ -1013,6 +1015,20 @@ _.bindAll(buttonView);
 jQuery('#underscore_button').bind('click', buttonView.onClick);
 </pre>
 
+      <p id="partial">
+          <b class="header">partial</b><code>_.partial(function, *arguments)</code>
+          <br />
+          Вернет функцию, которая будет являться <b>function</b> с некоторыми пердустановленными
+          аргументами, но без влияния на динамическое изменения контекста (<tt>this</tt>).
+      </p>
+<pre>
+var add = function(a, b) { return a + b; };
+add5 = _.partial(add, 5);
+
+// вернет 15
+add5(10);
+</pre>
+
       <p id="memoize">
         <b class="header">memoize</b><code>_.memoize(function, [hashFunction])</code>
         <br />
@@ -1028,7 +1044,7 @@ var fibonacci = _.memoize(function(n) {
 </pre>
 
       <p id="delay">
-        <b class="header">delay</b><code>_.delay(function, wait, [*arguments])</code>
+        <b class="header">delay</b><code>_.delay(function, wait, *arguments)</code>
         <br />
         Очень похожа на <b>setTimeout</b>, вызовет <b>function</b> по прошествии заданного (<b>wait</b>)
         вермени в миллисекундах. Если были переданы дополнительные аргументы <b>arguments</b>, они будут
@@ -1054,11 +1070,17 @@ _.defer(function(){ alert('deferred'); });
 </pre>
 
       <p id="throttle">
-        <b class="header">throttle</b><code>_.throttle(function, wait)</code>
+        <b class="header">throttle</b><code>_.throttle(function, wait, [options])</code>
         <br />
 		Вернет версию функции, которая, при повторных вызовах, 
 		исполниться не чаще одного раза в заданный промежуток  <b>wait</b>.
 		Полезна для использования при обработке событий, которые происходят слишком часто.
+      </p>
+      <p>
+          По-умолчанию <b>throttle</b> выполнит функцию, как только Вы ее вызовете (в первый раз)
+          при последующих вызовах втечении <b>wait</b> выполняться она не будет. Если Вы хотите
+          чтобы при первоначальном (первый раз) вызове она не выолнялась — нужно передать
+          <tt>{leading: false}</tt> в качестве options.
       </p>
       <pre>
 var throttled = _.throttle(updatePosition, 100);
@@ -1066,7 +1088,7 @@ $(window).scroll(throttled);
 </pre>
 
       <p id="debounce">
-        <b class="header">debounce</b><code>_.debounce(function, wait)</code>
+        <b class="header">debounce</b><code>_.debounce(function, wait, [immediate])</code>
         <br />
 		Вернет версию функции, исполнение которой начнется не ранее, чем
 		истечет промежуток <b>wait</b>, после ее последнего вызова.
@@ -1074,7 +1096,14 @@ $(window).scroll(throttled);
 		Например, проверить орфографию комментария пользователя лучше будет после того, как он его окончательно введет,
 		а динамечески перерассчитать разметку после того, как пользователь закончит изменять размер окна.
       </p>
-      <pre>
+
+      <p>
+          Если передать <tt>true</tt> в качестве аргумента <b>immediate</b> функция будет
+          выполнена сразу, не дожидаяся прошествия <b>wait</b>. Полезно в случаях когда нужно
+          предоствратить повторные действия, например отправку формы.
+      </p>
+
+<pre>
 var lazyLayout = _.debounce(calculateLayout, 300);
 $(window).resize(lazyLayout);
 </pre>
@@ -1109,6 +1138,17 @@ var renderNotes = _.after(notes.length, render);
 _.each(notes, function(note) {
   note.asyncSave({success: renderNotes}); 
 });</pre>
+
+      <p id="now">
+          <b class="header">now</b><code>_.now()</code>
+          <br />
+          Вернет текущую метку времени (Interger), используя самую быструю доступную в текущей
+          среде выполнения функцию. Полезно при реализации таймеров/анимаций.
+      </p>
+<pre>
+// вернет 1392066795351
+_.now();
+</pre>
 
       <p id="wrap">
         <b class="header">wrap</b><code>_.wrap(function, wrapper)</code>
