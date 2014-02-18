@@ -272,20 +272,28 @@
     <ul class="toc_section">
       <li>- <a href="#keys">keys</a></li>
       <li>- <a href="#values">values</a></li>
+      <li>- <a href="#pairs">pairs</a></li>
+      <li>- <a href="#invert">invert</a></li>
       <li>- <a href="#object-functions">functions</a></li>
       <li>- <a href="#extend">extend</a></li>
+      <li>- <a href="#pick">pick</a></li>
+      <li>- <a href="#omit">omit</a></li>
       <li>- <a href="#defaults">defaults</a></li>
       <li>- <a href="#clone">clone</a></li>
       <li>- <a href="#tap">tap</a></li>
       <li>- <a href="#has">has</a></li>
+      <li>- <a href="#matches">matches</a></li>
+      <li>- <a href="#property">property</a></li>
       <li>- <a href="#isEqual">isEqual</a></li>
       <li>- <a href="#isEmpty">isEmpty</a></li>
       <li>- <a href="#isElement">isElement</a></li>
       <li>- <a href="#isArray">isArray</a></li>
+      <li>- <a href="#isObject">isObject</a></li>
       <li>- <a href="#isArguments">isArguments</a></li>
       <li>- <a href="#isFunction">isFunction</a></li>
       <li>- <a href="#isString">isString</a></li>
       <li>- <a href="#isNumber">isNumber</a></li>
+      <li>- <a href="#isFinite">isFinite</a></li>
       <li>- <a href="#isBoolean">isBoolean</a></li>
       <li>- <a href="#isDate">isDate</a></li>
       <li>- <a href="#isRegExp">isRegExp</a></li>
@@ -1208,6 +1216,28 @@ _.keys({one : 1, two : 2, three : 3});
 _.values({one : 1, two : 2, three : 3});
 </pre>
 
+      <p id="pairs">
+          <b class="header">pairs</b><code>_.pairs(object)</code>
+          <br />
+          Сконвертирует объект с набор пар формата<tt>[key, value]</tt>.
+      </p>
+<pre>
+// вернет [["one", 1], ["two", 2], ["three", 3]]
+_.pairs({one: 1, two: 2, three: 3});
+</pre>
+
+      <p id="invert">
+          <b class="header">invert</b><code>_.invert(object)</code>
+          <br />
+          Вернет копию <b>object</b> где ключи — значения, а значения — ключи.
+          Чтобы это заработало, нужно чтобы все значения свойств объекта могли быть уникально
+          сериализованы в строки.
+      </p>
+<pre>
+// вернет {Moses: "Moe", Louis: "Larry", Jerome: "Curly"};
+_.invert({Moe: "Moses", Larry: "Louis", Curly: "Jerome"});
+</pre>
+
       <p id="object-functions">
         <b class="header">functions</b><code>_.functions(object)</code>
         <span class="alias">Alias: <b>methods</b></span>
@@ -1228,6 +1258,30 @@ _.functions(_);
       <pre>
 // вернет {name : 'moe', age : 50}
 _.extend({name : 'moe'}, {age : 50});
+</pre>
+
+      <p id="pick">
+          <b class="header">pick</b><code>_.pick(object, *keys)</code>
+          <br />
+
+          Вернет копию <b>object</b>, где будут значения только для ключей, указанных в <b>keys</b>.
+      </p>
+<pre>
+// вернет {name: 'moe', age: 50}
+
+_.pick({name: 'moe', age: 50, userid: 'moe1'}, 'name', 'age');
+</pre>
+
+      <p id="omit">
+          <b class="header">omit</b><code>_.omit(object, *keys)</code>
+          <br />
+          Вернет копию <b>object</b>, из которой будут удалены значения по ключам, заданным в
+          <b>keys</b>.
+      </p>
+<pre>
+// вернет {name: 'moe', age: 50}
+
+_.omit({name: 'moe', age: 50, userid: 'moe1'}, 'userid');
 </pre>
 
       <p id="defaults">
@@ -1282,6 +1336,30 @@ _([1,2,3,200]).chain().
 _.has({a: 1, b: 2, c: 3}, "b");
 </pre>
 
+      <p id="property">
+          <b class="header">property</b><code>_.property(key)</code>
+          <br />
+          Вернет функцию, которая в свою очередь вернет значение свойства <tt>key</tt>
+          для переданного в нее объекта.
+      </p>
+<pre>
+var moe = {name: 'moe'};
+
+// вернет true
+'moe' === _.property('name')(moe);
+</pre>
+
+      <p id="matches">
+          <b class="header">matches</b><code>_.matches(attrs)</code>
+          <br />
+          Вернет функцию, с помощью которой можно будет определить обладает ли объект
+          нужными свойствами и значениями этих свойств.
+      </p>
+<pre>
+var ready = _.matches({selected: true, visible: true});
+var readyToGoList = _.filter(list, ready);
+</pre>
+
       <p id="isEqual">
         <b class="header">isEqual</b><code>_.isEqual(object, other)</code>
         <br />
@@ -1334,6 +1412,20 @@ _.isElement(jQuery('body')[0]);
 _.isArray([1,2,3]);
 </pre>
 
+      <p id="isObject">
+          <b class="header">isObject</b><code>_.isObject(value)</code>
+          <br />
+          Вернет <i>true</i>, если <b>value</b> Object. Имейте в виду, что в JavaScript
+          массивы и функции — objects, а строки могут как примитивом, так и объектом strings.
+      </p>
+<pre>
+// true
+_.isObject({});
+
+// false
+_.isObject(1);
+</pre>
+
       <p id="isArguments">
         <b class="header">isArguments</b><code>_.isArguments(object)</code>
         <br />
@@ -1375,6 +1467,19 @@ _.isString("moe");
       <pre>
 // true
 _.isNumber(8.4 * 5);
+</pre>
+
+      <p id="isFinite">
+          <b class="header">isFinite</b><code>_.isFinite(object)</code>
+          <br />
+          Вернет <i>true</i> если <b>object</b> Number и не является Infinite.
+      </p>
+<pre>
+// true
+_.isFinite(-101);
+
+// false
+_.isFinite(-Infinity);
 </pre>
 
       <p id="isBoolean">
