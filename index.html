@@ -1912,35 +1912,323 @@ _([1, 2, 3]).value();
       </p>
 
       <h2 id="changelog">Change Log</h2>
-      
-      <p>
-        <b class="header">1.3.1</b> &mdash; <small><i>Jan. 23, 2012</i></small><br />
-        <ul>
+
+      <p id="1.6.0">
+          <b class="header">1.6.0</b> &mdash; <small><i>February 10, 2014</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.5.2...1.6.0">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.6.0/index.html">Docs</a><br />
+      <ul>
           <li>
-            Added an <tt>_.has</tt> function, as a safer way to use <tt>hasOwnProperty</tt>.
+              Underscore now registers itself for AMD (Require.js), Bower and Component,
+              as well as being a CommonJS module and a regular (Java)Script.
+              An ugliness, but perhaps a necessary one.
           </li>
           <li>
-            Added <tt>_.collect</tt> as an alias for <tt>_.map</tt>. Smalltalkers, rejoice.
+              Added <tt>_.partition</tt>, a way to split a collection into two lists
+              of results — those that pass and those that fail a particular predicate.
           </li>
           <li>
-            Reverted an old change so that <tt>_.extend</tt> will correctly copy 
-            over keys with undefined values again.
+              Added <tt>_.property</tt>, for easy creation of iterators that pull
+              specific properties from objects. Useful in conjunction with other
+              Underscore collection functions.
           </li>
           <li>
-            Bugfix to stop escaping slashes within interpolations in <tt>_.template</tt>.
+              Added <tt>_.matches</tt>, a function that will give you a predicate
+              that can be used to tell if a given object matches a list of specified
+              key/value properties.
           </li>
-        </ul>
+          <li>
+              Added <tt>_.constant</tt>, as a higher-order <tt>_.identity</tt>.
+          </li>
+          <li>
+              Added <tt>_.now</tt>, an optimized way to get a timestamp &mdash; used
+              internally to speed up <tt>debounce</tt> and <tt>throttle</tt>.
+          </li>
+          <li>
+              The <tt>_.partial</tt> function may now be used to partially apply
+              any of its arguments, by passing <tt>_</tt> wherever you'd like a
+              placeholder variable, to be filled-in later.
+          </li>
+          <li>
+              The <tt>_.each</tt> function now returns the original iterated list
+              (just like it used to), for better chaining.
+          </li>
+          <li>
+              &hellip; and more miscellaneous refactoring.
+          </li>
+      </ul>
       </p>
-      
-      <p>
-        <b class="header">1.3.0</b> &mdash; <small><i>Jan. 11, 2012</i></small><br />
-        <ul>
+
+      <p id="1.5.2">
+          <b class="header">1.5.2</b> &mdash; <small><i>September 7, 2013</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.5.1...1.5.2">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.5.2/index.html">Docs</a><br />
+      <ul>
           <li>
-            Removed AMD (RequireJS) support from Underscore. If you'd like to use
-            Underscore with RequireJS, you can load it as a normal script, wrap
-            or patch your copy, or download a forked version.
+              Added an <tt>indexBy</tt> function, which fits in alongside its
+              cousins, <tt>countBy</tt> and <tt>groupBy</tt>.
           </li>
-        </ul>
+          <li>
+              Added a <tt>sample</tt> function, for sampling random elements from
+              arrays.
+          </li>
+          <li>
+              Some optimizations relating to functions that can be implemented
+              in terms of <tt>_.keys</tt> (which includes, significantly,
+              <tt>each</tt> on objects). Also for <tt>debounce</tt> in a tight loop.
+          </li>
+          <li>
+              <tt>escape</tt> and <tt>unescape</tt> no longer affect
+              <tt>&#x2F;</tt> and <tt>&amp;#x2F;</tt>.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.5.1">
+          <b class="header">1.5.1</b> &mdash; <small><i>July 8, 2013</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.5.0...1.5.1">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.5.1/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Removed <tt>unzip</tt>, as it's simply the application of <tt>zip</tt>
+              to an array of arguments. Use <tt>_.zip.apply(_, list)</tt> to
+              transpose instead.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.5.0">
+          <b class="header">1.5.0</b> &mdash; <small><i>July 6, 2013</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.4.4...1.5.0">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.5.0/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Added a new <tt>unzip</tt> function, as the inverse of <tt>_.zip</tt>.
+          </li>
+          <li>
+              The <tt>throttle</tt> function now takes an <tt>options</tt> argument,
+              allowing you to disable execution of the throttled function on either
+              the <b>leading</b> or <b>trailing</b> edge.
+          </li>
+          <li>
+              A source map is now supplied for easier debugging of the minified
+              production build of Underscore.
+          </li>
+          <li>
+              The <tt>defaults</tt> function now only overrides <tt>undefined</tt>
+              values, not <tt>null</tt> ones.
+          </li>
+          <li>
+              Removed the ability to call <tt>_.bindAll</tt> with no method name
+              arguments. It's pretty much always wiser to white-list the names of
+              the methods you'd like to bind.
+          </li>
+          <li>
+              Removed the ability to call <tt>_.after</tt> with an invocation count
+              of zero. The minimum number of calls is (naturally) now <tt>1</tt>.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.4.4">
+          <b class="header">1.4.4</b> &mdash; <small><i>January 30, 2013</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.4.3...1.4.4">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.4.4/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Added <tt>_.findWhere</tt>, for finding the first element in a list
+              that matches a particular set of keys and values.
+          </li>
+          <li>
+              Added <tt>_.partial</tt>, for partially applying a function <i>without</i>
+              changing its dynamic reference to <tt>this</tt>.
+          </li>
+          <li>
+              Simplified <tt>bind</tt> by removing some edge cases involving
+              constructor functions. In short: don't <tt>_.bind</tt> your
+              constructors.
+          </li>
+          <li>
+              A minor optimization to <tt>invoke</tt>.
+          </li>
+          <li>
+              Fix bug in the minified version due to the minifier incorrectly
+              optimizing-away <tt>isFunction</tt>.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.4.3">
+          <b class="header">1.4.3</b> &mdash; <small><i>December 4, 2012</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.4.2...1.4.3">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.4.3/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Improved Underscore compatibility with Adobe's JS engine that can be
+              used to script Illustrator, Photoshop, and friends.
+          </li>
+          <li>
+              Added a default <tt>_.identity</tt> iterator to <tt>countBy</tt> and
+              <tt>groupBy</tt>.
+          </li>
+          <li>
+              The <tt>uniq</tt> function can now take <tt>array, iterator, context</tt>
+              as the argument list.
+          </li>
+          <li>
+              The <tt>times</tt> function now returns the mapped array of iterator
+              results.
+          </li>
+          <li>
+              Simplified and fixed bugs in <tt>throttle</tt>.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.4.2">
+          <b class="header">1.4.2</b> &mdash; <small><i>October 6, 2012</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.4.1...1.4.2">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.4.2/index.html">Docs</a><br />
+      <ul>
+          <li>
+              For backwards compatibility, returned to pre-1.4.0 behavior when
+              passing <tt>null</tt> to iteration functions. They now become no-ops
+              again.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.4.1">
+          <b class="header">1.4.1</b> &mdash; <small><i>October 1, 2012</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.4.0...1.4.1">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.4.1/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Fixed a 1.4.0 regression in the <tt>lastIndexOf</tt> function.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.4.0">
+          <b class="header">1.4.0</b> &mdash; <small><i>September 27, 2012</i></small>  &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.3.3...1.4.0">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.4.0/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Added a <tt>pairs</tt> function, for turning a JavaScript object
+              into <tt>[key, value]</tt> pairs ... as well as an <tt>object</tt>
+              function, for converting an array of <tt>[key, value]</tt> pairs
+              into an object.
+          </li>
+          <li>
+              Added a <tt>countBy</tt> function, for counting the number of objects
+              in a list that match a certain criteria.
+          </li>
+          <li>
+              Added an <tt>invert</tt> function, for performing a simple inversion
+              of the keys and values in an object.
+          </li>
+          <li>
+              Added a <tt>where</tt> function, for easy cases of filtering a list
+              for objects with specific values.
+          </li>
+          <li>
+              Added an <tt>omit</tt> function, for filtering an object to remove
+              certain keys.
+          </li>
+          <li>
+              Added a <tt>random</tt> function, to return a random number in a
+              given range.
+          </li>
+          <li>
+              <tt>_.debounce</tt>'d functions now return their last updated value,
+              just like <tt>_.throttle</tt>'d functions do.
+          </li>
+          <li>
+              The <tt>sortBy</tt> function now runs a stable sort algorithm.
+          </li>
+          <li>
+              Added the optional <tt>fromIndex</tt> option to <tt>indexOf</tt> and
+              <tt>lastIndexOf</tt>.
+          </li>
+          <li>
+              "Sparse" arrays are no longer supported in Underscore iteration
+              functions. Use a <tt>for</tt> loop instead (or better yet, an object).
+          </li>
+          <li>
+              The <tt>min</tt> and <tt>max</tt> functions may now be called on
+              <i>very</i> large arrays.
+          </li>
+          <li>
+              Interpolation in templates now represents <tt>null</tt> and
+              <tt>undefined</tt> as the empty string.
+          </li>
+          <li>
+              <del>Underscore iteration functions no longer accept <tt>null</tt> values
+                  as a no-op argument. You'll get an early error instead.</del>
+          </li>
+          <li>
+              A number of edge-cases fixes and tweaks, which you can spot in the
+              <a href="https://github.com/jashkenas/underscore/compare/1.3.3...1.4.0">diff</a>.
+              Depending on how you're using Underscore, <b>1.4.0</b> may be more
+              backwards-incompatible than usual &mdash; please test when you upgrade.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.3.3">
+          <b class="header">1.3.3</b> &mdash; <small><i>April 10, 2012</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.3.1...1.3.3">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.3.3/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Many improvements to <tt>_.template</tt>, which now provides the
+              <tt>source</tt> of the template function as a property, for potentially
+              even more efficient pre-compilation on the server-side. You may now
+              also set the <tt>variable</tt> option when creating a template,
+              which will cause your passed-in data to be made available under the
+              variable you named, instead of using a <tt>with</tt> statement &mdash;
+              significantly improving the speed of rendering the template.
+          </li>
+          <li>
+              Added the <tt>pick</tt> function, which allows you to filter an
+              object literal with a whitelist of allowed property names.
+          </li>
+          <li>
+              Added the <tt>result</tt> function, for convenience when working
+              with APIs that allow either functions or raw properties.
+          </li>
+          <li>
+              Added the <tt>isFinite</tt> function, because sometimes knowing that
+              a value is a number just ain't quite enough.
+          </li>
+          <li>
+              The <tt>sortBy</tt> function may now also be passed the string name
+              of a property to use as the sort order on each object.
+          </li>
+          <li>
+              Fixed <tt>uniq</tt> to work with sparse arrays.
+          </li>
+          <li>
+              The <tt>difference</tt> function now performs a shallow flatten
+              instead of a deep one when computing array differences.
+          </li>
+          <li>
+              The <tt>debounce</tt> function now takes an <tt>immediate</tt>
+              parameter, which will cause the callback to fire on the leading
+              instead of the trailing edge.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.3.1">
+          <b class="header">1.3.1</b> &mdash; <small><i>January 23, 2012</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.3.0...1.3.1">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.3.1/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Added an <tt>_.has</tt> function, as a safer way to use <tt>hasOwnProperty</tt>.
+          </li>
+          <li>
+              Added <tt>_.collect</tt> as an alias for <tt>_.map</tt>. Smalltalkers, rejoice.
+          </li>
+          <li>
+              Reverted an old change so that <tt>_.extend</tt> will correctly copy
+              over keys with undefined values again.
+          </li>
+          <li>
+              Bugfix to stop escaping slashes within interpolations in <tt>_.template</tt>.
+          </li>
+      </ul>
+      </p>
+
+      <p id="1.3.0">
+          <b class="header">1.3.0</b> &mdash; <small><i>January 11, 2012</i></small> &mdash; <a href="https://github.com/jashkenas/underscore/compare/1.2.4...1.3.0">Diff</a> &mdash; <a href="http://htmlpreview.github.io/?https://raw.github.com/jashkenas/underscore/1.3.0/index.html">Docs</a><br />
+      <ul>
+          <li>
+              Removed AMD (RequireJS) support from Underscore. If you'd like to use
+              Underscore with RequireJS, you can load it as a normal script, wrap
+              or patch your copy, or download a forked version.
+          </li>
+      </ul>
       </p>
       
       <p>
