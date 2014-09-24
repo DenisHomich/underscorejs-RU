@@ -219,6 +219,7 @@
       <li>- <a href="#indexBy">indexBy</a></li>
       <li>- <a href="#countBy">countBy</a></li>
       <li>- <a href="#shuffle">shuffle</a></li>
+      <li>- <a href="#sample">sample</a></li>
       <li>- <a href="#toArray">toArray</a></li>
       <li>- <a href="#size">size</a></li>
     </ul>
@@ -717,6 +718,21 @@ _.countBy([1, 2, 3, 4, 5], function(num) {
       <pre>
 // вернет [4, 1, 6, 3, 5, 2]
 _.shuffle([1, 2, 3, 4, 5, 6]);
+</pre>
+
+      <p id="sample">
+        <b class="header">sample</b><code>_.sample(list, [n])</code>
+        <br />
+        Вернет <b>n</b> случайных элементов из списка <b>list</b>.
+        Если <b>n</b> не задан - вернет 1 случайный элемент.
+      </p>
+      <pre>
+// вернет 4
+_.sample([1, 2, 3, 4, 5, 6]);
+
+
+// вернет [1, 6, 2]
+_.sample([1, 2, 3, 4, 5, 6], 3);
 </pre>
 
       <p id="toArray">
