@@ -219,6 +219,7 @@
       <li>- <a href="#indexBy">indexBy</a></li>
       <li>- <a href="#countBy">countBy</a></li>
       <li>- <a href="#shuffle">shuffle</a></li>
+      <li>- <a href="#sample">sample</a></li>
       <li>- <a href="#toArray">toArray</a></li>
       <li>- <a href="#size">size</a></li>
     </ul>
@@ -719,6 +720,21 @@ _.countBy([1, 2, 3, 4, 5], function(num) {
 _.shuffle([1, 2, 3, 4, 5, 6]);
 </pre>
 
+      <p id="sample">
+        <b class="header">sample</b><code>_.sample(list, [n])</code>
+        <br />
+        Вернет <b>n</b> случайных элементов из списка <b>list</b>.
+        Если <b>n</b> не задан - вернет 1 случайный элемент.
+      </p>
+      <pre>
+// вернет 4
+_.sample([1, 2, 3, 4, 5, 6]);
+
+
+// вернет [1, 6, 2]
+_.sample([1, 2, 3, 4, 5, 6], 3);
+</pre>
+
       <p id="toArray">
         <b class="header">toArray</b><code>_.toArray(list)</code>
         <br />
@@ -1030,7 +1046,7 @@ jQuery('#underscore_button').bind('click', buttonView.onClick);
       <p id="partial">
           <b class="header">partial</b><code>_.partial(function, *arguments)</code>
           <br />
-          Вернет функцию, которая будет являться <b>function</b> с некоторыми пердустановленными
+          Вернет функцию, которая будет являться <b>function</b> с некоторыми предустановленными
           аргументами, но без влияния на динамическое изменения контекста (<tt>this</tt>).
       </p>
 <pre>
