@@ -1174,17 +1174,6 @@ _.each(notes, function(note) {
 });
 </pre>
 
-      <p id="now">
-        <b class="header">now</b><code>_.now()</code>
-        <br />
-        Вернёт текущую метку времени (Integer), используя самую быструю доступную в текущей
-        среде выполнения функцию. Полезно при реализации таймеров/анимаций.
-      </p>
-<pre>
-// вернёт 1392066795351
-_.now();
-</pre>
-
       <p id="wrap">
         <b class="header">wrap</b><code>_.wrap(function, wrapper)</code>
         <br />
@@ -1584,7 +1573,7 @@ _.isUndefined(window.missingVariable);
       <p id="noConflict">
         <b class="header">noConflict</b><code>_.noConflict()</code>
         <br />
-        Отвяжет переменную "_" от объекта <b>Underscore</b>.Вернет ссылку на объект <b>Underscore</b>.
+        Отвяжет переменную "_" от объекта <b>Underscore</b>. Вернёт ссылку на объект <b>Underscore</b>.
       </p>
       <pre>
 var underscore = _.noConflict();</pre>
@@ -1592,8 +1581,8 @@ var underscore = _.noConflict();</pre>
       <p id="identity">
         <b class="header">identity</b><code>_.identity(value)</code>
         <br />
-        Вернет значение, которое было передано в качестве аргумента (<tt>f(x) = x</tt>).<br />
-        Используется повсюду в Underscore в качестве дефолтного итератора.
+        Вернёт значение, которое было передано в качестве аргумента (<tt>f(x) = x</tt>).<br />
+        Кажется бесполезным, но используется повсюду в Underscore в качестве дефолтного итератора.
       </p>
       <pre>
 var moe = {name : 'moe'};
@@ -1602,10 +1591,10 @@ var moe = {name : 'moe'};
 moe === _.identity(moe);</pre>
 
       <p id="constant">
-          <b class="header">constant</b><code>_.constant(value)</code>
-          <br />
-          Вернет функцию, которая будет всегда возвращать значение, переданное <tt>_.constant</tt>,
-          в качестве аргумента.
+        <b class="header">constant</b><code>_.constant(value)</code>
+        <br />
+        Вернёт функцию, которая будет всегда возвращать значение, переданное <tt>_.constant</tt>,
+        в качестве аргумента.
       </p>
 <pre>
 var moe = {name: 'moe'};
@@ -1623,10 +1612,11 @@ moe === _.constant(moe)();
 _(3).times(function(){ genie.grantWish(); });</pre>
 
       <p id="random">
-          <b class="header">random</b><code>_.random([min], max)</code>
-          <br />
-          Вернет случайное целое между <b>min</b> и <b>max</b> включительно.
-          Если передать только один аргумент, то возвращенное целое будет находиться в интервале от 0 до этого числа.
+        <b class="header">random</b><code>_.random([min], max)</code>
+        <br />
+        Вернёт случайное целое между <b>min</b> и <b>max</b> включительно.
+        Если передать только один аргумент, то возвращённое целое будет 
+        находиться в интервале от 0 до этого числа.
       </p>
 <pre>
 // 42
@@ -1641,8 +1631,8 @@ _.random(14);
         <b class="header">mixin</b><code>_.mixin(object)</code>
         <br />
         Позволяет расширять Underscore собственными функциями. 
-  Принимает объект следующего вида <tt>{name: function}</tt>, где <b>name</b> — имя функции, 
-  а <b>function</b> определение.
+        Принимает объект следующего вида <tt>{name: function}</tt>, где <b>name</b> — имя функции, 
+        а <b>function</b> — определение.
       </p>
       <pre>
 _.mixin({
@@ -1651,38 +1641,38 @@ _.mixin({
   }
 });
 
-// вернет "Fabio"
+// вернёт "Fabio"
 _("fabio").capitalize();
 </pre>
 
       <p id="uniqueId">
         <b class="header">uniqueId</b><code>_.uniqueId([prefix])</code>
         <br />
-        Сгенерирует уникальный id, для, например DOM элемента.
-  Если был передан <b>prefix</b>, то сгенерированное имя будет добавлено к нему.
+        Сгенерирует уникальный id для, например, DOM-элемента.
+        Если был передан <b>prefix</b>, то сгенерированное имя будет добавлено к нему.
       </p>
       <pre>
-// вернет 'contact_104'
+// вернёт 'contact_104'
 _.uniqueId('contact_');</pre>
 
       <p id="escape">
         <b class="header">escape</b><code>_.escape(string)</code>
         <br />
-        Проэкранирует в с строке <b>string</b> спецсимволы 
-  (<tt>&amp;</tt>, <tt>&lt;</tt>, <tt>&gt;</tt>, <tt>"</tt>, <tt>'</tt>, <tt>/</tt>),
-  сделав возможным ее безболезненную вставку в HTML.
+        Проэкранирует в строке <b>string</b> спецсимволы 
+        (<tt>&amp;</tt>, <tt>&lt;</tt>, <tt>&gt;</tt>, <tt>"</tt>, <tt>'</tt>, <tt>/</tt>),
+        сделав возможным её безболезненную вставку в HTML.
       </p>
       <pre>
 // "Curly, Larry &amp;amp; Moe"
 _.escape('Curly, Larry &amp; Moe');</pre>
 
       <p id="unescape">
-          <b class="header">unescape</b><code>_.unescape(string)</code>
-          <br />
-          Работает в обратную стороно от <a href="#escape"><b>escape</b></a>, заменит
-          <tt>&amp;amp;</tt>, <tt>&amp;lt;</tt>, <tt>&amp;gt;</tt>,
-          <tt>&amp;quot;</tt>, and <tt>&amp;#x27;</tt>
-          на их не экранированные варианты.
+        <b class="header">unescape</b><code>_.unescape(string)</code>
+        <br />
+        В противоположность <a href="#escape"><b>escape</b></a>, заменит
+        <tt>&amp;amp;</tt>, <tt>&amp;lt;</tt>, <tt>&amp;gt;</tt>,
+        <tt>&amp;quot;</tt>, and <tt>&amp;#x27;</tt>
+        на их неэкранированные варианты.
       </p>
 <pre>
 // "Curly, Larry &amp; Moe"
@@ -1690,10 +1680,10 @@ _.unescape('Curly, Larry &amp;amp; Moe');
 </pre>
 
       <p id="result">
-          <b class="header">result</b><code>_.result(object, property)</code>
-          <br />
-          Если <b>property</b> — функция, она будет вызвана в контексте  <b>object</b>;
-          если нет вернет его значение.
+        <b class="header">result</b><code>_.result(object, property)</code>
+        <br />
+        Если <b>property</b> — функция, она будет вызвана в контексте <b>object</b>;
+        если нет — вернёт его значение.
       </p>
 <pre>
 var object = {cheese: 'crumpets', stuff: function(){ return 'nonsense'; }};
@@ -1705,61 +1695,74 @@ _.result(object, 'cheese');
 _.result(object, 'stuff');
 </pre>
 
+      <p id="now">
+        <b class="header">now</b><code>_.now()</code>
+        <br />
+        Вернёт текущую метку времени (Integer), используя самую быструю доступную в текущей
+        среде выполнения функцию. Полезно при реализации таймеров/анимаций.
+      </p>
+<pre>
+// вернёт 1392066795351
+_.now();
+</pre>
+
       <p id="template">
         <b class="header">template</b><code>_.template(templateString, [data], [settings])</code>
         <br />
-        Компилирует JavaScript шаблоны в функции, которые могут быть вызваны для рендеринга этого шаблона.
-      Полезно при рендеринге объемных и сложных частей HTML разметки из JSON данных.
-      Полученные функции во время обработки данных могут интерполировать переменные, для чего используется следующий синтаксис внутри шаблона:
-      <tt>&lt;%= &hellip; %&gt;</tt>, а также производить вычисления <tt>&lt;% &hellip; %&gt;</tt>.
-        Если вы выводите внутри шаблона данные и хотите, чтобы они были HTML-безопасными (спец. символы будут экранированы),
+        Компилирует JavaScript-шаблоны в функции, которые могут быть вызваны для рендеринга этого 
+        шаблона. Полезно при рендеринге объёмных и сложных частей HTML-разметки из данных JSON.
+        Полученные функции во время обработки данных могут интерполировать переменные, для чего 
+        используется следующий синтаксис внутри шаблона: <tt>&lt;%= &hellip; %&gt;</tt>, а также 
+        производить вычисления <tt>&lt;% &hellip; %&gt;</tt>. Если вы выводите внутри шаблона данные 
+        и хотите, чтобы они были HTML-безопасными (спец. символы будут экранированы),
         используйте такой синтаксис: <tt>&lt;%- &hellip; %&gt;</tt>.
-        Если при вызове функции-шаблонизатора передать в нее аргумент <b>data</b>,
-        то его свойства будут соответствовать одноименным свободным переменным внутри функции.
-        Если же передать <b>data</b> во время вызова <b>template</b>, то
-        результатом его работы будет не функция-шаблонизатор, а отрендеренный шаблон.<br/>
-        В скомплированных функциях сохраняется динамический контекст, так что внутри них можно использовать <b>this</b>.
+        Если при вызове функции-шаблонизатора передать в неё аргумент <b>data</b>,
+        то его свойства будут соответствовать одноимённым свободным переменным внутри функции.
+        Если же передать <b>data</b> во время вызова <b>template</b>, то результатом его работы 
+        будет не функция-шаблонизатор, а отрендеренный шаблон.<br/> В скомпилированных функциях 
+        сохраняется динамический контекст, так что внутри них можно использовать <b>this</b>.
       </p>
       <p>
-          А передав <b>settings</b> можно переопределить любые настройки шаблонизатора,
-          определенные в <tt>_.templateSettings</tt>.
+        Передав <b>settings</b>, можно переопределить любые настройки шаблонизатора,
+        определённые в <tt>_.templateSettings</tt>.
       </p>
       <pre>
 var compiled = _.template("hello: &lt;%= name %&gt;");
 
-// вернет "hello: moe"
+// вернёт "hello: moe"
 compiled({name : 'moe'});
 
 
 var list = "&lt;% _.each(people, function(name) { %&gt; &lt;li&gt;&lt;%= name %&gt;&lt;/li&gt; &lt;% }); %&gt;";
 
-// вернет "&lt;li&gt;moe&lt;/li&gt;&lt;li&gt;curly&lt;/li&gt;&lt;li&gt;larry&lt;/li&gt;"
+// вернёт "&lt;li&gt;moe&lt;/li&gt;&lt;li&gt;curly&lt;/li&gt;&lt;li&gt;larry&lt;/li&gt;"
 _.template(list, {people : ['moe', 'curly', 'larry']});
 
 
 var template = _.template("&lt;b&gt;&lt;%- value %&gt;&lt;/b&gt;");
 
-// вернет "&lt;b&gt;&amp;lt;script&amp;gt;&lt;/b&gt;"
+// вернёт "&lt;b&gt;&amp;lt;script&amp;gt;&lt;/b&gt;"
 template({value : '&lt;script&gt;'});</pre>
 
       <p>
         В некоторых случаях вместо <tt>&lt;%= ... %&gt;</tt> будет лучше использовать 
-  <tt>print</tt> внутри шаблонов.
+        <tt>print</tt> внутри шаблонов.
       </p>
       
 <pre>
 var compiled = _.template("&lt;% print('Hello ' + epithet); %&gt;");
 
-// вернет "Hello stooge."
+// вернёт "Hello stooge."
 compiled({epithet: "stooge"});</pre>
 
       <p>
         Если по какой-то причине Вам не нравятся дескрипторы, используемые для вывода 
-  переменных и вставки исполняемого кода в шаблон, описанные выше,
-  Вы можете изменить настройки шаблонизатора Underscore, чтобы использовать для этих целей привычные символы.
-        Задайте регулярным выражением свойство <b>interpolate</b>, и (необязательно) свойство <b>evaluate</b>,
-  для определения участков шаблона, которые должны быть просто выведены в HTML или выполнены, как JavaScript код.
-        Если же свойство <b>evaluate</b> не было определено, то используя новые дескрипторы Вы сможете лишь выводить в HTML значения переменных.
+        переменных и вставки исполняемого кода в шаблон, описанные выше, Вы можете изменить 
+        настройки шаблонизатора Underscore, чтобы использовать для этих целей привычные символы.
+        Задайте регулярным выражением свойство <b>interpolate</b>, и (необязательно) свойство 
+        <b>evaluate</b> для определения участков шаблона, которые должны быть просто выведены 
+        в HTML или выполнены, как JavaScript-код. Если же свойство <b>evaluate</b> не было определено, 
+        то, используя новые дескрипторы, Вы сможете лишь выводить в HTML значения переменных.
         В качестве примера можно взглянуть на синтаксис шаблонизатора
         <a href="http://github.com/janl/mustache.js#readme">Mustache.js</a>:
       </p>
