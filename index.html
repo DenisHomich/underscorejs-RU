@@ -1781,8 +1781,8 @@ template({name : "Mustache"});</pre>
       <h2 id="chaining">Цепные вызовы</h2>
 
       <p>
-        Вы можете использовать Underscore как с применением объектоно-ориентированного подхода, так и процедурного,
-        в зависимости от ваших привычек и предпочтений. В качестве иллюстрации, взгляните на 2 строки кода ниже, они
+        Вы можете использовать Underscore с применением как объектно-ориентированного подхода, так и процедурного,
+        в зависимости от ваших привычек и предпочтений. В качестве иллюстрации взгляните на 2 строки кода ниже, они
         выполняют одну и ту же задачу, удваивают каждое число в массиве.
       </p>
 
@@ -1793,10 +1793,10 @@ _([1, 2, 3]).map(function(n){ return n * 2; });</pre>
       <p>
         Вызвав <tt>chain</tt> на объекте, с которым собираетесь работать, 
         вы получите эффект, при котором каждый последующий метод в цепочке 
-        будет вызван на объекте, возвращенным предыдущим методом.
+        будет вызван на объекте, возвращённом предыдущим методом.
         Чтобы получить результат отработавших методов, нужно вызвать 
-        <tt>value</tt>. Ниже приведен пример цепного вызова
-        <b>map/flatten/reduce</b>, в результате мы получим количество каждого слова в приведенной песне.
+        <tt>value</tt>. Ниже приведён пример цепного вызова
+        <b>map/flatten/reduce</b>, в результате мы получим количество каждого слова в приведённой песне.
       </p>
 
 <pre>
@@ -1807,7 +1807,7 @@ var lyrics = [
   {line : 4, words : "He sleeps all night and he works all day"}
 ];
 
-// вернет {lumberjack : 2, all : 4, night : 2 ... }
+// вернёт {lumberjack : 2, all : 4, night : 2 ... }
 _.chain(lyrics)
   .map(function(line) { return line.words.split(' '); })
   .flatten()
@@ -1820,14 +1820,14 @@ _.chain(lyrics)
       <p>
         Кроме того, цепочка, сделанная из объекта Underscore, обладает всеми методами 
         <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/prototype">
-  стандартного объекта Array</a>, а это значит, что Вы можете ее изменить, например, с помощью
+        стандартного объекта Array</a>, а это значит, что Вы можете её изменить, например, с помощью
         <tt>reverse</tt> или <tt>push</tt>, и затем продолжить работу.
       </p>
 
       <p id="chain">
         <b class="header">chain</b><code>_.chain(obj)</code>
         <br />
-        Вернет объект-оболочку, на котором можно будет вызвать любой из методов underscore. 
+        Вернёт объект-оболочку, на котором можно будет вызвать любой из методов underscore. 
         Результатом работы вызванных методов будет такой же объект.
         Для получения результата работы цепочки методов нужно вызвать <tt>value</tt>.
       </p>
@@ -1845,96 +1845,85 @@ var youngest = _.chain(stooges)
       <p id="value">
         <b class="header">value</b><code>_(obj).value()</code>
         <br />
-        Вернет значение, извлеченное из объекта-оболочки.
+        Вернёт значение, извлечённое из объекта-оболочки.
       </p>
       <pre>
-// вернет [1, 2, 3]
+// вернёт [1, 2, 3]
 _([1, 2, 3]).value();
 </pre>
 
-      <h2 id="links">Links &amp; Suggested Reading</h2>
+      <h2 id="links">Ссылки и рекомендуемая литература</h2>
 
       <p>
-          The Underscore documentation is also available in
-          <a href="http://learning.github.io/underscore/">Simplified Chinese</a>.
+        <a href="http://mirven.github.io/underscore.lua/">Underscore.lua</a>,
+        Lua-порт функций, которые доступны в обоих языках. Включает ООП-обёртки и цепочки.
+        (<a href="https://github.com/mirven/underscore.lua">источник</a>)
       </p>
 
       <p>
-          <a href="http://mirven.github.io/underscore.lua/">Underscore.lua</a>,
-          a Lua port of the functions that are applicable in both languages.
-          Includes OOP-wrapping and chaining.
-          (<a href="https://github.com/mirven/underscore.lua">source</a>)
+        <a href="http://underscorem.org/">Underscore.m</a>, Objective-C-порт
+        многих функций Underscore.js, использующий синтаксис, поощряющий chaining.
+        (<a href="https://github.com/robb/Underscore.m">источник</a>)
       </p>
 
       <p>
-          <a href="http://underscorem.org/">Underscore.m</a>, an Objective-C port
-          of many of the Underscore.js functions, using a syntax that encourages
-          chaining.
-          (<a href="https://github.com/robb/Underscore.m">source</a>)
+        <a href="http://kmalakoff.github.io/_.m/">_.m</a>, альтернативный
+        Objective-C-порт, который пытается держаться ближе к оригинальному Underscore.js API.
+        (<a href="https://github.com/kmalakoff/_.m">источник</a>)
       </p>
 
       <p>
-          <a href="http://kmalakoff.github.io/_.m/">_.m</a>, an alternative
-          Objective-C port that tries to stick a little closer to the original
-          Underscore.js API.
-          (<a href="https://github.com/kmalakoff/_.m">source</a>)
+        <a href="http://brianhaveri.github.io/Underscore.php/">Underscore.php</a>,
+        PHP-порт функций, которые доступны в обоих языках. Включает ООП-обёртки и цепочки.
+        (<a href="https://github.com/brianhaveri/Underscore.php">источник</a>)
       </p>
 
       <p>
-          <a href="http://brianhaveri.github.io/Underscore.php/">Underscore.php</a>,
-          a PHP port of the functions that are applicable in both languages.
-          Includes OOP-wrapping and chaining.
-          (<a href="https://github.com/brianhaveri/Underscore.php">source</a>)
+        <a href="http://vti.github.io/underscore-perl/">Underscore-perl</a>,
+        Perl-порт многих функций Underscore.js, нацеленный на хэши и массивы Perl.
+        (<a href="https://github.com/vti/underscore-perl">источник</a>)
       </p>
 
       <p>
-          <a href="http://vti.github.io/underscore-perl/">Underscore-perl</a>,
-          a Perl port of many of the Underscore.js functions,
-          aimed at on Perl hashes and arrays.
-          (<a href="https://github.com/vti/underscore-perl">source</a>)
+        <a href="http://russplaysguitar.github.io/UnderscoreCF/">Underscore.cfc</a>,
+        Coldfusion-порт многих функций Underscore.js.
+        (<a href="https://github.com/russplaysguitar/underscorecf">источник</a>)
       </p>
 
       <p>
-          <a href="http://russplaysguitar.github.io/UnderscoreCF/">Underscore.cfc</a>,
-          a Coldfusion port of many of the Underscore.js functions.
-          (<a href="https://github.com/russplaysguitar/underscorecf">source</a>)
+        <a href="http://epeli.github.io/underscore.string/">Underscore.string</a>,
+        расширение Underscore, добавляющее функции манипуляции со строками:
+        <tt>trim</tt>, <tt>startsWith</tt>, <tt>contains</tt>, <tt>capitalize</tt>,
+        <tt>reverse</tt>, <tt>sprintf</tt> и другие.
       </p>
 
       <p>
-          <a href="http://epeli.github.io/underscore.string/">Underscore.string</a>,
-          an Underscore extension that adds functions for string-manipulation:
-          <tt>trim</tt>, <tt>startsWith</tt>, <tt>contains</tt>, <tt>capitalize</tt>,
-          <tt>reverse</tt>, <tt>sprintf</tt>, and more.
+        Модуль <a href="http://ruby-doc.org/core/classes/Enumerable.html">Enumerable</a> для Ruby.
       </p>
 
       <p>
-          Ruby's <a href="http://ruby-doc.org/core/classes/Enumerable.html">Enumerable</a> module.
+        <a href="http://prototypejs.org/">Prototype.js</a>, который обеспечивает
+        JavaScript коллекцией функций в манере, близкой к Enumerable в Ruby.
       </p>
 
       <p>
-          <a href="http://prototypejs.org/">Prototype.js</a>, which provides
-          JavaScript with collection functions in the manner closest to Ruby's Enumerable.
+        <a href="http://osteele.com/sources/javascript/functional/">Функциональный JavaScript</a>
+        Оливера Стила, который включает в себя комплексную поддержку функций более высокого порядка, 
+        а также строки лямбда.
       </p>
 
       <p>
-          Oliver Steele's
-          <a href="http://osteele.com/sources/javascript/functional/">Functional JavaScript</a>,
-          which includes comprehensive higher-order function support as well as string lambdas.
+        <a href="https://github.com/substance/data">Data.js</a> Майкла Ауфрайтера,
+        data-манипуляции и persistence-библиотека для JavaScript.
       </p>
 
       <p>
-          Michael Aufreiter's <a href="https://github.com/substance/data">Data.js</a>,
-          a data manipulation + persistence library for JavaScript.
+        <a href="http://docs.python.org/library/itertools.html">Itertools</a> для Python.
       </p>
 
       <p>
-          Python's <a href="http://docs.python.org/library/itertools.html">itertools</a>.
-      </p>
-
-      <p>
-          <a href="http://toolz.readthedocs.org/">PyToolz</a>, a Python port
-          that extends itertools and functools to include much of the
-          Underscore API.
+        <a href="http://toolz.readthedocs.org/">PyToolz</a>, Python-порт, расширяющий itertools и functools, 
+        чтобы включить многое из Underscore API.
       </p>
 
       <h2 id="changelog">Change Log</h2>
