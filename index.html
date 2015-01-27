@@ -519,10 +519,10 @@ var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 </pre>
 
       <p id="where">
-          <b class="header">where</b><code>_.where(list, properties)</code>
-          <br />
-          Вернёт массив из элементов <b>list</b>, для которых совпадают значения для
-          соответсвующих ключей, перечисленные в <b>properties</b>.
+        <b class="header">where</b><code>_.where(list, properties)</code>
+        <br />
+        Вернёт массив из элементов <b>list</b>, для которых совпадают значения для
+        соответсвующих ключей, перечисленные в <b>properties</b>.
       </p>
 <pre>
 _.where(listOfPlays, {author: "Shakespeare", year: 1611});
@@ -535,10 +535,10 @@ _.where(listOfPlays, {author: "Shakespeare", year: 1611});
 </pre>
 
       <p id="findWhere">
-          <b class="header">findWhere</b><code>_.findWhere(list, properties)</code>
-          <br />
-          Сработает аналогично <b>where</b>, но вернёт только первый элемент, соответствующий
-          заданным <b>properties</b>.
+        <b class="header">findWhere</b><code>_.findWhere(list, properties)</code>
+        <br />
+        Сработает аналогично <b>where</b>, но вернёт только первый элемент, соответствующий
+        заданным <b>properties</b>.
       </p>
       <p>
           Если совпадений не найдено или <b>list</b> пустой, то вернёт <i>undefined</i>.
@@ -680,11 +680,11 @@ _.groupBy(['one', 'two', 'three'], 'length');
 </pre>
 
       <p id="indexBy">
-          <b class="header">indexBy</b><code>_.indexBy(list, iterator, [context])</code>
-          <br />
-          На вход получает коллекцию <b>list</b> и <b>iterator</b>, функцию, которая возвращает 
-          ключ для каждого элемента коллекции (или имя свойства), вернёт объект из пар индекс : соответствующий ему объект.
-          Т.е. работает аналогично <a href="#groupBy">groupBy</a>, но для случаев, когда индексы уникальны.
+        <b class="header">indexBy</b><code>_.indexBy(list, iterator, [context])</code>
+        <br />
+        На вход получает коллекцию <b>list</b> и <b>iterator</b>, функцию, которая возвращает 
+        ключ для каждого элемента коллекции (или имя свойства), вернёт объект из пар индекс : соответствующий ему объект.
+        Т.е. работает аналогично <a href="#groupBy">groupBy</a>, но для случаев, когда индексы уникальны.
       </p>
       <pre>
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
@@ -699,11 +699,11 @@ _.indexBy(stooges, 'age');
 </pre>
 
       <p id="countBy">
-          <b class="header">countBy</b><code>_.countBy(list, iterator, [context])</code>
-          <br />
-          Сортирует коллекцию <b>list</b> в группы, вернёт объект, где значением каждого свойства 
-          <b>groupName</b> будет количество элементов коллекции, относящихся к этой группе.
-          Т.е. работает аналогично <tt>groupBy</tt>, но вернёт не сами элементы, а их количество.
+        <b class="header">countBy</b><code>_.countBy(list, iterator, [context])</code>
+        <br />
+        Сортирует коллекцию <b>list</b> в группы, вернёт объект, где значением каждого свойства 
+        <b>groupName</b> будет количество элементов коллекции, относящихся к этой группе.
+        Т.е. работает аналогично <tt>groupBy</tt>, но вернёт не сами элементы, а их количество.
       </p>
 <pre>
 // вернёт {odd: 3, even: 2}
@@ -854,10 +854,10 @@ _.without([1, 2, 1, 0, 3, 1, 4], 0, 1);
 </pre>
 
       <p id="partition">
-          <b class="header">partition</b><code>_.partition(array, predicate)</code>
-          <br />
-          Разобьёт <b>array</b> на 2: в первом будут содержаться элементы, удовлетворяющие
-          <b>predicate</b> во втором — те, что нет.
+        <b class="header">partition</b><code>_.partition(array, predicate)</code>
+        <br />
+        Разобьёт <b>array</b> на 2: в первом будут содержаться элементы, удовлетворяющие
+        <b>predicate</b> во втором — те, что нет.
       </p>
 <pre>
 // вернёт [[1, 3, 5], [0, 2, 4]]
@@ -925,11 +925,11 @@ _.zip(['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]);
 </pre>
 
       <p id="object">
-          <b class="header">object</b><code>_.object(list, [values])</code>
-          <br />
-          Сконвертирует массивы в объекты. Получает на вход массивы формата
-          <tt>[key, value]</tt> или отдельно массив ключей и массив значений.
-          Если ключи дублируются, последнее значение будет результирующим.
+        <b class="header">object</b><code>_.object(list, [values])</code>
+        <br />
+        Сконвертирует массивы в объекты. Получает на вход массивы формата
+        <tt>[key, value]</tt> или отдельно массив ключей и массив значений.
+        Если ключи дублируются, последнее значение будет результирующим.
       </p>
 <pre>
 // вернёт {moe: 30, larry: 40, curly: 50}
@@ -967,13 +967,13 @@ _.lastIndexOf([1, 2, 3, 1, 2, 3], 2);
 </pre>
 
       <p id="sortedIndex">
-          <b class="header">sortedIndex</b><code>_.sortedIndex(list, value, [iterator], [context])</code>
-          <br />
-          Использует бинарный поиск, чтобы определить позицию, куда <b>value</b>
-          <i>должен</i> быть вставлен, чтобы не нарушился порядок отсортированного <b>list</b>.
-          Если был передан <b>iterator</b>, он будет использован для вычисления
-          ранга при сортировке каждого из элементов <b>list</b>. Итератор также может быть
-          строкой, т.е. именем свойства, по которому будет проведена сортировка.
+        <b class="header">sortedIndex</b><code>_.sortedIndex(list, value, [iterator], [context])</code>
+        <br />
+        Использует бинарный поиск, чтобы определить позицию, куда <b>value</b>
+        <i>должен</i> быть вставлен, чтобы не нарушился порядок отсортированного <b>list</b>.
+        Если был передан <b>iterator</b>, он будет использован для вычисления
+        ранга при сортировке каждого из элементов <b>list</b>. Итератор также может быть
+        строкой, т.е. именем свойства, по которому будет проведена сортировка.
       </p>
 <pre>
 // вернёт 3
@@ -1175,10 +1175,10 @@ _.each(notes, function(note) {
 </pre>
 
       <p id="now">
-          <b class="header">now</b><code>_.now()</code>
-          <br />
-          Вернёт текущую метку времени (Integer), используя самую быструю доступную в текущей
-          среде выполнения функцию. Полезно при реализации таймеров/анимаций.
+        <b class="header">now</b><code>_.now()</code>
+        <br />
+        Вернёт текущую метку времени (Integer), используя самую быструю доступную в текущей
+        среде выполнения функцию. Полезно при реализации таймеров/анимаций.
       </p>
 <pre>
 // вернёт 1392066795351
@@ -1225,42 +1225,42 @@ welcome('moe');
       <p id="keys">
         <b class="header">keys</b><code>_.keys(object)</code>
         <br />
-        Вернет массив, состоящий из названий всех свойств <b>object</b>.
+        Вернёт массив, состоящий из названий всех свойств <b>object</b>.
       </p>
       <pre>
-// вернет ["one", "two", "three"]
+// вернёт ["one", "two", "three"]
 _.keys({one : 1, two : 2, three : 3});
 </pre>
 
       <p id="values">
         <b class="header">values</b><code>_.values(object)</code>
         <br />
-        Вернет массив, состоящий из значений всех свойств <b>object</b>.
+        Вернёт массив, состоящий из значений всех свойств <b>object</b>.
       </p>
       <pre>
-// вернет [1, 2, 3]
+// вернёт [1, 2, 3]
 _.values({one : 1, two : 2, three : 3});
 </pre>
 
       <p id="pairs">
-          <b class="header">pairs</b><code>_.pairs(object)</code>
-          <br />
-          Сконвертирует объект с набор пар формата<tt>[key, value]</tt>.
+        <b class="header">pairs</b><code>_.pairs(object)</code>
+        <br />
+        Сконвертирует объект в набор пар формата<tt>[key, value]</tt>.
       </p>
 <pre>
-// вернет [["one", 1], ["two", 2], ["three", 3]]
+// вернёт [["one", 1], ["two", 2], ["three", 3]]
 _.pairs({one: 1, two: 2, three: 3});
 </pre>
 
       <p id="invert">
-          <b class="header">invert</b><code>_.invert(object)</code>
-          <br />
-          Вернет копию <b>object</b> где ключи — значения, а значения — ключи.
-          Чтобы это заработало, нужно чтобы все значения свойств объекта могли быть уникально
-          сериализованы в строки.
+        <b class="header">invert</b><code>_.invert(object)</code>
+        <br />
+        Вернёт копию <b>object</b> где ключи — значения, а значения — ключи.
+        Чтобы это заработало, нужно, чтобы все значения свойств объекта могли быть уникально
+        сериализованы в строки.
       </p>
 <pre>
-// вернет {Moses: "Moe", Louis: "Larry", Jerome: "Curly"};
+// вернёт {Moses: "Moe", Louis: "Larry", Jerome: "Curly"};
 _.invert({Moe: "Moses", Larry: "Louis", Curly: "Jerome"});
 </pre>
 
@@ -1268,10 +1268,10 @@ _.invert({Moe: "Moses", Larry: "Louis", Curly: "Jerome"});
         <b class="header">functions</b><code>_.functions(object)</code>
         <span class="alias">Alias: <b>methods</b></span>
         <br />
-        Вернет отсортированный массив, состоящий из названий всех методов <b>object</b>.
+        Вернёт отсортированный массив, состоящий из названий всех методов <b>object</b>.
       </p>
       <pre>
-// вернет ["all", "any", "bind", "bindAll", "clone", "compact", "compose" ...
+// вернёт ["all", "any", "bind", "bindAll", "clone", "compact", "compose" ...
 _.functions(_);
 </pre>
 
@@ -1279,54 +1279,52 @@ _.functions(_);
         <b class="header">extend</b><code>_.extend(destination, *sources)</code>
         <br />
         Скопирует все свойства из объектов <b>source</b> в объект
-        <b>destination</b>. Если объекты <b>source</b> имеют одноименные свойства, то значения каждого будут затерты значениями из следующего.
+        <b>destination</b>. Если объекты <b>source</b> имеют одноименные свойства, 
+        то значения каждого будут затёрты значениями из следующего.
       </p>
       <pre>
-// вернет {name : 'moe', age : 50}
+// вернёт {name : 'moe', age : 50}
 _.extend({name : 'moe'}, {age : 50});
 </pre>
 
       <p id="pick">
-          <b class="header">pick</b><code>_.pick(object, *keys)</code>
-          <br />
-
-          Вернет копию <b>object</b>, где будут значения только для ключей, указанных в <b>keys</b>.
+        <b class="header">pick</b><code>_.pick(object, *keys)</code>
+        <br />
+        Вернёт копию <b>object</b>, где будут значения только для ключей, указанных в <b>keys</b>.
       </p>
 <pre>
-// вернет {name: 'moe', age: 50}
-
+// вернёт {name: 'moe', age: 50}
 _.pick({name: 'moe', age: 50, userid: 'moe1'}, 'name', 'age');
 </pre>
 
       <p id="omit">
-          <b class="header">omit</b><code>_.omit(object, *keys)</code>
-          <br />
-          Вернет копию <b>object</b>, из которой будут удалены значения по ключам, заданным в
-          <b>keys</b>.
+        <b class="header">omit</b><code>_.omit(object, *keys)</code>
+        <br />
+        Вернёт копию <b>object</b>, из которой будут удалены значения по ключам, заданным в
+        <b>keys</b>.
       </p>
 <pre>
-// вернет {name: 'moe', age: 50}
-
+// вернёт {name: 'moe', age: 50}
 _.omit({name: 'moe', age: 50, userid: 'moe1'}, 'userid');
 </pre>
 
       <p id="defaults">
         <b class="header">defaults</b><code>_.defaults(object, *defaults)</code>
         <br />
-        Проинициализирует неопределенные свойства <b>object</b> значениями одноименных свойств из
-        <b>defaults</b>. Если же какие-то своейства <b>object</b> уже определены, то они не будут изменены.
+        Проинициализирует неопределённые свойства <b>object</b> значениями одноимённых свойств из
+        <b>defaults</b>. Если же какие-то свойства <b>object</b> уже определены, то они не будут изменены.
       </p>
       <pre>
 var iceCream = {flavor : "chocolate"};
 
-// вернет {flavor : "chocolate", sprinkles : "lots"}
+// вернёт {flavor : "chocolate", sprinkles : "lots"}
 _.defaults(iceCream, {flavor : "vanilla", sprinkles : "lots"});
 </pre>
 
       <p id="clone">
         <b class="header">clone</b><code>_.clone(object)</code>
         <br />
-        Вернет клон <b>object</b>. Любые, входящие в его состав массивы или 
+        Вернёт клон <b>object</b>. Любые, входящие в его состав массивы или 
         объекты будут скопированы по ссылке, а <i>не</i> продублированы.
       </p>
       <pre>
@@ -1337,11 +1335,12 @@ _.clone({name : 'moe'});
       <p id="tap">
         <b class="header">tap</b><code>_.tap(object, interceptor)</code>
         <br />
-        Вызовет <b>interceptor</b> с <b>object</b> в качестве аргумента и затем вернет <b>object</b>.
-        Основная задача данного метода: возможность «вклиниться» в цепочку вызовов, для того, чтобы произвести некие операции с промежуточными итогами.
+        Вызовет <b>interceptor</b> с <b>object</b> в качестве аргумента и затем вернёт <b>object</b>.
+        Основная задача данного метода — возможность «вклиниться» в цепочку вызовов для того, 
+        чтобы произвести некие операции с промежуточными итогами.
       </p>
       <pre>
-// на консоль будет выведен массив [2, 200], затем вызов value вернет [4, 40000]
+// на консоль будет выведен массив [2, 200], затем вызов value вернёт [4, 40000]
 _([1,2,3,200]).chain().
   filter(function(num) { return num % 2 == 0; }).
   tap(console.log).
@@ -1352,7 +1351,7 @@ _([1,2,3,200]).chain().
       <p id="has">
         <b class="header">has</b><code>_.has(object, key)</code>
         <br />
-        Проверяет, есть ли свойство <b>key</b> в объекте <b>object</b>? Для выяснения этого факта будет вызвана
+        Проверяет, есть ли свойство <b>key</b> в объекте <b>object</b>. Для выяснения этого будет вызвана
         <tt>object.hasOwnProperty(key)</tt>, но при этом будет использована «безопасная» ссылка на  
         <tt>hasOwnProperty</tt>, подробнее об этом можно прочитать 
         <a href="http://www.devthought.com/2012/01/18/an-object-is-not-a-hash/">тут</a>.
@@ -1363,10 +1362,10 @@ _.has({a: 1, b: 2, c: 3}, "b");
 </pre>
 
       <p id="property">
-          <b class="header">property</b><code>_.property(key)</code>
-          <br />
-          Вернет функцию, которая в свою очередь вернет значение свойства <tt>key</tt>
-          для переданного в нее объекта.
+        <b class="header">property</b><code>_.property(key)</code>
+        <br />
+        Вернёт функцию, которая, в свою очередь, вернёт значение свойства <tt>key</tt>
+        для переданного в неё объекта.
       </p>
 <pre>
 var moe = {name: 'moe'};
@@ -1376,10 +1375,10 @@ var moe = {name: 'moe'};
 </pre>
 
       <p id="matches">
-          <b class="header">matches</b><code>_.matches(attrs)</code>
-          <br />
-          Вернет функцию, с помощью которой можно будет определить обладает ли объект
-          нужными свойствами и значениями этих свойств.
+        <b class="header">matches</b><code>_.matches(attrs)</code>
+        <br />
+        Вернёт функцию, с помощью которой можно будет определить, обладает ли объект
+        нужными свойствами и значениями этих свойств.
       </p>
 <pre>
 var ready = _.matches({selected: true, visible: true});
@@ -1405,7 +1404,7 @@ _.isEqual(moe, clone);
       <p id="isEmpty">
         <b class="header">isEmpty</b><code>_.isEmpty(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> не содержит данных.
+        Вернёт <i>true</i>, если <b>object</b> не содержит данных.
       </p>
       <pre>
 // false
@@ -1418,7 +1417,7 @@ _.isEmpty({});
       <p id="isElement">
         <b class="header">isElement</b><code>_.isElement(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является DOM элементом.
+        Вернёт <i>true</i>, если <b>object</b> является DOM-элементом.
       </p>
       <pre>
 // true
@@ -1428,10 +1427,10 @@ _.isElement(jQuery('body')[0]);
       <p id="isArray">
         <b class="header">isArray</b><code>_.isArray(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является массивом (Array).
+        Вернёт <i>true</i>, если <b>object</b> является массивом (Array).
       </p>
       <pre>
-(// false
+// false
 (function(){ return _.isArray(arguments); })();
 
 // true
@@ -1439,10 +1438,10 @@ _.isArray([1,2,3]);
 </pre>
 
       <p id="isObject">
-          <b class="header">isObject</b><code>_.isObject(value)</code>
-          <br />
-          Вернет <i>true</i>, если <b>value</b> Object. Имейте в виду, что в JavaScript
-          массивы и функции — objects, а строки могут как примитивом, так и объектом strings.
+        <b class="header">isObject</b><code>_.isObject(value)</code>
+        <br />
+        Вернёт <i>true</i>, если <b>value</b> — объект. Имейте в виду, что в JavaScript
+        массивы и функции — объекты, а строки могут быть как примитивом, так и объектом strings.
       </p>
 <pre>
 // true
@@ -1455,7 +1454,7 @@ _.isObject(1);
       <p id="isArguments">
         <b class="header">isArguments</b><code>_.isArguments(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является объектом arguments.
+        Вернёт <i>true</i>, если <b>object</b> является объектом arguments.
       </p>
       <pre>
 // true
@@ -1468,7 +1467,7 @@ _.isArguments([1,2,3]);
       <p id="isFunction">
         <b class="header">isFunction</b><code>_.isFunction(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является функцией (Function).
+        Вернёт <i>true</i>, если <b>object</b> является функцией (Function).
       </p>
       <pre>
 // true
@@ -1478,7 +1477,7 @@ _.isFunction(alert);
       <p id="isString">
         <b class="header">isString</b><code>_.isString(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является строкой (String).
+        Вернёт <i>true</i>, если <b>object</b> является строкой (String).
       </p>
       <pre>
 // true
@@ -1488,7 +1487,7 @@ _.isString("moe");
       <p id="isNumber">
         <b class="header">isNumber</b><code>_.isNumber(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является числом (Number, включая константу NaN).
+        Вернёт <i>true</i>, если <b>object</b> является числом (Number, включая константу NaN).
       </p>
       <pre>
 // true
@@ -1496,9 +1495,9 @@ _.isNumber(8.4 * 5);
 </pre>
 
       <p id="isFinite">
-          <b class="header">isFinite</b><code>_.isFinite(object)</code>
-          <br />
-          Вернет <i>true</i> если <b>object</b> Number и не является Infinite.
+        <b class="header">isFinite</b><code>_.isFinite(object)</code>
+        <br />
+        Вернёт <i>true</i>, если <b>object</b> является конечным числом и не является Infinite.
       </p>
 <pre>
 // true
@@ -1511,7 +1510,7 @@ _.isFinite(-Infinity);
       <p id="isBoolean">
         <b class="header">isBoolean</b><code>_.isBoolean(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является булевым значением (true или false).
+        Вернёт <i>true</i>, если <b>object</b> является булевым значением (true или false).
       </p>
       <pre>
 // false
@@ -1521,7 +1520,7 @@ _.isBoolean(null);
       <p id="isDate">
         <b class="header">isDate</b><code>_.isDate(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является датой (Date).
+        Вернёт <i>true</i>, если <b>object</b> является датой (Date).
       </p>
       <pre>
 // true
@@ -1531,7 +1530,7 @@ _.isDate(new Date());
       <p id="isRegExp">
         <b class="header">isRegExp</b><code>_.isRegExp(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является регулярным выражением (RegExp).
+        Вернёт <i>true</i>, если <b>object</b> является регулярным выражением (RegExp).
       </p>
       <pre>
 // true
@@ -1541,8 +1540,10 @@ _.isRegExp(/moe/);
       <p id="isNaN">
         <b class="header">isNaN</b><code>_.isNaN(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является <i>NaN</i>.<br /> Примечание: 
-  разница с <b>isNaN</b> в том, что она так же вернет <i>true</i> для значения <i>undefined</i>.
+        Вернёт <i>true</i>, если <b>object</b> является <i>NaN</i>.
+        <br /> 
+        Примечание: разница с нативной функцией <b>isNaN</b> в том, что 
+        она также вернёт <i>true</i> для значения <i>undefined</i>.
       </p>
       <pre>
 // true
@@ -1558,7 +1559,7 @@ _.isNaN(undefined);
       <p id="isNull">
         <b class="header">isNull</b><code>_.isNull(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является <i>null</i>.
+        Вернёт <i>true</i>, если <b>object</b> является <i>null</i>.
       </p>
       <pre>
 // true
@@ -1571,7 +1572,7 @@ _.isNull(undefined);
       <p id="isUndefined">
         <b class="header">isUndefined</b><code>_.isUndefined(variable)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является <i>undefined</i>.
+        Вернёт <i>true</i>, если <b>object</b> является <i>undefined</i>.
       </p>
       <pre>
 // true
