@@ -262,7 +262,6 @@
       <li>- <a href="#debounce">debounce</a></li>
       <li>- <a href="#once">once</a></li>
       <li>- <a href="#after">after</a></li>
-      <li>- <a href="#now">now</a></li>
       <li>- <a href="#wrap">wrap</a></li>
       <li>- <a href="#compose">compose</a></li>
     </ul>
@@ -317,6 +316,7 @@
       <li>- <a href="#escape">escape</a></li>
       <li>- <a href="#unescape">unescape</a></li>
       <li>- <a href="#result">result</a></li>
+      <li>- <a href="#now">now</a></li>
       <li>- <a href="#template">template</a></li>
     </ul>
 
@@ -329,7 +329,7 @@
     </ul>
     
     <a class="toc_title" href="#links">
-      Links
+      Ссылки и рекомендуемая литература
     </a>
     
     <a class="toc_title" href="#changelog">
@@ -352,7 +352,7 @@
       Однако в отличие от Prototype.js, underscore не модифицирует прототипы  
       встроенных объектов JavaScript. Данная особенность гарантирует бесконфликтность, 
       что позволяет замечательно сочетать этот инструмент с, например, 
-      <a href="http://docs.jquery.com">jQuery</a> или <a href="http://backbonejs.org/">Backbone</a> или и тем и другим вместе.
+      <a href="http://docs.jquery.com">jQuery</a> или <a href="http://backbonejs.org/">Backbone</a>, или и тем и другим вместе.
     </p>
 
     <p>
@@ -636,7 +636,7 @@ _.pluck(stooges, 'name');
       <pre>
 var stooges = [{name : 'moe', age : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];
 
-// вернет {name : 'curly', age : 60};
+// вернёт {name : 'curly', age : 60};
 _.max(stooges, function(stooge){ return stooge.age; });
 </pre>
 
@@ -928,7 +928,7 @@ _.zip(['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]);
         <b class="header">object</b><code>_.object(list, [values])</code>
         <br />
         Сконвертирует массивы в объекты. Получает на вход массивы формата
-        <tt>[key, value]</tt> или отдельно массив ключей и массив значений.
+        <br/><tt>[key, value]</tt> или отдельно массив ключей и массив значений.
         Если ключи дублируются, последнее значение будет результирующим.
       </p>
 <pre>
@@ -988,7 +988,7 @@ _.sortedIndex(stooges, {name: 'larry', age: 50}, 'age');
         <b class="header">range</b><code>_.range([start], stop, [step])</code>
         <br />
         Удобная функция для создания наборов целых чисел, позволяющая их гибкую конфигурацию.
-        <b>start</b>, если не передан, по умолчанию будет установлен в 0; <b>step</b> — в <i>1</i>. 
+        Аргумент <b>start</b>, если не передан, по умолчанию будет установлен в 0; <b>step</b> — в <i>1</i>. 
         Возвращаемый набор будет представлять из себя числа в интервале от <b>start</b> до <b>stop</b>, 
         каждое последующее из которых будет увеличено (или уменьшено) относительно предыдущего на <b>step</b>.
       </p>
@@ -1187,7 +1187,7 @@ hello = _.wrap(hello, function(func) {
   return "before, " + func("moe") + ", after";
 });
 
-// вернет 'before, hello: moe, after'
+// вернёт 'before, hello: moe, after'
 hello();
 </pre>
 
@@ -1205,7 +1205,7 @@ var greet    = function(name){ return "hi: " + name; };
 var exclaim  = function(statement){ return statement + "!"; };
 var welcome = _.compose(exclaim, greet);
 
-// вернет 'hi: moe!'
+// вернёт 'hi: moe!'
 welcome('moe');
 </pre>
 
@@ -1317,7 +1317,7 @@ _.defaults(iceCream, {flavor : "vanilla", sprinkles : "lots"});
         объекты будут скопированы по ссылке, а <i>не</i> продублированы.
       </p>
       <pre>
-// вернет {name : 'moe'}
+// вернёт {name : 'moe'}
 _.clone({name : 'moe'});
 </pre>
 
@@ -1359,7 +1359,7 @@ _.has({a: 1, b: 2, c: 3}, "b");
 <pre>
 var moe = {name: 'moe'};
 
-// вернет true
+// вернёт true
 'moe' === _.property('name')(moe);
 </pre>
 
@@ -1774,7 +1774,7 @@ _.templateSettings = {
 
 var template = _.template("Hello {{ name }}!");
 
-// вернет "Hello Mustache!"
+// вернёт "Hello Mustache!"
 template({name : "Mustache"});</pre>
 
 
