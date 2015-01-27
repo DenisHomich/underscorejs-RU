@@ -262,7 +262,6 @@
       <li>- <a href="#debounce">debounce</a></li>
       <li>- <a href="#once">once</a></li>
       <li>- <a href="#after">after</a></li>
-      <li>- <a href="#now">now</a></li>
       <li>- <a href="#wrap">wrap</a></li>
       <li>- <a href="#compose">compose</a></li>
     </ul>
@@ -317,6 +316,7 @@
       <li>- <a href="#escape">escape</a></li>
       <li>- <a href="#unescape">unescape</a></li>
       <li>- <a href="#result">result</a></li>
+      <li>- <a href="#now">now</a></li>
       <li>- <a href="#template">template</a></li>
     </ul>
 
@@ -329,7 +329,7 @@
     </ul>
     
     <a class="toc_title" href="#links">
-      Links
+      Ссылки и рекомендуемая литература
     </a>
     
     <a class="toc_title" href="#changelog">
@@ -345,25 +345,25 @@
     </p>
 
     <p>
-      <a href="http://github.com/documentcloud/underscore/">Underscore</a> это 
-      невероятно удобная JavaScript библиотека, этакий швейцарский нож для 
+      <a href="http://github.com/documentcloud/underscore/">Underscore</a> — это 
+      невероятно удобная JavaScript-библиотека, этакий швейцарский нож для 
       js-разработчика, набор функций-утилит, которые так привычны любителям 
       <a href="http://prototypejs.org/api">Prototype.js</a> (или <a href="http://www.ruby-doc.org/core/classes/Enumerable.html">Ruby</a>).
-      Однако, в отличие, от Prototype.js, underscore не модифицирует прототипы  
+      Однако в отличие от Prototype.js, underscore не модифицирует прототипы  
       встроенных объектов JavaScript. Данная особенность гарантирует бесконфликтность, 
-      что позволяет замечательно сочетать сей инструмент с, например, 
-      <a href="http://docs.jquery.com">jQuery</a> или <a href="http://backbonejs.org/">Backbone</a> или и тем и другим всем вместе.
+      что позволяет замечательно сочетать этот инструмент с, например, 
+      <a href="http://docs.jquery.com">jQuery</a> или <a href="http://backbonejs.org/">Backbone</a>, или и тем и другим вместе.
     </p>
 
     <p>
       В состав Underscore входит более 80 функций, часть из которых решает
       более стандартные задачи, например, упрощает работу с коллекциями, 
       а часть позволяет проще делать более экзотические вещи, такие как: 
-      функциональное связывание, javascript шаблонизация, проверки на равенство 
-      (напр. объектов), и т.д. Кроме того, underscore умеет делегировать вызовы, 
-      т.е. если код выполняется с современном браузере, который имеет нативные 
+      функциональное связывание, javascript-шаблонизация, проверки на равенство 
+      (напр. объектов), и т.д. Кроме того, Underscore умеет делегировать вызовы, 
+      т.е. если код выполняется в современном браузере, который имеет нативные 
       реализации таких методов, как: <b>forEach</b>, <b>map</b>, <b>reduce</b>,
-      <b>filter</b>, <b>every</b>, <b>some</b> and <b>indexOf</b>, то будут вызваны 
+      <b>filter</b>, <b>every</b>, <b>some</b> и <b>indexOf</b>, то будут вызваны 
       именно они.
     </p>
 
@@ -378,7 +378,7 @@
     <p>
       Проект 
       <a href="http://github.com/documentcloud/underscore/">хостится на GitHub</a>.
-      Баг репорты и фичереквесты можно разместить 
+      Баг-репорты и фич-реквесты можно разместить 
       <a href="http://github.com/documentcloud/underscore/issues">тут</a>,
       или отправить твитом на <a href="http://twitter.com/documentcloud">@documentcloud</a>. Баги по русской версии 
       документации принимаются <a href="https://github.com/DenisHomich/underscorejs-RU">в этом репозитории</a>.
@@ -388,17 +388,17 @@
       <i>Underscore — это open-source компонента <a href="http://documentcloud.org/">DocumentCloud</a>.</i>
     </p>
 
-    <h2>Файлы для загрузки <i style="padding-left: 12px; font-size:12px;">(правый клик, затем "Сохранить как..")</i></h2>
+    <h2>Файлы для загрузки <i style="padding-left: 12px; font-size:12px;">(правый клик, затем «Сохранить как..»)</i></h2>
 
     <table>
       <tr>
         <td><a href="underscore.js">Версия для разработчиков (1.6.0)</a></td>
-        <td><i>44kb, Много комментариев</i></td>
+        <td><i>44kb, много комментариев</i></td>
       </tr>
       <tr>
-        <td><a href="underscore-min.js">Продакшн версия (1.6.0)</a></td>
+        <td><a href="underscore-min.js">Продакшн-версия (1.6.0)</a></td>
         <td>
-            <i>&lt; 5.0kb, Обфусцированная и обжатая</i>
+            <i>&lt; 5.0kb, обфусцированная и сжатая</i>
             <br/>
             <small>(<a href="underscore-min.map">Source Map</a>)</small>
         </td>
@@ -439,44 +439,47 @@
         Проходит по всему списку элементов, вызывая для каждого из них функцию <b>iterator</b>,
         которая будет вызвана в контексте <b>context</b>, если он был передан.
         При каждом вызове в <b>iterator</b> будут переданы 3 аргумента:
-        <tt>(element, index, list)</tt>. В случае, если <b>list</b> является JavaScript объектом, то в <b>iterator</b>
+        <tt>(element, index, list)</tt>. В случае, если <b>list</b> является JavaScript-объектом, то в <b>iterator</b>
         будут переданы <tt>(value, key, list)</tt>. Если в браузере есть нативная реализация метода
         <b>forEach</b>, то вызов будет делегирован ему.
       </p>
       <pre>
-// выведет все элементы массива
 _.each([1, 2, 3], function(num){ alert(num); });
+// выведет все элементы массива
 
+_.each({one : 1, two : 2, three : 3}, function(num, key){ alert(key+":"+num); });
 // выведет содержимое объекта в формате ключ:значение
-_.each({one : 1, two : 2, three : 3}, function(num, key){ alert(key+":"+num); });</pre>
+</pre>
 
       <p id="map">
         <b class="header">map</b><code>_.map(list, iterator, [context])</code>
         <span class="alias">Alias: <b>collect</b></span>
         <br />
-        Вернет новый массив, полученный преобразованием каждого элемента <b>list</b>
+        Вернёт новый массив, полученный преобразованием каждого элемента <b>list</b>
         в функции (<b>iterator</b>). Если метод <b>map</b> реализован нативно, будет вызван именно он.
-        Если <b>list</b> — JavaScript-объект, аргументами функции
-        <b>iterator</b> будут <tt>(value, key, list)</tt>.
+        Если <b>list</b> — JavaScript-объект, аргументами функции <b>iterator</b> будут 
+        <br/><tt>(value, key, list)</tt>.
       </p>
       <pre>
-// вернет [3,6,9]
 _.map([1, 2, 3], function(num){ return num * 3; });
+// вернёт [3,6,9]
 
-// вернет [3,6,9]
-_.map({one : 1, two : 2, three : 3}, function(num, key){ return num * 3; });</pre>
+_.map({one : 1, two : 2, three : 3}, function(num, key){ return num * 3; });
+// вернёт [3,6,9]
+</pre>
 
       <p id="reduce">
         <b class="header">reduce</b><code>_.reduce(list, iterator, memo, [context])</code>
         <span class="alias">Aliases: <b>inject, foldl</b></span>
         <br />
-        <b>Reduce</b> объединит вместе значения из <b>list</b>, путем пропускания каждого из них через 
-        функцию <b>iterator</b>, которая в качестве аргументов получит <tt>(memo, value, key, list)</tt>.
-	Где <b>memo</b> начальное значение шага редукции, которое было возвращено предыдущим вызовом <b>iterator</b>.
+        <b>Reduce</b> объединит вместе значения из <b>list</b> путём пропускания каждого из них через 
+        функцию <b>iterator</b>, которая в качестве аргументов получит <br/><tt>(memo, value, key, list)</tt>,
+        где <b>memo</b> — начальное значение шага редукции, которое было возвращено предыдущим вызовом <b>iterator</b>.
       </p>
       <pre>
-// вернет 6
-var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);</pre>
+var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
+// вернёт 6
+</pre>
 
       <p id="reduceRight">
         <b class="header">reduceRight</b><code>_.reduceRight(list, iterator, memo, [context])</code>
@@ -488,21 +491,22 @@ var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);</pr
       <pre>
 var list = [[0, 1], [2, 3], [4, 5]];
 
-// вернет [4, 5, 2, 3, 0, 1]
-var flat = _.reduceRight(list, function(a, b) { return a.concat(b); }, []);</pre>
+var flat = _.reduceRight(list, function(a, b) { return a.concat(b); }, []);
+// вернёт [4, 5, 2, 3, 0, 1]
+</pre>
 
       <p id="find">
         <b class="header">find</b><code>_.find(list, iterator, [context])</code>
         <span class="alias">Alias: <b>detect</b></span>
         <br />
-        Вызывает для каждого элемента <b>list</b>, функцию сравнения <b>iterator</b>,
-	возвращая первый элемент, для которого <b>iterator</b> вернула <tt>true</tt>. 
-	Выполнение функции при этом прерывается, т.е. вызовов <b>iterator</b> для оставшейся части <b>list</b>
-	не будет.
+        Вызывает для каждого элемента <b>list</b> функцию сравнения <b>iterator</b>,
+        возвращая первый элемент, для которого <b>iterator</b> вернула <tt>true</tt>. 
+        Выполнение функции при этом прерывается, т.е. вызовов <b>iterator</b> для оставшейся части <b>list</b>
+        не будет.
       </p>
       <pre>
-// вернет 2
 var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// вернёт 2
 </pre>
 
       <p id="filter">
@@ -511,22 +515,23 @@ var even = _.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
         <br />
         Проходит каждое значение <b>list</b>, возвращая массив из
         значений, для которых <b>iterator</b> вернул <tt>true</tt>. 
- 	Делегирует вызов нативной реализации <b>filter</b>, если таковая имеется.
+        Делегирует вызов нативной реализации <b>filter</b>, если таковая имеется.
       </p>
       <pre>
-// вернет [2,4,6]
 var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// вернёт [2,4,6]
 </pre>
 
       <p id="where">
-          <b class="header">where</b><code>_.where(list, properties)</code>
-          <br />
-          Вернет массив из элементов <b>list</b>, для которых совпадают значения для
-          соответсвующих ключей, перечисленные в <b>properties</b>.
+        <b class="header">where</b><code>_.where(list, properties)</code>
+        <br />
+        Вернёт массив из элементов <b>list</b>, для которых совпадают значения для
+        соответсвующих ключей, перечисленные в <b>properties</b>.
       </p>
 <pre>
 _.where(listOfPlays, {author: "Shakespeare", year: 1611});
-// вернет
+
+// вернёт
 [
     {title: "Cymbeline", author: "Shakespeare", year: 1611},
     {title: "The Tempest", author: "Shakespeare", year: 1611}
@@ -534,21 +539,24 @@ _.where(listOfPlays, {author: "Shakespeare", year: 1611});
 </pre>
 
       <p id="findWhere">
-          <b class="header">findWhere</b><code>_.findWhere(list, properties)</code>
-          <br />
-          Сработает аналогично <b>where</b>, но вернет только первый элемент, соответствующий
-          заданным <b>properties</b>.
+        <b class="header">findWhere</b><code>_.findWhere(list, properties)</code>
+        <br />
+        Сработает аналогично <b>where</b>, но вернёт только первый элемент, соответствующий
+        заданным <b>properties</b>.
       </p>
       <p>
-          Если совпадений не найдено или <b>list</b> пустой — вернет <i>undefined</i>.
+          Если совпадений не найдено или <b>list</b> пустой, то вернёт <i>undefined</i>.
       </p>
 <pre>
 _.findWhere(publicServicePulitzers, {newsroom: "The New York Times"});
-// вернет
+
+// вернёт
 {
     year     : 1918,
     newsroom : "The New York Times",
-    reason   : "For its public service in publishing in full so many official reports, documents and speeches by European statesmen relating to the progress and conduct of the war."
+    reason   : "For its public service in publishing in full so many official reports, 
+    documents and speeches by European statesmen relating to the progress and 
+    conduct of the war."
 }
 </pre>
 
@@ -556,138 +564,137 @@ _.findWhere(publicServicePulitzers, {newsroom: "The New York Times"});
         <b class="header">reject</b><code>_.reject(list, iterator, [context])</code>
         <br />
         Возвращает массив, содержащий все значения <b>list</b>, за исключением элементов, для которых функция
-	<b>iterator</b> вернула значение, отличное от <tt>true</tt>. Т.е. <b>reject</b> является «антонимом» <b>filter</b>.
+        <b>iterator</b> вернула значение, отличное от <tt>true</tt>. Т.е. <b>reject</b> является «антонимом» <b>filter</b>.
       </p>
       <pre>
-// вернет [1, 3, 5]
 var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// вернёт [1, 3, 5]
 </pre>
 
       <p id="every">
         <b class="header">every</b><code>_.every(list, [predicate], [context])</code>
         <span class="alias">Alias: <b>all</b></span>
         <br />
-        Вернет <tt>true</tt>, если для каждого значения из <b>list</b> <b>predicate</b>
-        вернет <tt>true</tt>. Делегирует вызов к нативной реализации <b>every</b>, если она существует.
+        Вернёт <tt>true</tt>, если для каждого значения из <b>list</b> <b>predicate</b>
+        вернёт <tt>true</tt>. Делегирует вызов к нативной реализации <b>every</b>, если она существует.
       </p>
       <pre>
-// вернет false
 _.every([true, 1, null, 'yes'], _.identity);
+// вернёт false
 </pre>
 
       <p id="some">
         <b class="header">some</b><code>_.some(list, [predicate], [context])</code>
         <span class="alias">Alias: <b>any</b></span>
         <br />
-        Вернет <tt>true</tt>, если хотябы для одного значения из <b>list</b> <b>predicate</b>
-        вернет <tt>true</tt>. После нахождения первого, удовлетворяющего условию элемента выполнение функции прерывается.
-	    Делегирует вызов к нативной реализации <b>some</b>, если она существует.
+        Вернёт <tt>true</tt>, если хотя бы для одного значения из <b>list</b> <b>predicate</b>
+        вернёт <tt>true</tt>. После нахождения первого удовлетворяющего условию элемента выполнение функции прерывается.
+        Делегирует вызов к нативной реализации <b>some</b>, если она существует.
       </p>
       <pre>
-// вернет true
 _.any([null, 0, 'yes', false]);
+// вернёт true
 </pre>
 
       <p id="contains">
         <b class="header">contains</b><code>_.contains(list, value)</code>
         <span class="alias">Alias: <b>include</b></span>
         <br />
-        Вернет <i>true</i>, если в <b>list</b> содержится элемент, эквивалентный <b>value</b>.
-	    Для сравнения используется оператор <tt>===</tt>. Если <b>list</b> является массивом, будет вызван метод <b>indexOf</b>.
+        Вернёт <i>true</i>, если в <b>list</b> содержится элемент, эквивалентный <b>value</b>.
+        Для сравнения используется оператор <tt>===</tt>. Если <b>list</b> является массивом, будет вызван метод <b>indexOf</b>.
       </p>
       <pre>
-// вернет true
 _.include([1, 2, 3], 3);
+// вернёт true
 </pre>
 
       <p id="invoke">
         <b class="header">invoke</b><code>_.invoke(list, methodName, [*arguments])</code>
         <br />
         Вызовет метод <b>methodName</b> на каждом значении <b>list</b>.
-        Все дополнительные аргументы, если они переданы в <b>invoke</b> будут так же переданы при вызове <b>methodName</b>.
+        Все дополнительные аргументы, если они переданы в <b>invoke</b> будут также переданы при вызове <b>methodName</b>.
       </p>
       <pre>
-// вернет [[1, 5, 7], [1, 2, 3]]
 _.invoke([[5, 1, 7], [3, 2, 1]], 'sort');
+// вернёт [[1, 5, 7], [1, 2, 3]]
 </pre>
 
       <p id="pluck">
         <b class="header">pluck</b><code>_.pluck(list, propertyName)</code>
         <br />
-        Наверное, наиболее частоиспользуемый метод для <b>map</b>:
-	вернет массив, состоящий из значений свойства <b>propertyName</b> каждого из элементов <b>list</b>.
+        Наверное, наиболее часто используемый метод для <b>map</b>: вернёт массив, 
+        состоящий из значений свойства <b>propertyName</b> каждого из элементов <b>list</b>.
       </p>
       <pre>
-// вернет ["moe", "larry", "curly"]
 var stooges = [{name : 'moe', age : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];
 _.pluck(stooges, 'name');
+// вернёт ["moe", "larry", "curly"]
 </pre>
 
       <p id="max">
         <b class="header">max</b><code>_.max(list, [iterator], [context])</code>
         <br />
-        Вернет максимальное значение из <b>list</b>. Если был передан <b>iterator</b>,
+        Вернёт максимальное значение из <b>list</b>. Если был передан <b>iterator</b>,
         то он будет использован для генерация критерия, по которому будет проведено сравнение.
       </p>
       <pre>
 var stooges = [{name : 'moe', age : 40}, {name : 'larry', age : 50}, {name : 'curly', age : 60}];
 
-// вернет {name : 'curly', age : 60};
 _.max(stooges, function(stooge){ return stooge.age; });
+// вернёт {name : 'curly', age : 60};
 </pre>
 
       <p id="min">
         <b class="header">min</b><code>_.min(list, [iterator], [context])</code>
         <br />
-        Вернет минимальное значение из <b>list</b>. Если был передан <b>iterator</b>,
-	то он будет использован для генерация критерия, по которому будет проведено сравнение.
+        Вернёт минимальное значение из <b>list</b>. Если был передан <b>iterator</b>,
+        то он будет использован для генерации критерия, по которому будет проведено сравнение.
       </p>
       <pre>
 var numbers = [10, 5, 100, 2, 1000];
 
-// вернет 2
 _.min(numbers);
+// вернёт 2
 </pre>
 
       <p id="sortBy">
         <b class="header">sortBy</b><code>_.sortBy(list, iterator, [context])</code>
         <br />
-        Вернет отсортированную копию <b>list</b>, сортировка будет проведена по значению, 
-        возвращенному функцией <b>iterator</b>, для каждого элемента <b>list</b>.
+        Вернёт отсортированную копию <b>list</b>, сортировка будет проведена по значению, 
+        возвращённому функцией <b>iterator</b> для каждого элемента <b>list</b>.
       </p>
       <pre>
-// вернет [5, 4, 6, 3, 1, 2]
 _.sortBy([1, 2, 3, 4, 5, 6], function(num){ return Math.sin(num); });
+// вернёт [5, 4, 6, 3, 1, 2]
 </pre>
 
       <p id="groupBy">
         <b class="header">groupBy</b><code>_.groupBy(list, iterator)</code>
         <br />
-        Разобьет коллекцию на сеты, сгруппированные по признаку, определенному вызовом <b>iterator</b>
-	для каждого из элементов <b>list</b>. Если <b>iterator</b> не функция, а строка, 
-	то группировка будет произведена по значению свойства с именем <b>iterator</b>.
+        Разобьёт коллекцию на сеты, сгруппированные по признаку, определённому вызовом <b>iterator</b>
+        для каждого из элементов <b>list</b>. Если <b>iterator</b> не функция, а строка, 
+        то группировка будет произведена по значению свойства с именем <b>iterator</b>.
       </p>
       <pre>
-// вернет {1: [1.3], 2: [2.1, 2.4]}
 _.groupBy([1.3, 2.1, 2.4], function(num){ return Math.floor(num); });
+// вернёт {1: [1.3], 2: [2.1, 2.4]}
 
-// вернет {3: ["one", "two"], 5: ["three"]}
 _.groupBy(['one', 'two', 'three'], 'length');
+// вернёт {3: ["one", "two"], 5: ["three"]}
 </pre>
 
       <p id="indexBy">
-          <b class="header">indexBy</b><code>_.indexBy(list, iterator, [context])</code>
-          <br />
-          На вход получает коллекцию <b>list</b> и <b>iterator</b>, функцию которая должна
-          вернуть ключ для каждого элемента коллекции (or a property name),
-          вернет объект, пар индекс : соответствующий ему объект.
-          Т.е. работает аналогично <a href="#groupBy">groupBy</a>, для случаев, когда индексы уникальны.
+        <b class="header">indexBy</b><code>_.indexBy(list, iterator, [context])</code>
+        <br />
+        На вход получает коллекцию <b>list</b> и <b>iterator</b>, функцию, которая возвращает 
+        ключ для каждого элемента коллекции (или имя свойства), вернёт объект из пар индекс : соответствующий ему объект.
+        Т.е. работает аналогично <a href="#groupBy">groupBy</a>, но для случаев, когда индексы уникальны.
       </p>
       <pre>
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
 _.indexBy(stooges, 'age');
 
-// вернет
+// вернёт
 {
   "40": {name: 'moe', age: 40},
   "50": {name: 'larry', age: 50},
@@ -696,64 +703,64 @@ _.indexBy(stooges, 'age');
 </pre>
 
       <p id="countBy">
-          <b class="header">countBy</b><code>_.countBy(list, iterator, [context])</code>
-          <br />
-          Сортирует коллекцию <b>list</b> в группы, вернет объект где значением каждого свойства <b>groupName</b>
-          будет количество элементов коллекции, относящихся к этой группе.
-          Т.е. работает аналогично <tt>groupBy</tt>, но вернет не сами элементы а их количество.
+        <b class="header">countBy</b><code>_.countBy(list, iterator, [context])</code>
+        <br />
+        Сортирует коллекцию <b>list</b> в группы, вернёт объект, где значением каждого свойства 
+        <b>groupName</b> будет количество элементов коллекции, относящихся к этой группе.
+        Т.е. работает аналогично <tt>groupBy</tt>, но вернёт не сами элементы, а их количество.
       </p>
 <pre>
-// вернет {odd: 3, even: 2}
 _.countBy([1, 2, 3, 4, 5], function(num) {
     return num % 2 == 0 ? 'even': 'odd';
 });
+// вернёт {odd: 3, even: 2}
 </pre>
 
       <p id="shuffle">
         <b class="header">shuffle</b><code>_.shuffle(list)</code>
         <br />
-        Вернет «перемешанную» копию <b>list</b>, используя 
-        <a href="http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">метод случайного перемешивания Фишера-Ятса</a>.
+        Вернет перемешанную копию <b>list</b>, используя 
+        <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A4%D0%B8%D1%88%D0%B5%D1%80%D0%B0%E2%80%93%D0%99%D0%B5%D1%82%D1%81%D0%B0">метод случайного перемешивания Фишера-Ятса</a>.
       </p>
       <pre>
-// вернет [4, 1, 6, 3, 5, 2]
 _.shuffle([1, 2, 3, 4, 5, 6]);
+// вернёт [4, 1, 6, 3, 5, 2]
 </pre>
 
       <p id="sample">
         <b class="header">sample</b><code>_.sample(list, [n])</code>
         <br />
-        Вернет <b>n</b> случайных элементов из списка <b>list</b>.
-        Если <b>n</b> не задан - вернет 1 случайный элемент.
+        Вернёт <b>n</b> случайных элементов из списка <b>list</b>.
+        Если <b>n</b> не задан, вернёт 1 случайный элемент.
       </p>
       <pre>
-// вернет 4
 _.sample([1, 2, 3, 4, 5, 6]);
+// вернёт 4
 
 
-// вернет [1, 6, 2]
 _.sample([1, 2, 3, 4, 5, 6], 3);
+// вернёт [1, 6, 2]
 </pre>
 
       <p id="toArray">
         <b class="header">toArray</b><code>_.toArray(list)</code>
         <br />
         Сконвертирует <b>list</b> в массив.
-	Удобен, например, для преобразования объекта <b>arguments</b>.
+        Удобен, например, для преобразования объекта <b>arguments</b>.
       </p>
       <pre>
-// вернет [1, 2, 3]
 (function(){ return _.toArray(arguments).slice(0); })(1, 2, 3);
+// вернёт [1, 2, 3]
 </pre>
 
       <p id="size">
         <b class="header">size</b><code>_.size(list)</code>
         <br />
-        Вернет количесво элементов в <b>list</b>.
+        Вернёт количество элементов в <b>list</b>.
       </p>
       <pre>
-// вернет 3
 _.size({one : 1, two : 2, three : 3});
+// вернёт 3
 </pre>
 
       <h2 id="arrays">Функции для работы с массивами</h2>
@@ -769,239 +776,241 @@ _.size({one : 1, two : 2, three : 3});
         <b class="header">first</b><code>_.first(array, [n])</code>
         <span class="alias">Alias: <b>head</b></span>
         <br />
-        Вернет первый элемент массива <b>array</b>. Если был передан аргумент <b>n</b>, то 
-        будет возвращен подмассив из <b>n</b> первых элементов родительского.
+        Вернёт первый элемент массива <b>array</b>. Если был передан аргумент <b>n</b>, то 
+        будет возвращён подмассив из <b>n</b> первых элементов родительского.
       </p>
       <pre>
-// вернет 5
 _.first([5, 4, 3, 2, 1]);
+// вернёт 5
 </pre>
 
       <p id="initial">
         <b class="header">initial</b><code>_.initial(array, [n])</code>
         <br />
-        Вернет подмассив из всех элементов родительского, за исключением последнего.
+        Вернёт подмассив из всех элементов родительского, за исключением последнего.
         Довольно полезно при работе с объектом <tt>arguments</tt>. Если передан <b>n</b>, 
-        то возвращенный подмассив не будет содержать <b>n</b> 
-	последних элементов родительского.
+        то возвращённый подмассив не будет содержать <b>n</b> 
+        последних элементов родительского.
       </p>
       <pre>
-// вернет [5, 4, 3, 2]
 _.initial([5, 4, 3, 2, 1]);
+// вернёт [5, 4, 3, 2]
 </pre>
 
       <p id="last">
         <b class="header">last</b><code>_.last(array, [n])</code>
         <br />
-        Вернет последний элемент массива <b>array</b>. Если был передан аргумент <b>n</b>, то 
-        будет возвращен подмассив из <b>n</b> последних элементов родительского.
+        Вернёт последний элемент массива <b>array</b>. Если был передан аргумент <b>n</b>, то 
+        будет возвращён подмассив из <b>n</b> последних элементов родительского.
       </p>
       <pre>
-// вернет 1
 _.last([5, 4, 3, 2, 1]);
+// вернёт 1
 </pre>
 
       <p id="rest">
         <b class="header">rest</b><code>_.rest(array, [index])</code>
         <span class="alias">Alias: <b>tail</b></span>
         <br />
-        Вернет все, кроме первого элементы массива. Если передан <b>index</b>
-        то вернет все элементы, позиция которых больше или равна <b>index</b>.
+        Вернёт все, кроме первого элемента массива. Если передан <b>index</b>
+        то вернёт все элементы, позиция которых больше или равна <b>index</b>.
       </p>
       <pre>
-// вернет [4, 3, 2, 1]
 _.rest([5, 4, 3, 2, 1]);
+// вернёт [4, 3, 2, 1]
 </pre>
 
       <p id="compact">
         <b class="header">compact</b><code>_.compact(array)</code>
         <br />
-        Вернет копию массива <b>array</b>, в котором удалены все «ложные» значения.
-        Такие как: <i>false</i>, <i>null</i>, <i>0</i>, <i>""</i>,
-        <i>undefined</i> и <i>NaN</i>.
+        Вернёт копию массива <b>array</b>, в котором удалены все «ложные» значения,
+        такие как: <i>false</i>, <i>null</i>, <i>0</i>, <i>""</i>, <i>undefined</i> и <i>NaN</i>.
       </p>
       <pre>
-// вернет [1, 2, 3]
 _.compact([0, 1, false, 2, '', 3]);
+// вернёт [1, 2, 3]
 </pre>
 
       <p id="flatten">
         <b class="header">flatten</b><code>_.flatten(array, [shallow])</code>
         <br />
-        Если массив <b>array</b>, обладает уровнями вложенности, приведет его к элементарному виду (вложенность может быть любой глубины). 
-        Если аргумент <b>shallow</b> был установлен в true, будет устранен только один уровень вложенности.
-        
+        Если массив <b>array</b> обладает уровнями вложенности, приведёт его к элементарному 
+        виду (вложенность может быть любой глубины). Если аргумент <b>shallow</b> был установлен 
+        в true, будет устранён только один уровень вложенности.
       </p>
       <pre>
-// вернет [1, 2, 3, 4]
 _.flatten([1, [2], [3, [[[4]]]]]);
+// вернёт [1, 2, 3, 4]
 
-// вернет [1, 2, 3, [[4]]]
 _.flatten([1, [2], [3, [[4]]]], true);
+// вернёт [1, 2, 3, [[4]]]
 </pre>
 
       <p id="without">
         <b class="header">without</b><code>_.without(array, *values)</code>
         <br />
-        Вернет копию массива <b>array</b>, из которой будут удалены все значения <b>values</b>.
-	    Для сравнения будет использован оператор <i>===</i>.
+        Вернёт копию массива <b>array</b>, из которой будут удалены все значения <b>values</b>.
+        Для сравнения будет использован оператор <i>===</i>.
       </p>
       <pre>
-// вернет [2, 3, 4]
 _.without([1, 2, 1, 0, 3, 1, 4], 0, 1);
+// вернёт [2, 3, 4]
 </pre>
 
       <p id="partition">
-          <b class="header">partition</b><code>_.partition(array, predicate)</code>
-          <br />
-          Разабьет <b>array</b> на 2: в первом будут содержаться элементы, удовлетворяющие
-          <b>predicate</b> во втором — те, что нет..
+        <b class="header">partition</b><code>_.partition(array, predicate)</code>
+        <br />
+        Разобьёт <b>array</b> на 2: в первом будут содержаться элементы, удовлетворяющие
+        <b>predicate</b> во втором — те, что нет.
       </p>
 <pre>
-// вернет [[1, 3, 5], [0, 2, 4]]
 _.partition([0, 1, 2, 3, 4, 5], isOdd);
+// вернёт [[1, 3, 5], [0, 2, 4]]
 </pre>
 
       <p id="union">
         <b class="header">union</b><code>_.union(*arrays)</code>
         <br />
-        Объеденит уникальные элементы всех массивов  <b>arrays</b>.
-	Порядок элементов будет определен порядком их появления в исходных массивах.
+        Объединит уникальные элементы всех массивов <b>arrays</b>.
+        Порядок элементов будет определён порядком их появления в исходных массивах.
       </p>
       <pre>
-// вернет [1, 2, 3, 101, 10]
 _.union([1, 2, 3], [101, 2, 1, 10], [2, 1]);
+// вернёт [1, 2, 3, 101, 10]
 </pre>
 
       <p id="intersection">
         <b class="header">intersection</b><code>_.intersection(*arrays)</code>
         <br />
-        Вернет массив из элементов, встречающихся в каждом из переданных массивов.
+        Вернёт массив из элементов, встречающихся в каждом из переданных массивов.
       </p>
       <pre>
-// вернет [1, 2]
 _.intersection([1, 2, 3], [101, 2, 1, 10], [2, 1]);
+// вернёт [1, 2]
 </pre>
 
       <p id="difference">
         <b class="header">difference</b><code>_.difference(array, *others)</code>
         <br />
-        Эдентичен <b>without</b>, с той разницей, что значения, которые необходимо исключить передаются единым массивом <b>other</b>.
+        Идентичен <b>without</b>, с той разницей, что значения, которые необходимо 
+        исключить, передаются единым массивом <b>other</b>.
       </p>
       <pre>
-// вернет [1, 3, 4]
 _.difference([1, 2, 3, 4, 5], [5, 2, 10]);
+// вернёт [1, 3, 4]
 </pre>
 
       <p id="uniq">
         <b class="header">uniq</b><code>_.uniq(array, [isSorted], [iterator])</code>
         <span class="alias">Alias: <b>unique</b></span>
         <br />
-        Вернет версию массива <b>array</b>, состоящую только из уникальных элементов.
-	Для сравнения объектов используется оператор <i>===</i>. Если <b>array</b> был предварительно отсортирован,
-        то это стоит указать, передав <i>true</i> в качестве <b>isSorted</b>, т.к. это значительно повлияет на скорость работы алгоритма.
-        Если Вы желаете определить уникальность элементов, после неких преобразований, то задайте функцию <b>iterator</b>, которая их выполнит.
+        Вернёт версию массива <b>array</b>, состоящую только из уникальных элементов.
+        Для сравнения объектов используется оператор <i>===</i>. Если <b>array</b> 
+        был предварительно отсортирован, то это стоит указать, передав <i>true</i> 
+        в качестве <b>isSorted</b>, т.к. это значительно повлияет на скорость работы алгоритма.
+        Если Вы желаете определить уникальность элементов после неких преобразований, 
+        то задайте функцию <b>iterator</b>, которая их выполнит.
       </p>
       <pre>
-// вернет [1, 2, 3, 4]
 _.uniq([1, 2, 1, 3, 1, 4]);
+// вернёт [1, 2, 3, 4]
 </pre>
 
       <p id="zip">
         <b class="header">zip</b><code>_.zip(*arrays)</code>
         <br />
-        Вернет массив, каждым элементом которого будет массив, содержащий элементы всех
-	переданных массивов (<b>arrays</b>), расположенные на соответствующих позициях.
-        При работе с матрицами, <b>zip.apply</b>
-        может быть использован для их транспонирования.
+        Вернёт массив, каждым элементом которого будет массив, содержащий элементы всех
+        переданных массивов (<b>arrays</b>), расположенные на соответствующих позициях.
+        При работе с матрицами <b>zip.apply</b> может быть использован для их транспонирования.
       </p>
       <pre>
-// вернет [["moe", 30, true], ["larry", 40, false], ["curly", 50, false]]
 _.zip(['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]);
+// вернёт [["moe", 30, true], ["larry", 40, false], ["curly", 50, false]]
 </pre>
 
       <p id="object">
-          <b class="header">object</b><code>_.object(list, [values])</code>
-          <br />
-          Сконвертирует массивы в объекты. Получает на вход массивы формата
-          <tt>[key, value]</tt>, или отдельно массив ключей и массив значений.
-          Если ключи дублируются, последнее значение будет результирующим.
+        <b class="header">object</b><code>_.object(list, [values])</code>
+        <br />
+        Сконвертирует массивы в объекты. Получает на вход массивы формата
+        <br/><tt>[key, value]</tt> или отдельно массив ключей и массив значений.
+        Если ключи дублируются, последнее значение будет результирующим.
       </p>
 <pre>
-// вернет {moe: 30, larry: 40, curly: 50}
 _.object(['moe', 'larry', 'curly'], [30, 40, 50]);
+// вернёт {moe: 30, larry: 40, curly: 50}
 
-// вернет {moe: 30, larry: 40, curly: 50}
 _.object([['moe', 30], ['larry', 40], ['curly', 50]]);
+// вернёт {moe: 30, larry: 40, curly: 50}
 </pre>
 
       <p id="indexOf">
         <b class="header">indexOf</b><code>_.indexOf(array, value, [isSorted])</code>
         <br />
-        Вернет позицию, на которой находится элемент <b>value</b> в массиве <b>array</b>,
-        или <i>-1</i>, если данный элемент не был найден. Использует нативную реализацию <b>indexOf</b>, 
-		если таковая имеется. Если Вы работаете с большим массивом и знаете, что он был предварительно отсортирован, то укажите это, передав <tt>true</tt>
-        как <b>isSorted</b>, в этом случае будет использован бинарный поиск, который значительно быстрее перебора.
+        Вернёт позицию, на которой находится элемент <b>value</b> в массиве <b>array</b>,
+        или <i>-1</i>, если данный элемент не был найден. Использует нативную реализацию 
+        <b>indexOf</b>, если таковая имеется. Если Вы работаете с большим массивом и знаете, 
+        что он был предварительно отсортирован, то укажите это, передав <tt>true</tt> для 
+        <b>isSorted</b>, в этом случае будет использован бинарный поиск, который значительно быстрее перебора.
       </p>
       <pre>
-// вернет 1
 _.indexOf([1, 2, 3], 2);
+// вернёт 1
 </pre>
 
       <p id="lastIndexOf">
         <b class="header">lastIndexOf</b><code>_.lastIndexOf(array, value, [fromIndex])</code>
         <br />
-        Вернет позицию последнего вхождения элемента <b>value</b> в массиве <b>array</b>,
-        или <i>-1</i>, если данный элемент не был найден. Если это возможно, использует нативную реализацию <b>lastIndexOf</b>.
-        Если передать 3ий аргумент <b>fromIndex</b>, поиск будет вестить с этой позиции.
+        Вернёт позицию последнего вхождения элемента <b>value</b> в массиве <b>array</b>,
+        или <i>-1</i>, если данный элемент не был найден. Если это возможно, использует 
+        нативную реализацию <b>lastIndexOf</b>. Если передать аргумент <b>fromIndex</b>, 
+        поиск будет вестить с этой позиции.
       </p>
       <pre>
-// вернет 4
 _.lastIndexOf([1, 2, 3, 1, 2, 3], 2);
+// вернёт 4
 </pre>
 
       <p id="sortedIndex">
-          <b class="header">sortedIndex</b><code>_.sortedIndex(list, value, [iterator], [context])</code>
-          <br />
-          Использует бинарный поиск, чтобы определить позицию, куда <b>value</b>
-          <i>должен</i> быть вставлен, чтобы не нарушился порядок отсортированного <b>list</b>.
-          Если был передан <b>iterator</b>, он будет использован для вычисленя
-          ранга при сортировке каждого из элементов <b>list</b>. Итератор так же может быть
-          строкой, т.е. именем свойства, по которому будет проведена сортировка.
+        <b class="header">sortedIndex</b><code>_.sortedIndex(list, value, [iterator], [context])</code>
+        <br />
+        Использует бинарный поиск, чтобы определить позицию, куда <b>value</b>
+        <i>должен</i> быть вставлен, чтобы не нарушился порядок отсортированного <b>list</b>.
+        Если был передан <b>iterator</b>, он будет использован для вычисления
+        ранга при сортировке каждого из элементов <b>list</b>. Итератор также может быть
+        строкой, т.е. именем свойства, по которому будет проведена сортировка.
       </p>
 <pre>
-// вернет 3
 _.sortedIndex([10, 20, 30, 40, 50], 35);
+// вернёт 3
 
-// вернет 1
 var stooges = [{name: 'moe', age: 40}, {name: 'curly', age: 60}];
 _.sortedIndex(stooges, {name: 'larry', age: 50}, 'age');
+// вернёт 1
 </pre>
 
       <p id="range">
         <b class="header">range</b><code>_.range([start], stop, [step])</code>
         <br />
         Удобная функция для создания наборов целых чисел, позволяющая их гибкую конфигурацию.
-        <b>start</b>, если не передан, по-умолчанию будет установлен в 0;
- 	<b>step</b> — в <i>1</i>. 
-	Возвращаемый набор будет представлять из себя числа в интервале от <b>start</b> до <b>stop</b>, 
-	каждое последующее из которых будет увеличено (или уменьшено) относительно предыдущего на <b>step</b>.
+        Аргумент <b>start</b>, если не передан, по умолчанию будет установлен в 0; <b>step</b> — в <i>1</i>. 
+        Возвращаемый набор будет представлять из себя числа в интервале от <b>start</b> до <b>stop</b>, 
+        каждое последующее из которых будет увеличено (или уменьшено) относительно предыдущего на <b>step</b>.
       </p>
       <pre>
-// вернет [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 _.range(10);
+// вернёт [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-// вернет [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 _.range(1, 11); 
+// вернёт [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-// вернет [0, 5, 10, 15, 20, 25]
 _.range(0, 30, 5);
+// вернёт [0, 5, 10, 15, 20, 25]
 
-// вернет [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 _.range(0, -10, -1); 
+// вернёт [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 
-// вернет []
 _.range(0);
+// вернёт []
 </pre>
 
       <h2 id="functions">Работа с функциями</h2>
@@ -1010,23 +1019,23 @@ _.range(0);
         <b class="header">bind</b><code>_.bind(function, object, *arguments)</code>
         <br />
         Связывает функцию <b>function</b> с объектом <b>object</b>. Это значит, что 
-		каждый раз когда она будет вызвана <i>this</i> будет указывать на <b>object</b>.
-		Кроме того можно задать значения параметров по-умолчанию, для этого задайте их в
-		<b>arguments</b>, данный прием называется <a href="http://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">каррингом</a>.
+        каждый раз когда она будет вызвана <i>this</i> будет указывать на <b>object</b>.
+        Кроме того, можно задать значения параметров по умолчанию, для этого задайте их в
+        <b>arguments</b>, данный приём называется <a href="http://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">каррингом</a>.
       </p>
       <pre>
 var func = function(greeting){ return greeting + ': ' + this.name };
 func = _.bind(func, {name : 'moe'}, 'hi');
 
-// вернет 'hi: moe'
 func();
+// вернёт 'hi: moe'
 </pre>
 
       <p id="bindAll">
         <b class="header">bindAll</b><code>_.bindAll(object, *methodNames)</code>
         <br />
-        Свяжет с объектом <b>object</b>, все методы, переданные, как
-        <b>methodNames</b>. Весьма полезно использовать при работе с обработчиками событий.
+        Свяжет с объектом <b>object</b> все методы, переданные как <b>methodNames</b>. 
+        Весьма полезно использовать при работе с обработчиками событий.
         Если <b>methodNames</b> не определены, то все методы самого <b>object</b>
         будут привязаны к нему.
       </p>
@@ -1039,31 +1048,31 @@ var buttonView = {
 
 _.bindAll(buttonView);
 
-// когда на кнопке произойдет клик, this.label будет содержать значение 'underscore'
 jQuery('#underscore_button').bind('click', buttonView.onClick);
+// когда на кнопке произойдёт клик, this.label будет содержать значение 'underscore'
 </pre>
 
       <p id="partial">
-          <b class="header">partial</b><code>_.partial(function, *arguments)</code>
-          <br />
-          Вернет функцию, которая будет являться <b>function</b> с некоторыми предустановленными
-          аргументами, но без влияния на динамическое изменения контекста (<tt>this</tt>).
+        <b class="header">partial</b><code>_.partial(function, *arguments)</code>
+        <br />
+        Вернёт функцию, которая будет являться <b>function</b> с некоторыми предустановленными
+        аргументами, но без влияния на динамическое изменения контекста (<tt>this</tt>).
       </p>
 <pre>
 var add = function(a, b) { return a + b; };
 add5 = _.partial(add, 5);
 
-// вернет 15
 add5(10);
+// вернёт 15
 </pre>
 
       <p id="memoize">
         <b class="header">memoize</b><code>_.memoize(function, [hashFunction])</code>
         <br />
-        Мемоизирует функцию <b>function</b> путем кэширования вычисленного значения. 
-        Полезно для ускорения медленных вычислений. Если задана 
-        <b>hashFunction</b>, она будет использована для вычисления хэш ключа, который необходим для хранения результата. 
-        По-умолчанию <b>hashFunction</b> использует первый аргумент мемоизированной функции в качестве ключа.
+        Мемоизирует функцию <b>function</b> путём кэширования вычисленного значения. 
+        Полезно для ускорения медленных вычислений. Если задана <b>hashFunction</b>, 
+        она будет использована для вычисления хэш-ключа, который необходим для хранения результата. 
+        По умолчанию <b>hashFunction</b> использует первый аргумент мемоизированной функции в качестве ключа.
       </p>
       <pre>
 var fibonacci = _.memoize(function(n) {
@@ -1075,40 +1084,41 @@ var fibonacci = _.memoize(function(n) {
         <b class="header">delay</b><code>_.delay(function, wait, *arguments)</code>
         <br />
         Очень похожа на <b>setTimeout</b>, вызовет <b>function</b> по прошествии заданного (<b>wait</b>)
-        вермени в миллисекундах. Если были переданы дополнительные аргументы <b>arguments</b>, они будут
-        переданы в <b>function</b> при ее вызове.
+        времени в миллисекундах. Если были переданы дополнительные аргументы <b>arguments</b>, они будут
+        переданы в <b>function</b> при её вызове.
       </p>
       <pre>
 var log = _.bind(console.log, console);
 
+_.delay(log, 1000, 'logged later');
 // выведет на консоль 'logged later' через секунду после вызова .delay
-_.delay(log, 1000, 'logged later');</pre>
+</pre>
 
       <p id="defer">
         <b class="header">defer</b><code>_.defer(function)</code>
         <br />
-		Откладывает вызов <b>function</b> до момента, пока не очистится текущий стек вызовов.
+        Откладывает вызов <b>function</b> до момента, пока не очистится текущий стек вызовов.
         Аналогична использованию <b>setTimeout</b> с задержкой равной 0. 
-		Полезна при затратных с точки зрения производительности вычислениях или рендеринге
-		HTML, чтобы не «замораживать» пользовательский интерфейс на это время.
+        Полезна при затратных с точки зрения производительности вычислениях или рендеринге
+        HTML, чтобы не «замораживать» пользовательский интерфейс на это время.
       </p>
       <pre>
-// выход из функции будет осуществлен до того, как будет запущена alert.
 _.defer(function(){ alert('deferred'); });
+// выход из функции будет осуществлён до того, как будет запущена alert.
 </pre>
 
       <p id="throttle">
         <b class="header">throttle</b><code>_.throttle(function, wait, [options])</code>
         <br />
-		Вернет версию функции, которая, при повторных вызовах, 
-		исполниться не чаще одного раза в заданный промежуток  <b>wait</b>.
-		Полезна для использования при обработке событий, которые происходят слишком часто.
+        Вернёт версию функции, которая, при повторных вызовах, исполнится не чаще одного раза 
+        в заданный промежуток <b>wait</b>. Полезна для использования при обработке событий, 
+        которые происходят слишком часто.
       </p>
       <p>
-          По-умолчанию <b>throttle</b> выполнит функцию, как только Вы ее вызовете (в первый раз)
-          при последующих вызовах втечении <b>wait</b> выполняться она не будет. Если Вы хотите
-          чтобы при первоначальном (первый раз) вызове она не выолнялась — нужно передать
-          <tt>{leading: false}</tt> в качестве options.
+        По умолчанию <b>throttle</b> выполнит функцию, как только Вы её вызовете (в первый раз)
+        при последующих вызовах в течение <b>wait</b> выполняться она не будет. Если Вы хотите,
+        чтобы при первоначальном (первый раз) вызове она не выолнялась – нужно передать
+        <tt>{leading: false}</tt> в качестве options.
       </p>
       <pre>
 var throttled = _.throttle(updatePosition, 100);
@@ -1118,17 +1128,17 @@ $(window).scroll(throttled);
       <p id="debounce">
         <b class="header">debounce</b><code>_.debounce(function, wait, [immediate])</code>
         <br />
-		Вернет версию функции, исполнение которой начнется не ранее, чем
-		истечет промежуток <b>wait</b>, после ее последнего вызова.
-		Полезно для реализации логики, которая зависит от завершения действий пользователя. 
-		Например, проверить орфографию комментария пользователя лучше будет после того, как он его окончательно введет,
-		а динамечески перерассчитать разметку после того, как пользователь закончит изменять размер окна.
+        Вернёт версию функции, исполнение которой начнётся не ранее, чем истечёт промежуток 
+        <b>wait</b>, после её последнего вызова. Полезно для реализации логики, которая зависит 
+        от завершения действий пользователя. Например, проверить орфографию комментария пользователя 
+        лучше будет после того, как он его окончательно введёт, а динамечески перерассчитать разметку 
+        после того, как пользователь закончит изменять размер окна.
       </p>
 
       <p>
-          Если передать <tt>true</tt> в качестве аргумента <b>immediate</b> функция будет
-          выполнена сразу, не дожидаяся прошествия <b>wait</b>. Полезно в случаях когда нужно
-          предоствратить повторные действия, например отправку формы.
+        Если передать <tt>true</tt> в качестве аргумента <b>immediate</b>, функция будет
+        выполнена сразу, не дожидаясь прошествия <b>wait</b>. Полезно в случаях, когда нужно
+        предотвратить повторные действия, например, отправку формы.
       </p>
 
 <pre>
@@ -1139,50 +1149,41 @@ $(window).resize(lazyLayout);
       <p id="once">
         <b class="header">once</b><code>_.once(function)</code>
         <br />
-		Вернет функцию, которая может быть вызвана только один раз.
-		Все последующие ее вызовы будут возвращать значение, вычисленное в первый раз. 
-        Можно испоьзовать для создания функций-инициализаторов.
+        Вернёт функцию, которая может быть вызвана только один раз.
+        Все последующие её вызовы будут возвращать значение, вычисленное в первый раз. 
+        Можно использовать для создания функций-инициализаторов.
       </p>
       <pre>
 var initialize = _.once(createApplication);
 
-// код будет выполнен единожды
 initialize();
-initialize();</pre>
+initialize();
+// код будет выполнен единожды
+</pre>
 
       <p id="after">
         <b class="header">after</b><code>_.after(count, function)</code>
         <br />
-		Вернет копию функции <b>function</b>, модифицированную таким образом, 
-		что она будет запущена только после того, как будет вызвана  <b>count</b> раз. 
-		Удобно использовать при работе с асинхронными запроса, например, 
-		чтобы убедиться, что все обращения к серверу завершились.<br/>
-		Если же указать <b>count</b> равным <b>0</b>, то <b>function</b> будет вызвана немедленно.
+        Вернёт копию функции <b>function</b>, модифицированную таким образом, 
+        что она будет запущена только после того, как будет вызвана  <b>count</b> раз. 
+        Удобно использовать при работе с асинхронными запросами, например, 
+        чтобы убедиться, что все обращения к серверу завершились.<br/>
+        Если же указать <b>count</b> равным <b>0</b>, то <b>function</b> будет вызвана немедленно.
       </p>
       <pre>
 var renderNotes = _.after(notes.length, render);
 
-// renderNotes будет вызвана лишь на последней итерации each
 _.each(notes, function(note) {
   note.asyncSave({success: renderNotes}); 
-});</pre>
-
-      <p id="now">
-          <b class="header">now</b><code>_.now()</code>
-          <br />
-          Вернет текущую метку времени (Interger), используя самую быструю доступную в текущей
-          среде выполнения функцию. Полезно при реализации таймеров/анимаций.
-      </p>
-<pre>
-// вернет 1392066795351
-_.now();
+});
+// renderNotes будет вызвана лишь на последней итерации each
 </pre>
 
       <p id="wrap">
         <b class="header">wrap</b><code>_.wrap(function, wrapper)</code>
         <br />
-		Передаст функцию <b>function</b> в функцию <b>wrapper</b>,
-        в качестве первого аргумента. Это позволит вызвать ее из <b>wrapper</b>
+        Передаст функцию <b>function</b> в функцию <b>wrapper</b>,
+        в качестве первого аргумента. Это позволит вызвать её из <b>wrapper</b>
         в любое удобное время в зависимости от условий.
       </p>
       <pre>
@@ -1191,18 +1192,17 @@ hello = _.wrap(hello, function(func) {
   return "before, " + func("moe") + ", after";
 });
 
-// вернет 'before, hello: moe, after'
 hello();
+// вернёт 'before, hello: moe, after'
 </pre>
 
       <p id="compose">
         <b class="header">compose</b><code>_.compose(*functions)</code>
         <br />
-		Вернет функцию, скомпонованную из переданных в аргументах, таким образом, что
-		каждая функция будет вызвана с аргументом, значение которого вычислено путем вызова
-		следующей за ней (в аргументах <tt>compose</tt>) функции.
-        В терминах математики, результатом
-        композиции функций <i>f()</i>, <i>g()</i>, и <i>h()</i> будет следующее выразение:
+        Вернёт функцию, скомпонованную из списка <b>functions</b>, таким образом, что
+        каждая функция будет вызвана с аргументом, значение которого вычислено путём вызова
+        следующей за ней (в аргументах <tt>compose</tt>) функции. В терминах математики 
+        результатом композиции функций <i>f()</i>, <i>g()</i>, и <i>h()</i> будет следующее выражение:
         <i>f(g(h()))</i>.
       </p>
       <pre>
@@ -1210,8 +1210,8 @@ var greet    = function(name){ return "hi: " + name; };
 var exclaim  = function(statement){ return statement + "!"; };
 var welcome = _.compose(exclaim, greet);
 
-// вернет 'hi: moe!'
 welcome('moe');
+// вернёт 'hi: moe!'
 </pre>
 
       <h2 id="objects">Функции для работы с объектами</h2>
@@ -1219,161 +1219,160 @@ welcome('moe');
       <p id="keys">
         <b class="header">keys</b><code>_.keys(object)</code>
         <br />
-        Вернет массив, состоящий из названий всех свойств <b>object</b>.
+        Вернёт массив, состоящий из названий всех свойств <b>object</b>.
       </p>
       <pre>
-// вернет ["one", "two", "three"]
 _.keys({one : 1, two : 2, three : 3});
+// вернёт ["one", "two", "three"]
 </pre>
 
       <p id="values">
         <b class="header">values</b><code>_.values(object)</code>
         <br />
-        Вернет массив, состоящий из значений всех свойств <b>object</b>.
+        Вернёт массив, состоящий из значений всех свойств <b>object</b>.
       </p>
       <pre>
-// вернет [1, 2, 3]
 _.values({one : 1, two : 2, three : 3});
+// вернёт [1, 2, 3]
 </pre>
 
       <p id="pairs">
-          <b class="header">pairs</b><code>_.pairs(object)</code>
-          <br />
-          Сконвертирует объект с набор пар формата<tt>[key, value]</tt>.
+        <b class="header">pairs</b><code>_.pairs(object)</code>
+        <br />
+        Сконвертирует объект в набор пар формата<tt>[key, value]</tt>.
       </p>
 <pre>
-// вернет [["one", 1], ["two", 2], ["three", 3]]
 _.pairs({one: 1, two: 2, three: 3});
+// вернёт [["one", 1], ["two", 2], ["three", 3]]
 </pre>
 
       <p id="invert">
-          <b class="header">invert</b><code>_.invert(object)</code>
-          <br />
-          Вернет копию <b>object</b> где ключи — значения, а значения — ключи.
-          Чтобы это заработало, нужно чтобы все значения свойств объекта могли быть уникально
-          сериализованы в строки.
+        <b class="header">invert</b><code>_.invert(object)</code>
+        <br />
+        Вернёт копию <b>object</b> где ключи — значения, а значения — ключи.
+        Чтобы это заработало, нужно, чтобы все значения свойств объекта могли быть уникально
+        сериализованы в строки.
       </p>
 <pre>
-// вернет {Moses: "Moe", Louis: "Larry", Jerome: "Curly"};
 _.invert({Moe: "Moses", Larry: "Louis", Curly: "Jerome"});
+// вернёт {Moses: "Moe", Louis: "Larry", Jerome: "Curly"};
 </pre>
 
       <p id="object-functions">
         <b class="header">functions</b><code>_.functions(object)</code>
         <span class="alias">Alias: <b>methods</b></span>
         <br />
-        Вернет отсортированный массив, состоящий из названий всех методов <b>object</b>.
+        Вернёт отсортированный массив, состоящий из названий всех методов <b>object</b>.
       </p>
       <pre>
-// вернет ["all", "any", "bind", "bindAll", "clone", "compact", "compose" ...
 _.functions(_);
+// вернёт ["all", "any", "bind", "bindAll", "clone", "compact", "compose" ...
 </pre>
 
       <p id="extend">
         <b class="header">extend</b><code>_.extend(destination, *sources)</code>
         <br />
         Скопирует все свойства из объектов <b>source</b> в объект
-        <b>destination</b>. Если объекты <b>source</b> имеют одноименные свойства, то значения каждого будут затерты значениями из следующего.
+        <b>destination</b>. Если объекты <b>source</b> имеют одноименные свойства, 
+        то значения каждого будут затёрты значениями из следующего.
       </p>
       <pre>
-// вернет {name : 'moe', age : 50}
 _.extend({name : 'moe'}, {age : 50});
+// вернёт {name : 'moe', age : 50}
 </pre>
 
       <p id="pick">
-          <b class="header">pick</b><code>_.pick(object, *keys)</code>
-          <br />
-
-          Вернет копию <b>object</b>, где будут значения только для ключей, указанных в <b>keys</b>.
+        <b class="header">pick</b><code>_.pick(object, *keys)</code>
+        <br />
+        Вернёт копию <b>object</b>, где будут значения только для ключей, указанных в <b>keys</b>.
       </p>
 <pre>
-// вернет {name: 'moe', age: 50}
-
 _.pick({name: 'moe', age: 50, userid: 'moe1'}, 'name', 'age');
+// вернёт {name: 'moe', age: 50}
 </pre>
 
       <p id="omit">
-          <b class="header">omit</b><code>_.omit(object, *keys)</code>
-          <br />
-          Вернет копию <b>object</b>, из которой будут удалены значения по ключам, заданным в
-          <b>keys</b>.
+        <b class="header">omit</b><code>_.omit(object, *keys)</code>
+        <br />
+        Вернёт копию <b>object</b>, из которой будут удалены значения по ключам, заданным в
+        <b>keys</b>.
       </p>
 <pre>
-// вернет {name: 'moe', age: 50}
-
 _.omit({name: 'moe', age: 50, userid: 'moe1'}, 'userid');
+// вернёт {name: 'moe', age: 50}
 </pre>
 
       <p id="defaults">
         <b class="header">defaults</b><code>_.defaults(object, *defaults)</code>
         <br />
-        Проинициализирует неопределенные свойства <b>object</b> значениями одноименных свойств из
-        <b>defaults</b>. Если же какие-то своейства <b>object</b> уже определены, то они не будут изменены.
+        Проинициализирует неопределённые свойства <b>object</b> значениями одноимённых свойств из
+        <b>defaults</b>. Если же какие-то свойства <b>object</b> уже определены, то они не будут изменены.
       </p>
       <pre>
 var iceCream = {flavor : "chocolate"};
 
-// вернет {flavor : "chocolate", sprinkles : "lots"}
 _.defaults(iceCream, {flavor : "vanilla", sprinkles : "lots"});
+// вернёт {flavor : "chocolate", sprinkles : "lots"}
 </pre>
 
       <p id="clone">
         <b class="header">clone</b><code>_.clone(object)</code>
         <br />
-        Вернет клон <b>object</b>. Любые, входящие в его состав массивы или 
+        Вернёт клон <b>object</b>. Любые, входящие в его состав массивы или 
         объекты будут скопированы по ссылке, а <i>не</i> продублированы.
       </p>
       <pre>
-// вернет {name : 'moe'}
 _.clone({name : 'moe'});
+// вернёт {name : 'moe'}
 </pre>
 
       <p id="tap">
         <b class="header">tap</b><code>_.tap(object, interceptor)</code>
         <br />
-        Вызовет <b>interceptor</b> с <b>object</b> в качестве аргумента и затем вернет <b>object</b>.
-        Основная задача данного метода: возможность «вклиниться» в цепочку вызовов, для того, чтобы произвести некие операции с промежуточными итогами.
+        Вызовет <b>interceptor</b> с <b>object</b> в качестве аргумента и затем вернёт <b>object</b>.
+        Основная задача данного метода — возможность «вклиниться» в цепочку вызовов для того, 
+        чтобы произвести некие операции с промежуточными итогами.
       </p>
       <pre>
-// на консоль будет выведен массив [2, 200], затем вызов value вернет [4, 40000]
 _([1,2,3,200]).chain().
   filter(function(num) { return num % 2 == 0; }).
   tap(console.log).
   map(function(num) { return num * num }).
   value();
+// на консоль будет выведен массив [2, 200], затем вызов value вернёт [4, 40000]
 </pre>
 
       <p id="has">
         <b class="header">has</b><code>_.has(object, key)</code>
         <br />
-        Проверяет, есть ли свойство <b>key</b> в объекте <b>object</b>? Для выяснения этого факта будет вызвана
+        Проверяет, есть ли свойство <b>key</b> в объекте <b>object</b>. Для выяснения этого будет вызвана
         <tt>object.hasOwnProperty(key)</tt>, но при этом будет использована «безопасная» ссылка на  
         <tt>hasOwnProperty</tt>, подробнее об этом можно прочитать 
         <a href="http://www.devthought.com/2012/01/18/an-object-is-not-a-hash/">тут</a>.
       </p>
       <pre>
-// true
 _.has({a: 1, b: 2, c: 3}, "b");
+// true
 </pre>
 
       <p id="property">
-          <b class="header">property</b><code>_.property(key)</code>
-          <br />
-          Вернет функцию, которая в свою очередь вернет значение свойства <tt>key</tt>
-          для переданного в нее объекта.
+        <b class="header">property</b><code>_.property(key)</code>
+        <br />
+        Вернёт функцию, которая, в свою очередь, вернёт значение свойства <tt>key</tt>
+        для переданного в неё объекта.
       </p>
 <pre>
 var moe = {name: 'moe'};
 
-// вернет true
 'moe' === _.property('name')(moe);
+// вернёт true
 </pre>
 
       <p id="matches">
-          <b class="header">matches</b><code>_.matches(attrs)</code>
-          <br />
-          Вернет функцию, с помощью которой можно будет определить обладает ли объект
-          нужными свойствами и значениями этих свойств.
+        <b class="header">matches</b><code>_.matches(attrs)</code>
+        <br />
+        Вернёт функцию, с помощью которой можно будет определить, обладает ли объект
+        нужными свойствами и значениями этих свойств.
       </p>
 <pre>
 var ready = _.matches({selected: true, visible: true});
@@ -1389,187 +1388,189 @@ var readyToGoList = _.filter(list, ready);
 var moe   = {name : 'moe', luckyNumbers : [13, 27, 34]};
 var clone = {name : 'moe', luckyNumbers : [13, 27, 34]};
 
-// false
 moe == clone;
+// false
 
-// true
 _.isEqual(moe, clone);
+// true
 </pre>
 
       <p id="isEmpty">
         <b class="header">isEmpty</b><code>_.isEmpty(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> не содержит данных.
+        Вернёт <i>true</i>, если <b>object</b> не содержит данных.
       </p>
       <pre>
-// false
 _.isEmpty([1, 2, 3]);
+// false
 
-// true
 _.isEmpty({});
+// true
 </pre>
 
       <p id="isElement">
         <b class="header">isElement</b><code>_.isElement(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является DOM элементом.
+        Вернёт <i>true</i>, если <b>object</b> является DOM-элементом.
       </p>
       <pre>
-// true
 _.isElement(jQuery('body')[0]);
+// true
 </pre>
 
       <p id="isArray">
         <b class="header">isArray</b><code>_.isArray(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является массивом (Array).
+        Вернёт <i>true</i>, если <b>object</b> является массивом (Array).
       </p>
       <pre>
-(// false
 (function(){ return _.isArray(arguments); })();
+// false
 
-// true
 _.isArray([1,2,3]);
+// true
 </pre>
 
       <p id="isObject">
-          <b class="header">isObject</b><code>_.isObject(value)</code>
-          <br />
-          Вернет <i>true</i>, если <b>value</b> Object. Имейте в виду, что в JavaScript
-          массивы и функции — objects, а строки могут как примитивом, так и объектом strings.
+        <b class="header">isObject</b><code>_.isObject(value)</code>
+        <br />
+        Вернёт <i>true</i>, если <b>value</b> — объект. Имейте в виду, что в JavaScript
+        массивы и функции — объекты, а строки могут быть как примитивом, так и объектом strings.
       </p>
 <pre>
-// true
 _.isObject({});
+// true
 
-// false
 _.isObject(1);
+// false
 </pre>
 
       <p id="isArguments">
         <b class="header">isArguments</b><code>_.isArguments(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является объектом arguments.
+        Вернёт <i>true</i>, если <b>object</b> является объектом arguments.
       </p>
       <pre>
-// true
 (function(){ return _.isArguments(arguments); })(1, 2, 3);
+// true
 
-// false
 _.isArguments([1,2,3]);
+// false
 </pre>
 
       <p id="isFunction">
         <b class="header">isFunction</b><code>_.isFunction(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является функцией (Function).
+        Вернёт <i>true</i>, если <b>object</b> является функцией (Function).
       </p>
       <pre>
-// true
 _.isFunction(alert);
+// true
 </pre>
 
       <p id="isString">
         <b class="header">isString</b><code>_.isString(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является строкой (String).
+        Вернёт <i>true</i>, если <b>object</b> является строкой (String).
       </p>
       <pre>
-// true
 _.isString("moe");
+// true
 </pre>
 
       <p id="isNumber">
         <b class="header">isNumber</b><code>_.isNumber(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является числом (Number, включая константу NaN).
+        Вернёт <i>true</i>, если <b>object</b> является числом (Number, включая константу NaN).
       </p>
       <pre>
-// true
 _.isNumber(8.4 * 5);
+// true
 </pre>
 
       <p id="isFinite">
-          <b class="header">isFinite</b><code>_.isFinite(object)</code>
-          <br />
-          Вернет <i>true</i> если <b>object</b> Number и не является Infinite.
+        <b class="header">isFinite</b><code>_.isFinite(object)</code>
+        <br />
+        Вернёт <i>true</i>, если <b>object</b> является конечным числом и не является Infinite.
       </p>
 <pre>
-// true
 _.isFinite(-101);
+// true
 
-// false
 _.isFinite(-Infinity);
+// false
 </pre>
 
       <p id="isBoolean">
         <b class="header">isBoolean</b><code>_.isBoolean(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является булевым значением (true или false).
+        Вернёт <i>true</i>, если <b>object</b> является булевым значением (true или false).
       </p>
       <pre>
-// false
 _.isBoolean(null);
+// false
 </pre>
 
       <p id="isDate">
         <b class="header">isDate</b><code>_.isDate(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является датой (Date).
+        Вернёт <i>true</i>, если <b>object</b> является датой (Date).
       </p>
       <pre>
-// true
 _.isDate(new Date());
+// true
 </pre>
 
       <p id="isRegExp">
         <b class="header">isRegExp</b><code>_.isRegExp(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является регулярным выражением (RegExp).
+        Вернёт <i>true</i>, если <b>object</b> является регулярным выражением (RegExp).
       </p>
       <pre>
-// true
 _.isRegExp(/moe/);
+// true
 </pre>
 
       <p id="isNaN">
         <b class="header">isNaN</b><code>_.isNaN(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является <i>NaN</i>.<br /> Примечание: 
- 	разница с <b>isNaN</b> в том, что она так же вернет <i>true</i> для значения <i>undefined</i>.
+        Вернёт <i>true</i>, если <b>object</b> является <i>NaN</i>.
+        <br /> 
+        Примечание: разница с нативной функцией <b>isNaN</b> в том, что 
+        она также вернёт <i>true</i> для значения <i>undefined</i>.
       </p>
       <pre>
-// true
 _.isNaN(NaN);
-
 // true
-isNaN(undefined);
 
-// false
+isNaN(undefined);
+// true
+
 _.isNaN(undefined);
+// false
 </pre>
 
       <p id="isNull">
         <b class="header">isNull</b><code>_.isNull(object)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является <i>null</i>.
+        Вернёт <i>true</i>, если <b>object</b> является <i>null</i>.
       </p>
       <pre>
-// true
 _.isNull(null);
+// true
 
-// false
 _.isNull(undefined);
+// false
 </pre>
 
       <p id="isUndefined">
         <b class="header">isUndefined</b><code>_.isUndefined(variable)</code>
         <br />
-        Вернет <i>true</i> если <b>object</b> является <i>undefined</i>.
+        Вернёт <i>true</i>, если <b>object</b> является <i>undefined</i>.
       </p>
       <pre>
-// true
 _.isUndefined(window.missingVariable);
+// true
 </pre>
 
       <h2 id="utility">Функции-утилиты</h2>
@@ -1577,34 +1578,36 @@ _.isUndefined(window.missingVariable);
       <p id="noConflict">
         <b class="header">noConflict</b><code>_.noConflict()</code>
         <br />
-        Отвяжет переменную "_" от объекта <b>Underscore</b>.Вернет ссылку на объект <b>Underscore</b>.
+        Отвяжет переменную "_" от объекта <b>Underscore</b>. Вернёт ссылку на объект <b>Underscore</b>.
       </p>
       <pre>
-var underscore = _.noConflict();</pre>
+var underscore = _.noConflict();
+</pre>
 
       <p id="identity">
         <b class="header">identity</b><code>_.identity(value)</code>
         <br />
-        Вернет значение, которое было передано в качестве аргумента (<tt>f(x) = x</tt>).<br />
-        Используется повсюду в Underscore в качестве дефолтного итератора.
+        Вернёт значение, которое было передано в качестве аргумента (<tt>f(x) = x</tt>).<br />
+        Кажется бесполезным, но используется повсюду в Underscore в качестве дефолтного итератора.
       </p>
       <pre>
 var moe = {name : 'moe'};
 
+moe === _.identity(moe);
 // true
-moe === _.identity(moe);</pre>
+</pre>
 
       <p id="constant">
-          <b class="header">constant</b><code>_.constant(value)</code>
-          <br />
-          Вернет функцию, которая будет всегда возвращать значение, переданное <tt>_.constant</tt>,
-          в качестве аргумента.
+        <b class="header">constant</b><code>_.constant(value)</code>
+        <br />
+        Вернёт функцию, которая будет всегда возвращать значение, переданное <tt>_.constant</tt>,
+        в качестве аргумента.
       </p>
 <pre>
 var moe = {name: 'moe'};
 
-// true
 moe === _.constant(moe)();
+// true
 </pre>
 
       <p id="times">
@@ -1613,29 +1616,31 @@ moe === _.constant(moe)();
         Вызовет <b>iterator</b> <b>n</b> раз.
       </p>
       <pre>
-_(3).times(function(){ genie.grantWish(); });</pre>
+_(3).times(function(){ genie.grantWish(); });
+</pre>
 
       <p id="random">
-          <b class="header">random</b><code>_.random([min], max)</code>
-          <br />
-          Вернет случайное целое между <b>min</b> и <b>max</b> включительно.
-          Если передать только один аргумент, то возвращенное целое будет находиться в интервале от 0 до этого числа.
+        <b class="header">random</b><code>_.random([min], max)</code>
+        <br />
+        Вернёт случайное целое между <b>min</b> и <b>max</b> включительно.
+        Если передать только один аргумент, то возвращённое целое будет 
+        находиться в интервале от 0 до этого числа.
       </p>
 <pre>
-// 42
 _.random(14, 100);
+// 42
 
 
-// 12
 _.random(14);
+// 12
 </pre>
 
       <p id="mixin">
         <b class="header">mixin</b><code>_.mixin(object)</code>
         <br />
         Позволяет расширять Underscore собственными функциями. 
-	Принимает объект следующего вида <tt>{name: function}</tt>, где <b>name</b> — имя функции, 
-	а <b>function</b> определение.
+        Принимает объект следующего вида <tt>{name: function}</tt>, где <b>name</b> — имя функции, 
+        а <b>function</b> — определение.
       </p>
       <pre>
 _.mixin({
@@ -1644,115 +1649,132 @@ _.mixin({
   }
 });
 
-// вернет "Fabio"
 _("fabio").capitalize();
+// вернёт "Fabio"
 </pre>
 
       <p id="uniqueId">
         <b class="header">uniqueId</b><code>_.uniqueId([prefix])</code>
         <br />
-        Сгенерирует уникальный id, для, например DOM элемента.
-	Если был передан <b>prefix</b>, то сгенерированное имя будет добавлено к нему.
+        Сгенерирует уникальный id для, например, DOM-элемента.
+        Если был передан <b>prefix</b>, то сгенерированное имя будет добавлено к нему.
       </p>
       <pre>
-// вернет 'contact_104'
-_.uniqueId('contact_');</pre>
+_.uniqueId('contact_');
+// вернёт 'contact_104'
+</pre>
 
       <p id="escape">
         <b class="header">escape</b><code>_.escape(string)</code>
         <br />
-        Проэкранирует в с строке <b>string</b> спецсимволы 
-	(<tt>&amp;</tt>, <tt>&lt;</tt>, <tt>&gt;</tt>, <tt>"</tt>, <tt>'</tt>, <tt>/</tt>),
-	сделав возможным ее безболезненную вставку в HTML.
+        Проэкранирует в строке <b>string</b> спецсимволы 
+        (<tt>&amp;</tt>, <tt>&lt;</tt>, <tt>&gt;</tt>, <tt>"</tt>, <tt>'</tt>, <tt>/</tt>),
+        сделав возможным её безболезненную вставку в HTML.
       </p>
       <pre>
+_.escape('Curly, Larry &amp; Moe');
 // "Curly, Larry &amp;amp; Moe"
-_.escape('Curly, Larry &amp; Moe');</pre>
+</pre>
 
       <p id="unescape">
-          <b class="header">unescape</b><code>_.unescape(string)</code>
-          <br />
-          Работает в обратную стороно от <a href="#escape"><b>escape</b></a>, заменит
-          <tt>&amp;amp;</tt>, <tt>&amp;lt;</tt>, <tt>&amp;gt;</tt>,
-          <tt>&amp;quot;</tt>, and <tt>&amp;#x27;</tt>
-          на их не экранированные варианты.
+        <b class="header">unescape</b><code>_.unescape(string)</code>
+        <br />
+        В противоположность <a href="#escape"><b>escape</b></a>, заменит
+        <tt>&amp;amp;</tt>, <tt>&amp;lt;</tt>, <tt>&amp;gt;</tt>,
+        <tt>&amp;quot;</tt>, and <tt>&amp;#x27;</tt>
+        на их неэкранированные варианты.
       </p>
 <pre>
-// "Curly, Larry &amp; Moe"
 _.unescape('Curly, Larry &amp;amp; Moe');
+// "Curly, Larry &amp; Moe"
 </pre>
 
       <p id="result">
-          <b class="header">result</b><code>_.result(object, property)</code>
-          <br />
-          Если <b>property</b> — функция, она будет вызвана в контексте  <b>object</b>;
-          если нет вернет его значение.
+        <b class="header">result</b><code>_.result(object, property)</code>
+        <br />
+        Если <b>property</b> — функция, она будет вызвана в контексте <b>object</b>;
+        если нет — вернёт его значение.
       </p>
 <pre>
 var object = {cheese: 'crumpets', stuff: function(){ return 'nonsense'; }};
 
-// "crumpets"
 _.result(object, 'cheese');
+// "crumpets"
 
-// "nonsense"
 _.result(object, 'stuff');
+// "nonsense"
+</pre>
+
+      <p id="now">
+        <b class="header">now</b><code>_.now()</code>
+        <br />
+        Вернёт текущую метку времени (Integer), используя самую быструю доступную в текущей
+        среде выполнения функцию. Полезно при реализации таймеров/анимаций.
+      </p>
+<pre>
+_.now();
+// вернёт 1392066795351
 </pre>
 
       <p id="template">
         <b class="header">template</b><code>_.template(templateString, [data], [settings])</code>
         <br />
-        Компилирует JavaScript шаблоны в функции, которые могут быть вызваны для рендеринга этого шаблона.
-	    Полезно при рендеринге объемных и сложных частей HTML разметки из JSON данных.
-	    Полученные функции во время обработки данных могут интерполировать переменные, для чего используется следующий синтаксис внутри шаблона:
-	    <tt>&lt;%= &hellip; %&gt;</tt>, а также производить вычисления <tt>&lt;% &hellip; %&gt;</tt>.
-        Если вы выводите внутри шаблона данные и хотите, чтобы они были HTML-безопасными (спец. символы будут экранированы),
+        Компилирует JavaScript-шаблоны в функции, которые могут быть вызваны для рендеринга этого 
+        шаблона. Полезно при рендеринге объёмных и сложных частей HTML-разметки из данных JSON.
+        Полученные функции во время обработки данных могут интерполировать переменные, для чего 
+        используется следующий синтаксис внутри шаблона: <tt>&lt;%= &hellip; %&gt;</tt>, а также 
+        производить вычисления <tt>&lt;% &hellip; %&gt;</tt>. Если вы выводите внутри шаблона данные 
+        и хотите, чтобы они были HTML-безопасными (спец. символы будут экранированы),
         используйте такой синтаксис: <tt>&lt;%- &hellip; %&gt;</tt>.
-        Если при вызове функции-шаблонизатора передать в нее аргумент <b>data</b>,
-        то его свойства будут соответствовать одноименным свободным переменным внутри функции.
-        Если же передать <b>data</b> во время вызова <b>template</b>, то
-        результатом его работы будет не функция-шаблонизатор, а отрендеренный шаблон.<br/>
-        В скомплированных функциях сохраняется динамический контекст, так что внутри них можно использовать <b>this</b>.
+        Если при вызове функции-шаблонизатора передать в неё аргумент <b>data</b>,
+        то его свойства будут соответствовать одноимённым свободным переменным внутри функции.
+        Если же передать <b>data</b> во время вызова <b>template</b>, то результатом его работы 
+        будет не функция-шаблонизатор, а отрендеренный шаблон.<br/> В скомпилированных функциях 
+        сохраняется динамический контекст, так что внутри них можно использовать <b>this</b>.
       </p>
       <p>
-          А передав <b>settings</b> можно переопределить любые настройки шаблонизатора,
-          определенные в <tt>_.templateSettings</tt>.
+        Передав <b>settings</b>, можно переопределить любые настройки шаблонизатора,
+        определённые в <tt>_.templateSettings</tt>.
       </p>
       <pre>
 var compiled = _.template("hello: &lt;%= name %&gt;");
 
-// вернет "hello: moe"
 compiled({name : 'moe'});
+// вернёт "hello: moe"
 
 
 var list = "&lt;% _.each(people, function(name) { %&gt; &lt;li&gt;&lt;%= name %&gt;&lt;/li&gt; &lt;% }); %&gt;";
 
-// вернет "&lt;li&gt;moe&lt;/li&gt;&lt;li&gt;curly&lt;/li&gt;&lt;li&gt;larry&lt;/li&gt;"
 _.template(list, {people : ['moe', 'curly', 'larry']});
+// вернёт "&lt;li&gt;moe&lt;/li&gt;&lt;li&gt;curly&lt;/li&gt;&lt;li&gt;larry&lt;/li&gt;"
 
 
 var template = _.template("&lt;b&gt;&lt;%- value %&gt;&lt;/b&gt;");
 
-// вернет "&lt;b&gt;&amp;lt;script&amp;gt;&lt;/b&gt;"
-template({value : '&lt;script&gt;'});</pre>
+template({value : '&lt;script&gt;'});
+// вернёт "&lt;b&gt;&amp;lt;script&amp;gt;&lt;/b&gt;"
+</pre>
 
       <p>
         В некоторых случаях вместо <tt>&lt;%= ... %&gt;</tt> будет лучше использовать 
-	<tt>print</tt> внутри шаблонов.
+        <tt>print</tt> внутри шаблонов.
       </p>
       
 <pre>
 var compiled = _.template("&lt;% print('Hello ' + epithet); %&gt;");
 
-// вернет "Hello stooge."
-compiled({epithet: "stooge"});</pre>
+compiled({epithet: "stooge"});
+// вернёт "Hello stooge."
+</pre>
 
       <p>
         Если по какой-то причине Вам не нравятся дескрипторы, используемые для вывода 
-	переменных и вставки исполняемого кода в шаблон, описанные выше,
-	Вы можете изменить настройки шаблонизатора Underscore, чтобы использовать для этих целей привычные символы.
-        Задайте регулярным выражением свойство <b>interpolate</b>, и (необязательно) свойство <b>evaluate</b>,
-	для определения участков шаблона, которые должны быть просто выведены в HTML или выполнены, как JavaScript код.
-        Если же свойство <b>evaluate</b> не было определено, то используя новые дескрипторы Вы сможете лишь выводить в HTML значения переменных.
+        переменных и вставки исполняемого кода в шаблон, описанные выше, Вы можете изменить 
+        настройки шаблонизатора Underscore, чтобы использовать для этих целей привычные символы.
+        Задайте регулярным выражением свойство <b>interpolate</b>, и (необязательно) свойство 
+        <b>evaluate</b> для определения участков шаблона, которые должны быть просто выведены 
+        в HTML или выполнены, как JavaScript-код. Если же свойство <b>evaluate</b> не было определено, 
+        то, используя новые дескрипторы, Вы сможете лишь выводить в HTML значения переменных.
         В качестве примера можно взглянуть на синтаксис шаблонизатора
         <a href="http://github.com/janl/mustache.js#readme">Mustache.js</a>:
       </p>
@@ -1764,29 +1786,31 @@ _.templateSettings = {
 
 var template = _.template("Hello {{ name }}!");
 
-// вернет "Hello Mustache!"
-template({name : "Mustache"});</pre>
+template({name : "Mustache"});
+// вернёт "Hello Mustache!"
+</pre>
 
 
       <h2 id="chaining">Цепные вызовы</h2>
 
       <p>
-        Вы можете использовать Underscore как с применением объектоно-ориентированного подхода, так и процедурного,
-        в зависимости от ваших привычек и предпочтений. В качестве иллюстрации, взгляните на 2 строки кода ниже, они
+        Вы можете использовать Underscore с применением как объектно-ориентированного подхода, так и процедурного,
+        в зависимости от ваших привычек и предпочтений. В качестве иллюстрации взгляните на 2 строки кода ниже, они
         выполняют одну и ту же задачу, удваивают каждое число в массиве.
       </p>
 
     <pre>
 _.map([1, 2, 3], function(n){ return n * 2; });
-_([1, 2, 3]).map(function(n){ return n * 2; });</pre>
+_([1, 2, 3]).map(function(n){ return n * 2; });
+</pre>
 
       <p>
         Вызвав <tt>chain</tt> на объекте, с которым собираетесь работать, 
         вы получите эффект, при котором каждый последующий метод в цепочке 
-        будет вызван на объекте, возвращенным предыдущим методом.
+        будет вызван на объекте, возвращённом предыдущим методом.
         Чтобы получить результат отработавших методов, нужно вызвать 
-        <tt>value</tt>. Ниже приведен пример цепного вызова
-        <b>map/flatten/reduce</b>, в результате мы получим количество каждого слова в приведенной песне.
+        <tt>value</tt>. Ниже приведён пример цепного вызова
+        <b>map/flatten/reduce</b>, в результате мы получим количество каждого слова в приведённой песне.
       </p>
 
 <pre>
@@ -1797,7 +1821,6 @@ var lyrics = [
   {line : 4, words : "He sleeps all night and he works all day"}
 ];
 
-// вернет {lumberjack : 2, all : 4, night : 2 ... }
 _.chain(lyrics)
   .map(function(line) { return line.words.split(' '); })
   .flatten()
@@ -1805,126 +1828,116 @@ _.chain(lyrics)
     counts[word] = (counts[word] || 0) + 1;
     return counts;
 }, {}).value();
+// вернёт {lumberjack : 2, all : 4, night : 2 ... }
 </pre>
 
       <p>
         Кроме того, цепочка, сделанная из объекта Underscore, обладает всеми методами 
         <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/prototype">
-	стандартного объекта Array</a>, а это значит, что Вы можете ее изменить, например, с помощью
+        стандартного объекта Array</a>, а это значит, что Вы можете её изменить, например, с помощью
         <tt>reverse</tt> или <tt>push</tt>, и затем продолжить работу.
       </p>
 
       <p id="chain">
         <b class="header">chain</b><code>_.chain(obj)</code>
         <br />
-        Вернет объект-оболочку, на котором можно будет вызвать любой из методов underscore. 
+        Вернёт объект-оболочку, на котором можно будет вызвать любой из методов underscore. 
         Результатом работы вызванных методов будет такой же объект.
         Для получения результата работы цепочки методов нужно вызвать <tt>value</tt>.
       </p>
       <pre>
 var stooges = [{name : 'curly', age : 25}, {name : 'moe', age : 21}, {name : 'larry', age : 23}];
 
-// youngest будет установлена в "moe is 21"
 var youngest = _.chain(stooges)
   .sortBy(function(stooge){ return stooge.age; })
   .map(function(stooge){ return stooge.name + ' is ' + stooge.age; })
   .first()
   .value(); 
+// youngest будет установлена в "moe is 21"
 </pre>
 
       <p id="value">
         <b class="header">value</b><code>_(obj).value()</code>
         <br />
-        Вернет значение, извлеченное из объекта-оболочки.
+        Вернёт значение, извлечённое из объекта-оболочки.
       </p>
       <pre>
-// вернет [1, 2, 3]
 _([1, 2, 3]).value();
+// вернёт [1, 2, 3]
 </pre>
 
-      <h2 id="links">Links &amp; Suggested Reading</h2>
+      <h2 id="links">Ссылки и рекомендуемая литература</h2>
 
       <p>
-          The Underscore documentation is also available in
-          <a href="http://learning.github.io/underscore/">Simplified Chinese</a>.
+        <a href="http://mirven.github.io/underscore.lua/">Underscore.lua</a>,
+        Lua-порт функций, которые доступны в обоих языках. Включает ООП-обёртки и цепочки.
+        (<a href="https://github.com/mirven/underscore.lua">источник</a>)
       </p>
 
       <p>
-          <a href="http://mirven.github.io/underscore.lua/">Underscore.lua</a>,
-          a Lua port of the functions that are applicable in both languages.
-          Includes OOP-wrapping and chaining.
-          (<a href="https://github.com/mirven/underscore.lua">source</a>)
+        <a href="http://underscorem.org/">Underscore.m</a>, Objective-C-порт
+        многих функций Underscore.js, использующий синтаксис, поощряющий chaining.
+        (<a href="https://github.com/robb/Underscore.m">источник</a>)
       </p>
 
       <p>
-          <a href="http://underscorem.org/">Underscore.m</a>, an Objective-C port
-          of many of the Underscore.js functions, using a syntax that encourages
-          chaining.
-          (<a href="https://github.com/robb/Underscore.m">source</a>)
+        <a href="http://kmalakoff.github.io/_.m/">_.m</a>, альтернативный
+        Objective-C-порт, который пытается держаться ближе к оригинальному Underscore.js API.
+        (<a href="https://github.com/kmalakoff/_.m">источник</a>)
       </p>
 
       <p>
-          <a href="http://kmalakoff.github.io/_.m/">_.m</a>, an alternative
-          Objective-C port that tries to stick a little closer to the original
-          Underscore.js API.
-          (<a href="https://github.com/kmalakoff/_.m">source</a>)
+        <a href="http://brianhaveri.github.io/Underscore.php/">Underscore.php</a>,
+        PHP-порт функций, которые доступны в обоих языках. Включает ООП-обёртки и цепочки.
+        (<a href="https://github.com/brianhaveri/Underscore.php">источник</a>)
       </p>
 
       <p>
-          <a href="http://brianhaveri.github.io/Underscore.php/">Underscore.php</a>,
-          a PHP port of the functions that are applicable in both languages.
-          Includes OOP-wrapping and chaining.
-          (<a href="https://github.com/brianhaveri/Underscore.php">source</a>)
+        <a href="http://vti.github.io/underscore-perl/">Underscore-perl</a>,
+        Perl-порт многих функций Underscore.js, нацеленный на хэши и массивы Perl.
+        (<a href="https://github.com/vti/underscore-perl">источник</a>)
       </p>
 
       <p>
-          <a href="http://vti.github.io/underscore-perl/">Underscore-perl</a>,
-          a Perl port of many of the Underscore.js functions,
-          aimed at on Perl hashes and arrays.
-          (<a href="https://github.com/vti/underscore-perl">source</a>)
+        <a href="http://russplaysguitar.github.io/UnderscoreCF/">Underscore.cfc</a>,
+        Coldfusion-порт многих функций Underscore.js.
+        (<a href="https://github.com/russplaysguitar/underscorecf">источник</a>)
       </p>
 
       <p>
-          <a href="http://russplaysguitar.github.io/UnderscoreCF/">Underscore.cfc</a>,
-          a Coldfusion port of many of the Underscore.js functions.
-          (<a href="https://github.com/russplaysguitar/underscorecf">source</a>)
+        <a href="http://epeli.github.io/underscore.string/">Underscore.string</a>,
+        расширение Underscore, добавляющее функции манипуляции со строками:
+        <tt>trim</tt>, <tt>startsWith</tt>, <tt>contains</tt>, <tt>capitalize</tt>,
+        <tt>reverse</tt>, <tt>sprintf</tt> и другие.
       </p>
 
       <p>
-          <a href="http://epeli.github.io/underscore.string/">Underscore.string</a>,
-          an Underscore extension that adds functions for string-manipulation:
-          <tt>trim</tt>, <tt>startsWith</tt>, <tt>contains</tt>, <tt>capitalize</tt>,
-          <tt>reverse</tt>, <tt>sprintf</tt>, and more.
+        Модуль <a href="http://ruby-doc.org/core/classes/Enumerable.html">Enumerable</a> для Ruby.
       </p>
 
       <p>
-          Ruby's <a href="http://ruby-doc.org/core/classes/Enumerable.html">Enumerable</a> module.
+        <a href="http://prototypejs.org/">Prototype.js</a>, который обеспечивает
+        JavaScript коллекцией функций в манере, близкой к Enumerable в Ruby.
       </p>
 
       <p>
-          <a href="http://prototypejs.org/">Prototype.js</a>, which provides
-          JavaScript with collection functions in the manner closest to Ruby's Enumerable.
+        <a href="http://osteele.com/sources/javascript/functional/">Функциональный JavaScript</a>
+        Оливера Стила, который включает в себя комплексную поддержку функций более высокого порядка, 
+        а также строки лямбда.
       </p>
 
       <p>
-          Oliver Steele's
-          <a href="http://osteele.com/sources/javascript/functional/">Functional JavaScript</a>,
-          which includes comprehensive higher-order function support as well as string lambdas.
+        <a href="https://github.com/substance/data">Data.js</a> Майкла Ауфрайтера,
+        data-манипуляции и persistence-библиотека для JavaScript.
       </p>
 
       <p>
-          Michael Aufreiter's <a href="https://github.com/substance/data">Data.js</a>,
-          a data manipulation + persistence library for JavaScript.
+        <a href="http://docs.python.org/library/itertools.html">Itertools</a> для Python.
       </p>
 
       <p>
-          Python's <a href="http://docs.python.org/library/itertools.html">itertools</a>.
-      </p>
-
-      <p>
-          <a href="http://toolz.readthedocs.org/">PyToolz</a>, a Python port
-          that extends itertools and functools to include much of the
-          Underscore API.
+        <a href="http://toolz.readthedocs.org/">PyToolz</a>, Python-порт, расширяющий itertools и functools, 
+        чтобы включить многое из Underscore API.
       </p>
 
       <h2 id="changelog">Change Log</h2>
