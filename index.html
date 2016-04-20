@@ -564,7 +564,7 @@ _.findWhere(publicServicePulitzers, {newsroom: "The New York Times"});
         <b class="header">reject</b><code>_.reject(list, iterator, [context])</code>
         <br />
         Возвращает массив, содержащий все значения <b>list</b>, за исключением элементов, для которых функция
-        <b>iterator</b> вернула значение, отличное от <tt>true</tt>. Т.е. <b>reject</b> является «антонимом» <b>filter</b>.
+        <b>iterator</b> вернула значение <tt>true</tt>. Т.е. <b>reject</b> является «антонимом» <b>filter</b>.
       </p>
       <pre>
 var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
